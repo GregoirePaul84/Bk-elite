@@ -63,13 +63,13 @@
             height: 37px;
             width: 30px;
             background: rgba(255, 255, 255, 0.4);
-            transform: skewX(20deg) translateX(0);
+            transform: skewX(340deg) translateX(0);
             pointer-events: none;
         }
 
         &:hover .shine {
-            transition: transform 0.75s linear;
-            transform: skewX(20deg) translateX(300px);
+            transition: transform 0.8s linear;
+            transform: skewX(340deg) translateX(300px);
         }
     }
 }

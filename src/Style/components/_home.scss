@@ -39,13 +39,12 @@
                 height: 100%;
                 display: flex;
                 list-style-type: none;
-                gap: 10%;
                 position: relative;
                 overflow: hidden;
 
                 li {
                     height: 100%;
-                    width: 130px;
+                    width: 200px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -53,12 +52,13 @@
                     cursor: pointer;
                     position: relative;
                     overflow: hidden;
+                    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 
                     @for $i from 1 through 4 {
 
                         &:nth-child(#{$i} ):hover .shine {
                             transition: transform 0.75s linear;
-                            transform: skewX(340deg) translateX(300px);
+                            transform: skewX(330deg) translateX(300px);
                         }
                     }
 
@@ -74,9 +74,9 @@
                     top: 0;
                     left: -50px;
                     height: 100%;
-                    width: 35px;
+                    width: 40px;
                     background: rgba(255, 255, 255, 0.4);
-                    transform: skewX(340deg) translateX(0);
+                    transform: skewX(330deg) translateX(0);
                     pointer-events: none;
                 }  
             }
