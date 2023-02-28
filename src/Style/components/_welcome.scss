@@ -1,0 +1,111 @@
+.welcome-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(19, 9, 46, 1) 0, rgb(11 7 22) 35%, rgba(10, 5, 25, 1) 100%);
+    position: absolute;
+    top: 0;
+    z-index: 10;
+
+    .brand-logo {
+        width: 25%;
+        min-width: 275px;
+
+        #home-svg {
+            width: 100%;
+            overflow: visible;
+        }
+        
+        #home-svg :nth-child(2) {
+            animation: moveCar 1s cubic-bezier(0, 0, 0.28, 1) forwards 1s;
+            opacity: 0;
+        }
+        #home-svg :nth-child(3) {
+            animation: moveCar 1s cubic-bezier(0, 0, 0.28, 1) forwards 1s;
+            opacity: 0;
+        }
+        #home-svg :nth-child(4) {
+            animation: moveCar 1s cubic-bezier(0, 0, 0.28, 1) forwards 1s;
+            opacity: 0;
+        }
+        
+        p {
+            text-align: center;
+            font-family: 'Smooch Sans', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+        }
+    }
+
+    .btn-container {
+        margin-top: 25px;
+        position: relative;
+        overflow: hidden;
+
+        button {
+            height: 37px;
+            width: 120px;
+            background-color: $color_secondary;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.45em;
+
+        }
+
+        .shine {
+            position: absolute;
+            top: 0;
+            left: -70px;
+            height: 37px;
+            width: 30px;
+            background: rgba(255, 255, 255, 0.4);
+            transition: transform 0.75s linear;
+            transform: skewX(20deg) translateX(0);
+            pointer-events: none;
+        }
+
+        &:hover .shine {
+            transform: skewX(20deg) translateX(300px);
+        }
+    }
+}
+
+
+@keyframes moveCar {
+    from {
+        opacity: 0;
+        transform: translateX(105vw);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveCar2 {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(35px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-105vw);
+    }
+}
+
+@keyframes enter {
+    to {
+        transform: translateX(105vw);
+    }
+}

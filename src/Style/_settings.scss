@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'teslaregular';
+    src: url('../Style/Font/webfontkit-20230228-102345/tesla-webfont.woff2') format('woff2'),
+         url('../Style/Font/webfontkit-20230228-102345/tesla-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'teslaregular';
+    font-weight: normal;
+
+    span {
+        color: $color_secondary;
+    }
+}
+
+button, p, li, h2 {
+    font-family: 'Smooch Sans', sans-serif;
+}
+
+video, img {
+    object-fit: cover;
+}
