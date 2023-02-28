@@ -22,10 +22,23 @@ const Home = () => {
                 </div>
                 <nav>
                     <ul>
-                        <li>À propos</li>
-                        <li>Services</li>
-                        <li>Véhicules</li>
-                        <li>Réservations</li>
+                        
+                        <li>
+                            <div className="shine"></div>
+                            À propos
+                        </li>
+                        <li>
+                            <div className="shine"></div>
+                            Services
+                        </li>
+                        <li>
+                            <div className="shine"></div>
+                            Véhicules
+                        </li>
+                        <li>
+                            <div className="shine"></div>
+                            Réservations
+                        </li>
                     </ul>
                 </nav>
                 <div className="languages-ctn">

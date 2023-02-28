@@ -17,8 +17,8 @@
             content: '';
             display: block;
             height: 2px;
-            width: 70%;
-            background-color: $color_secondary;
+            width: 80%;
+            background-color: rgba(209, 176, 0, 0.8);
         }
 
         .brand-logo {
@@ -38,14 +38,47 @@
             ul {
                 height: 100%;
                 display: flex;
-                align-items: center;
                 list-style-type: none;
                 gap: 10%;
+                position: relative;
+                overflow: hidden;
 
                 li {
+                    height: 100%;
+                    width: 130px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     font-size: 1.5em;
                     cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+
+                    @for $i from 1 through 4 {
+
+                        &:nth-child(#{$i} ):hover .shine {
+                            transition: transform 0.75s linear;
+                            transform: skewX(340deg) translateX(300px);
+                        }
+                    }
+
+                   
+
+                    &:hover {
+                        background-color: rgba(209, 176, 0, 0.8);
+                    }
                 }
+
+                .shine {
+                    position: absolute;
+                    top: 0;
+                    left: -50px;
+                    height: 100%;
+                    width: 35px;
+                    background: rgba(255, 255, 255, 0.4);
+                    transform: skewX(340deg) translateX(0);
+                    pointer-events: none;
+                }  
             }
         }
 
@@ -56,6 +89,10 @@
             justify-content: flex-end;
             align-items: center;
             gap: 20px;
+
+            img {
+                cursor: pointer;
+            }
         }
     }
     .company-info-ctr {
