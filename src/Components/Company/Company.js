@@ -21,7 +21,7 @@ const Company = ({isEntered}) => {
             console.log('slide réactivé');
             setSlideActive(true);
             setHandleSlide({from: slide1, to: slide2});
-        }, 5000)
+        }, 9000)
     }
    
     useEffect(() => {

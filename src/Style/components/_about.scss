@@ -1,0 +1,137 @@
+.about-ctr {
+    display: flex;
+
+
+    .about-main {
+        height: 100%;
+        width: 75%;
+        padding-top: 25vh;
+        background-image: url('../../Medias/Image/Main/office2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        .content-title {
+            height: 65px;
+            width: 100%;
+            padding-left: 10%;
+
+            h3 {
+                display: inline-block;
+                font-weight: 700;
+                font-size: 2.8em;
+                margin-right: 15px;
+                vertical-align: middle;
+            }
+
+            svg {
+                vertical-align: middle;
+            }
+            
+            &::after {
+                content: "";
+                display: block;
+                height: 2px;
+                width: 20%;
+                background-color: $color_secondary;
+                margin-top: 5px;
+            }
+        }
+
+        .content {
+            height: calc(100% - 65px);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            p {
+                width: 50%;
+                font-size: 1.3em;
+            }
+
+            .left-banner {
+                height: 28%;
+                width: 70%;
+                background-color: $color_primary;
+                display: flex;
+                justify-content: flex-end;
+                box-shadow: inset -15px 0 $color_tertiary;
+
+                p {
+                    height: fit-content;
+                    padding-right: 50px;
+                    // text-align: end;       
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+            }
+
+            .right-banner {
+                height: 28%;
+                width: 70%;
+                background-color: $color_tertiary;
+                display: flex;
+                align-self: flex-end;
+                box-shadow: inset 15px 0 $color_primary;
+
+                p {
+                    height: fit-content;
+                    padding-left: 50px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+            }
+        }
+    }
+
+    .about-nav {
+        height: 100%;
+        width: 25%;
+
+        .about-nav__title {
+            padding-top: 25vh;
+
+            .h-section {
+                height: 25px;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+        }
+
+        ul {
+            height: calc(100% - 60px);
+            padding: 0 12%;
+
+            li {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                cursor: pointer;
+                transition: transform 300ms;
+                transform-origin: center left;
+
+                &::before {
+                    background-color: $color_secondary;	
+                    background-image: -webkit-linear-gradient(45deg,
+                                        rgba(255, 255, 255, .2) 25%,
+                                        transparent 25%,
+                                        transparent 50%,
+                                        rgba(255, 255, 255, .2) 50%,
+                                        rgba(255, 255, 255, .2) 75%,
+                                        transparent 75%,
+                                        transparent);
+                    content: "";
+                    display: inline-block;
+                    height: 15px;
+                    width: 5px;
+                    margin-right: 15px;
+                    transform: scaleX(1);
+                }
+
+                &:hover::before {              
+                    transform: scaleX(3);
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 .page-block {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 
     header {
@@ -95,9 +95,31 @@
             }
         }
     }
-    .company-info-ctr {
-        height: 100vh;
+
+    main {
+        height: fit-content;
         width: 100%;
-        position: relative;
+        
+        .company-info-ctr {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        .transition {
+            position: absolute;
+            z-index: 1;
+            height: 22vh;
+            width: 100%;
+            background-color: $color_primary;
+            clip-path: polygon(0 0, 100% 0, 100% 82px, 0% 100%);
+        }
+
+        .about-ctr {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
     }
+    
 }

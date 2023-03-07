@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Company from '../Company/Company';
-import Nav from './Nav';
 import Welcome from './Welcome';
 
 import french from '../../Medias/Image/Icons/france32.png';
 import english from '../../Medias/Image/Icons/english32.png';
+import About from '../About/About';
 
 const Home = () => {
 
@@ -46,9 +46,17 @@ const Home = () => {
                     <img src={english} alt="drapeau anglais" />
                 </div>
             </header>
-            <section className="company-info-ctr">
-                <Company isEntered={isEntered} />
-            </section>
+            <main>  
+                <section className="company-info-ctr">
+                    <Company isEntered={isEntered} />
+                </section>
+                <div className="transition"></div>
+                <section className="about-ctr">
+                    <About />
+                </section>
+            </main>
+            
+
         </div>
     );
 };

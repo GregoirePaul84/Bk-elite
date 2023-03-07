@@ -4,7 +4,8 @@ const Welcome = ({setIsEntered}) => {
 
     function enterWebsite() {
 
-        const pageBlock = document.querySelector('.page-block');
+        const html = document.getElementsByTagName('html')[0];
+        const body = document.getElementsByTagName('body')[0];
         const container = document.querySelector('.welcome-container');
         const path1 = document.querySelector('#home-svg path:nth-child(2)');
         const path2 = document.querySelector('#home-svg path:nth-child(3)');
@@ -21,8 +22,10 @@ const Welcome = ({setIsEntered}) => {
         }, 2000);
 
         setTimeout(() => {
+            html.style.overflow = 'overlay';
+            body.style.overflow = 'auto';
             container.style.display = 'none';
-            pageBlock.style.height = 'auto';
+            body.style.height = 'auto';
         }, 3100);
     }
 
