@@ -6,10 +6,24 @@
         height: 100%;
         width: 75%;
         padding-top: 25vh;
-        background-image: url('../../Medias/Image/Main/office2.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        position: relative;
+        // background-image: url('../../Medias/Image/Main/office2.png');
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-position: center;
+
+        .about-slider {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
 
         .content-title {
             height: 65px;
@@ -47,7 +61,7 @@
 
             p {
                 width: 50%;
-                font-size: 1.3em;
+                font-size: 1.4em;
             }
 
             .left-banner {
@@ -57,13 +71,15 @@
                 display: flex;
                 justify-content: flex-end;
                 box-shadow: inset -15px 0 $color_tertiary;
+                transform-origin: left;
+                transform: scaleX(0);
 
                 p {
                     height: fit-content;
                     padding-right: 50px;
-                    // text-align: end;       
                     margin-top: auto;
                     margin-bottom: auto;
+                    opacity: 0;
                 }
             }
 
@@ -74,12 +90,15 @@
                 display: flex;
                 align-self: flex-end;
                 box-shadow: inset 15px 0 $color_primary;
+                transform-origin: right;
+                transform: scaleX(0);
 
                 p {
                     height: fit-content;
                     padding-left: 50px;
                     margin-top: auto;
                     margin-bottom: auto;
+                    opacity: 0;
                 }
             }
         }
@@ -133,5 +152,23 @@
                 }
             }
         }
+    }
+}
+
+@keyframes displayBanner {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes opa0to1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

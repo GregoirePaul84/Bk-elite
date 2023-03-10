@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Company from '../Company/Company';
 import Welcome from './Welcome';
 
@@ -9,6 +9,25 @@ import About from '../About/About';
 const Home = () => {
 
     const [isEntered, setIsEntered] = useState(false);
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        console.log(scrollY);
+    }, [scrollY])
+
+    const handleScroll = () => {    
+        setScrollY(window.scrollY);
+    }
+
+    useEffect(() => {
+
+        window.addEventListener('scroll', handleScroll, {
+        });
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    });
 
     return (
         <div className="page-block">
@@ -52,7 +71,7 @@ const Home = () => {
                 </section>
                 <div className="transition"></div>
                 <section className="about-ctr">
-                    <About />
+                    <About scrollY={scrollY} />
                 </section>
             </main>
             
