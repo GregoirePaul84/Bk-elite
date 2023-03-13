@@ -10,9 +10,9 @@ const infoArray = [
         p2 : 'Nous proposons nos services hauts-de-gamme à une clientèle exigeante, soucieuse du confort et de l\'excellence.'
     },
     {
-        title : 'Les valeurs',
-        p1 : 'Nos valeurs sont',
-        p2 : 'blablabla'
+        title : 'Nos valeurs',
+        p1 : 'Chez Bk-Elite, nous nous engageons à offrir un service de qualité supérieure à nos clients. ',
+        p2 : 'Nous considérons que la ponctualité est essentielle pour toute entreprise de transport, c`\'est pourquoi nous prenons des mesures pour garantir que nos chauffeurs sont toujours à l\'heure pour prendre en charge nos clients.'
     },
     {
         title : 'Nos collaborateurs',
@@ -24,22 +24,119 @@ const infoArray = [
 const About = ({scrollY}) => {
 
     const [aboutCtg, setAboutCtg] = useState(0);
+    const [aboutSlide, setAboutSlide] = useState(undefined);
 
+    function displayAbout(index) {
+        const slider = document.querySelector('.img-ctn .about-slider');
+        const content = document.querySelector('.content');
+        const banners = document.querySelectorAll('.left-banner, .right-banner');
+        const textP = document.querySelectorAll('.content p');
+        console.log(index);
+
+        switch(index) {
+
+            case 'noSlide':
+
+                banners.forEach((banner) => {
+                    banner.style.animation = 'displayBanner 1s ease-out 1 forwards';
+                })
+                textP.forEach((p) => {
+                    p.style.animation = 'opa0to1 1s ease-in-out 1 forwards 1s';
+                })
+
+                break;
+
+                
+            case 'company': 
+
+                banners.forEach((banner) => {
+                  banner.style.animationName = 'none';
+                  banner.style.animationPlayState = 'paused';
+                })
+                textP.forEach((p) => {
+                  p.style.animationName = 'none';
+                  p.style.animationPlayState = 'paused';
+                })
+              
+                void content.offsetWidth;
+              
+                banners.forEach((banner) => {
+                  banner.style.animationName = 'displayBanner2';
+                  banner.style.animationDuration = '2s';
+                  banner.style.animationPlayState = 'running';
+                })
+                textP.forEach((p) => {
+                  p.style.animationName = 'opa0to1';
+                  p.style.animationDuration = '3s';
+                  p.style.animationPlayState = 'running';
+                })
+              
+                slider.style.animationName = 'about2to1';
+                slider.style.animationPlayState = 'running';
+              
+                break;
+              
+
+            case 'values':
+
+                banners.forEach((banner) => {
+                  banner.style.animationName = 'none';
+                  banner.style.animationPlayState = 'paused';
+                })
+                textP.forEach((p) => {
+                  p.style.animationName = 'none';
+                  p.style.animationPlayState = 'paused';
+                })
+                          
+                void content.offsetWidth;
+              
+                banners.forEach((banner) => {
+                  banner.style.animationName = 'displayBanner2';
+                  banner.style.animationDuration = '2s';
+                  banner.style.animationPlayState = 'running';
+                })       
+                textP.forEach((p) => {
+                  p.style.animationName = 'opa0to1';
+                  p.style.animationDuration = '3s';
+                  p.style.animationPlayState = 'running';
+                })
+              
+                slider.style.animationName = 'about1to2';
+                slider.style.animationPlayState = 'running';
+              
+                break;
+
+
+            default:
+                console.log('erreur');
+        }
+
+        
+    }
+
+    useEffect(() => {
+
+        if(aboutSlide === 'noSlide') {
+            displayAbout('noSlide');
+        }
+
+        if(aboutSlide === 'company') {
+            displayAbout('company');
+        }
+            
+        if(aboutSlide === 'values') {
+            displayAbout('values');
+            
+        }
+           
+
+    }, [aboutSlide])
 
 
     useEffect(() => {
-        const bannerLeft = document.querySelector('.left-banner');
-        const p1 = document.querySelector('.left-banner p');
-        const bannerRight = document.querySelector('.right-banner');
-        const p2 = document.querySelector('.right-banner p');
-
-        if(scrollY >= 580) {
-            bannerLeft.style.animation = 'displayBanner 1s ease-out 1 forwards';
-            p1.style.animation = 'opa0to1 1s ease-in-out 1 forwards 1s';
-        }
-        if(scrollY >= 740) {
-            bannerRight.style.animation = 'displayBanner 1s ease-out 1 forwards';
-            p2.style.animation = 'opa0to1 1s ease-in-out 1 forwards 1s';
+    
+        if(scrollY >= 580 && aboutSlide === undefined) {
+            displayAbout('noSlide');
         }
 
     }, [scrollY])
@@ -47,13 +144,12 @@ const About = ({scrollY}) => {
     return (
         <>
             <div className="about-main">
-                <div className="about-slider">
-                    {(aboutCtg === 0) ?
+                <div className="img-ctn">
+                    <div className="about-slider">      
                         <img src={companyImg} alt="" />
-                    : 
-                        <img src={valuesImg} alt="" />
-                    }
-                </div>
+                        <img src={valuesImg} alt="" />        
+                    </div>
+                </div>       
                 <div className="content-title">
                     <h3>{infoArray[aboutCtg].title}</h3>
                     {(aboutCtg === 0) ? 
@@ -95,9 +191,9 @@ const About = ({scrollY}) => {
                     </h2>
                 </div>
                 <ul>
-                    <li onClick={(() => setAboutCtg(0))}>La société</li>
-                    <li onClick={(() => setAboutCtg(1))}>Nos valeurs</li>
-                    <li onClick={(() => setAboutCtg(2))}>Nos collaborateurs</li>
+                    <li onClick={(() => {setAboutCtg(0); setAboutSlide('company')})}>La société</li>
+                    <li onClick={(() => {setAboutCtg(1); setAboutSlide('values')})}>Nos valeurs</li>
+                    <li onClick={(() => {setAboutCtg(2); setAboutSlide('collaborators')})}>Nos collaborateurs</li>
                 </ul>
             </div>
         </>
