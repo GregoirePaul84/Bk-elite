@@ -99,6 +99,7 @@
     main {
         height: fit-content;
         width: 100%;
+        position: relative;
         
         .company-info-ctr {
             height: 100vh;
@@ -112,7 +113,7 @@
             height: 22vh;
             width: 100%;
             background-color: $color_primary;
-            clip-path: polygon(0 0, 100% 0, 100% 82px, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 56px, 0% 100%);
         }
 
         .about-ctr {

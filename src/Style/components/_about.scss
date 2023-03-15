@@ -5,13 +5,14 @@
     .about-main {
         height: 100%;
         width: 75%;
-        padding-top: 23vh;
+        padding-top: 22vh;
         position: relative;
 
         .img-ctn {
             height: 100%;
             width: 100%;
             position: absolute;
+            z-index: -1;
             top: 0;
             left: 0;
             overflow: hidden;
@@ -69,44 +70,77 @@
 
             p {
                 width: 50%;
-                font-size: 1.35em;
+                font-size: 1.4em;
+                line-height: 30px;
+
+                .colored {
+                    color: $color_secondary;
+                    font-weight: 600;
+                }
             }
 
-
-            .left-banner {
-                height: 35%;
-                width: 70%;
-                background-color: rgba(4, 6, 19, .80);
+            ul {
+                min-width: 125px;
                 display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 35px;
+                opacity: 0;
+
+                .selected {
+                    font-weight: 600;
+                    font-size: 1.5em;
+                    color: #fff;
+                }   
+
+                li {
+                    font-size: 1.3em;
+                    margin-bottom: 5px;
+                    text-align: center;
+                    color: $color_secondary;
+                    cursor: pointer;
+                }
+            }
+
+            .banner {
+                height: auto;
+                min-height: 200px;
+                width: 80%;
+                display: flex;
+                transform: scaleX(0);
+                padding: 20px 0;
+            }
+
+            .left-banner {           
+                background-color: rgba(4, 6, 19, .80);
                 justify-content: flex-end;
+                align-items: center;
                 box-shadow: inset -15px 0 $color_tertiary;
                 transform-origin: left;
-                transform: scaleX(0);
-
+            
                 p {
                     height: fit-content;
-                    padding-right: 50px;
-                    margin-top: auto;
-                    margin-bottom: auto;
+                    padding-right: 35px;
                     opacity: 0;
                 }
             }
 
             .right-banner {
-                height: 35%;
-                width: 70%;
                 background-color: rgba(128, 114, 40, .65);
-                display: flex;
                 align-self: flex-end;
                 box-shadow: inset 15px 0 $color_primary;
                 transform-origin: right;
-                transform: scaleX(0);
 
                 p {
                     height: fit-content;
                     padding-left: 50px;
                     margin-top: auto;
                     margin-bottom: auto;
+                    opacity: 0;
+                }
+
+                .value-type {
+                    // animation: leftAppears 1s ease-out 1 forwards;
                     opacity: 0;
                 }
             }
@@ -116,19 +150,22 @@
     .about-nav {
         height: 100%;
         width: 25%;
+        margin-top: 12vh;
 
         .about-nav__title {
-            padding-top: 25vh;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, rgb(10, 14, 38) 0%, rgb(4, 6, 19) 50%);
 
-            .h-section {
-                height: 25px;
-                text-align: center;
-                margin-bottom: 40px;
+            h2 {
+                font-size: 1.8em;
             }
         }
 
         ul {
-            height: calc(100% - 60px);
             padding: 0 12%;
 
             li {
@@ -151,7 +188,7 @@
                     display: inline-block;
                     height: 15px;
                     width: 5px;
-                    margin-right: 15px;
+                    margin-right: 25px;
                     transform-origin: left;
                     transform: scaleX(1);
                 }
@@ -214,5 +251,41 @@
     }
     to {
         transform: translateX(0);
+    }
+}
+
+@keyframes about2to3 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+@keyframes about3to2 {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes about3to1 {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes about1to3 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
     }
 }
