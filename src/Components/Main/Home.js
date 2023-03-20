@@ -5,6 +5,7 @@ import Welcome from './Welcome';
 import french from '../../Medias/Image/Icons/france32.png';
 import english from '../../Medias/Image/Icons/english32.png';
 import About from '../About/About';
+import Services from '../Services/Services';
 
 const Home = () => {
 
@@ -72,6 +73,10 @@ const Home = () => {
                 <div className="transition"></div>
                 <section className="about-ctr">
                     <About scrollY={scrollY} />
+                </section>
+                <div className="transition inverted"></div>
+                <section className="services-ctr">
+                    <Services />  
                 </section>
             </main>
             

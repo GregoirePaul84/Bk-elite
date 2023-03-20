@@ -4,7 +4,7 @@ import companyImg from '../../Medias/Image/Main/office3.png';
 import valuesImg from '../../Medias/Image/Main/values.png';
 import collabImg from '../../Medias/Image/Main/collaborators.png';
 
-const infoArray = [
+const aboutArray = [
     {
         title : 'La société',
         p1 : <span dangerouslySetInnerHTML={{__html: 'La société <span class=colored>Bk-Elite</span> est un prestataire de <strong>service de transport privé</strong>, basée en région Provence-Alpes-Côte d\'Azur.'}} />,
@@ -38,16 +38,16 @@ const About = ({scrollY}) => {
 
     const [aboutCtg, setAboutCtg] = useState(0);
     const [aboutSlide, setAboutSlide] = useState({from: undefined, to: 'company'});
-    const [value, setValue] = useState( {title: infoArray[1].values[2].title, 
-                                        description: infoArray[1].values[2].description,
+    const [value, setValue] = useState( {title: aboutArray[1].values[2].title, 
+                                        description: aboutArray[1].values[2].description,
                                         increment: 1} );
 
     function displayAbout(index) {
         const slider = document.querySelector('.img-ctn .about-slider');
-        const content = document.querySelector('.content');
+        const content = document.querySelector('.about-ctr .content');
         const banners = document.querySelectorAll('.left-banner, .right-banner');
-        const textP = document.querySelectorAll('.content p');
-        const list = document.querySelectorAll('.content ul');
+        const textP = document.querySelectorAll('.about-ctr .content p');
+        const list = document.querySelectorAll('.about-ctr .content ul');
 
         if(index === 'noSlide') {
             banners.forEach((banner) => {
@@ -61,8 +61,8 @@ const About = ({scrollY}) => {
         }
 
         else {
-            setValue({title: infoArray[1].values[2].title, 
-                description: infoArray[1].values[2].description,
+            setValue({title: aboutArray[1].values[2].title, 
+                description: aboutArray[1].values[2].description,
                 increment: 1})
                 
             banners.forEach((banner) => {
@@ -142,6 +142,29 @@ const About = ({scrollY}) => {
     }, [value])
 
     useEffect(() => {
+        const company = document.getElementById('company-nav');
+        const values = document.getElementById('values-nav');
+        const collaborators = document.getElementById('collaborators-nav');
+
+        if(aboutSlide.to === 'company') {
+            company.classList.add('nav-selected');
+            values.classList.remove('nav-selected');
+            collaborators.classList.remove('nav-selected');
+        }
+        if(aboutSlide.to === 'values') {
+            company.classList.remove('nav-selected');
+            values.classList.add('nav-selected');
+            collaborators.classList.remove('nav-selected');
+        }
+        if(aboutSlide.to === 'collaborators') {
+            company.classList.remove('nav-selected');
+            values.classList.remove('nav-selected');
+            collaborators.classList.add('nav-selected');
+        }
+            
+        if(aboutSlide.to === 'values')
+            document.getElementById('values-nav').classList.add('nav-selected');
+
 
         if(aboutSlide.from === 'company' && aboutSlide.to === 'values') {
             displayAbout('slide1to2');
@@ -189,7 +212,7 @@ const About = ({scrollY}) => {
                     </div>
                 </div>       
                 <div className="content-title">
-                    <h3>{infoArray[aboutCtg].title}</h3>
+                    <h3>{aboutArray[aboutCtg].title}</h3>
                     {(aboutCtg === 0) ? 
                         <svg width="22" height="40" viewBox="0 0 41 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.125 0C2.29557 0 0 2.01562 0 4.5V43.5C0 45.9844 2.29557 48 5.125 48H15.375V40.5C15.375 38.0156 17.6706 36 20.5 36C23.3294 36 25.625 38.0156 25.625 40.5V48H35.875C38.7044 48 41 45.9844 41 43.5V4.5C41 2.01562 38.7044 0 35.875 0H5.125ZM6.83333 22.5C6.83333 21.675 7.60208 21 8.54167 21H11.9583C12.8979 21 13.6667 21.675 13.6667 22.5V25.5C13.6667 26.325 12.8979 27 11.9583 27H8.54167C7.60208 27 6.83333 26.325 6.83333 25.5V22.5ZM18.7917 21H22.2083C23.1479 21 23.9167 21.675 23.9167 22.5V25.5C23.9167 26.325 23.1479 27 22.2083 27H18.7917C17.8521 27 17.0833 26.325 17.0833 25.5V22.5C17.0833 21.675 17.8521 21 18.7917 21ZM27.3333 22.5C27.3333 21.675 28.1021 21 29.0417 21H32.4583C33.3979 21 34.1667 21.675 34.1667 22.5V25.5C34.1667 26.325 33.3979 27 32.4583 27H29.0417C28.1021 27 27.3333 26.325 27.3333 25.5V22.5ZM8.54167 9H11.9583C12.8979 9 13.6667 9.675 13.6667 10.5V13.5C13.6667 14.325 12.8979 15 11.9583 15H8.54167C7.60208 15 6.83333 14.325 6.83333 13.5V10.5C6.83333 9.675 7.60208 9 8.54167 9ZM17.0833 10.5C17.0833 9.675 17.8521 9 18.7917 9H22.2083C23.1479 9 23.9167 9.675 23.9167 10.5V13.5C23.9167 14.325 23.1479 15 22.2083 15H18.7917C17.8521 15 17.0833 14.325 17.0833 13.5V10.5ZM29.0417 9H32.4583C33.3979 9 34.1667 9.675 34.1667 10.5V13.5C34.1667 14.325 33.3979 15 32.4583 15H29.0417C28.1021 15 27.3333 14.325 27.3333 13.5V10.5C27.3333 9.675 28.1021 9 29.0417 9Z" fill="#D1B000"/>
@@ -211,18 +234,18 @@ const About = ({scrollY}) => {
                 <div className="content">
                     <div className="banner left-banner">
                         <p>
-                            {infoArray[aboutCtg].p1}
+                            {aboutArray[aboutCtg].p1}
                         </p>
                     </div>
                     <div className="banner right-banner">
                         {(aboutCtg === 0 || aboutCtg === 2) ?
                             <p>
-                                {infoArray[aboutCtg].p2}
+                                {aboutArray[aboutCtg].p2}
                             </p>
                             :
                             <>
                                 <ul>
-                                    {infoArray[1].values.map
+                                    {aboutArray[1].values.map
                                         ((elt) => 
                                             <li key={elt.title} onClick={() => 
                                                 setValue(
@@ -250,9 +273,9 @@ const About = ({scrollY}) => {
                     </h2>
                 </div>
                 <ul>
-                    <li onClick={(() => {setAboutCtg(0); setAboutSlide({from: aboutSlide.to, to: 'company'})})}>La société</li>
-                    <li onClick={(() => {setAboutCtg(1); setAboutSlide({from: aboutSlide.to, to: 'values'})})}>Nos valeurs</li>
-                    <li onClick={(() => {setAboutCtg(2); setAboutSlide({from: aboutSlide.to, to: 'collaborators'})})}>Nos collaborateurs</li>
+                    <li id='company-nav' onClick={(() => {setAboutCtg(0); setAboutSlide({from: aboutSlide.to, to: 'company'})})}>La société</li>
+                    <li id='values-nav' onClick={(() => {setAboutCtg(1); setAboutSlide({from: aboutSlide.to, to: 'values'})})}>Nos valeurs</li>
+                    <li id='collaborators-nav' onClick={(() => {setAboutCtg(2); setAboutSlide({from: aboutSlide.to, to: 'collaborators'})})}>Nos collaborateurs</li>
                 </ul>
             </div>
         </>

@@ -100,8 +100,8 @@
         height: fit-content;
         width: 100%;
         position: relative;
-        
-        .company-info-ctr {
+
+        section {
             height: 100vh;
             width: 100vw;
             position: relative;
@@ -116,10 +116,8 @@
             clip-path: polygon(0 0, 100% 0, 100% 56px, 0% 100%);
         }
 
-        .about-ctr {
-            height: 100vh;
-            width: 100vw;
-            position: relative;
+        .inverted {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 56px);
         }
     }
     
