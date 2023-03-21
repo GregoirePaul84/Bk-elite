@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Bk-elite/static/css/main.6f54a0b7.css",
+    "main.js": "/Bk-elite/static/js/main.226a8787.js",
+    "static/media/night_city_short.mp4": "/Bk-elite/static/media/night_city_short.59b69627588a12d8f051.mp4",
+    "static/media/office3.png": "/Bk-elite/static/media/office3.9b702a448c93d1b56948.png",
+    "static/media/evening.png": "/Bk-elite/static/media/evening.7d45778139de7717aa52.png",
+    "static/media/collaborators.png": "/Bk-elite/static/media/collaborators.29ff215b3ff8ee3ca619.png",
+    "static/media/airplane.png": "/Bk-elite/static/media/airplane.ddaaf490391a29deff43.png",
+    "static/media/values.png": "/Bk-elite/static/media/values.97cbd11653cd5f2cf31b.png",
+    "static/media/car_above_darked.jpg": "/Bk-elite/static/media/car_above_darked.681bc89b6b5129678c20.jpg",
+    "static/media/distance.png": "/Bk-elite/static/media/distance.411245f437604b9efe83.png",
+    "static/media/wedding.png": "/Bk-elite/static/media/wedding.237bb7248ce64efafe61.png",
+    "static/media/bridge.jpg": "/Bk-elite/static/media/bridge.1ea52192de150bebb77e.jpg",
+    "static/media/tesla-webfont.woff": "/Bk-elite/static/media/tesla-webfont.6c2ec8e0fd300778262c.woff",
+    "static/media/tesla-webfont.woff2": "/Bk-elite/static/media/tesla-webfont.7088f8799f0f798149bd.woff2",
+    "index.html": "/Bk-elite/index.html",
+    "main.6f54a0b7.css.map": "/Bk-elite/static/css/main.6f54a0b7.css.map",
+    "main.226a8787.js.map": "/Bk-elite/static/js/main.226a8787.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f54a0b7.css",
+    "static/js/main.226a8787.js"
+  ]
+}
