@@ -102,51 +102,51 @@ const Services = () => {
 
             switch(index) {
                 case 'slide1to2':
-                    slider.style.animation = 'services1to2 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical1to2 1s ease-in-out forwards';
                     break;
                 
                 case 'slide2to1':
-                    slider.style.animation = 'services2to1 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical2to1 1s ease-in-out forwards';
                     break;
 
                 case 'slide2to3':
-                    slider.style.animation = 'services2to3 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical2to3 1s ease-in-out forwards';
                     break;
 
                 case 'slide3to2':
-                    slider.style.animation = 'services3to2 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical3to2 1s ease-in-out forwards';
                     break;
                 
                 case 'slide1to3':
-                    slider.style.animation = 'services1to3 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical1to3 1s ease-in-out forwards';
                     break;
 
                 case 'slide3to1':
-                    slider.style.animation = 'services3to1 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical3to1 1s ease-in-out forwards';
                     break;
 
                 case 'slide3to4':
-                    slider.style.animation = 'services3to4 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical3to4 1s ease-in-out forwards';
                     break;
 
                 case 'slide4to3':
-                    slider.style.animation = 'services4to3 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical4to3 1s ease-in-out forwards';
                     break;
 
                 case 'slide1to4':
-                    slider.style.animation = 'services1to4 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical1to4 1s ease-in-out forwards';
                     break;
 
                 case 'slide4to1':
-                    slider.style.animation = 'services4to1 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical4to1 1s ease-in-out forwards';
                     break;
 
                 case 'slide2to4':
-                    slider.style.animation = 'services2to4 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical2to4 1s ease-in-out forwards';
                     break;
 
                 case 'slide4to2':
-                    slider.style.animation = 'services4to2 1s ease-in-out forwards';
+                    slider.style.animation = 'vertical4to2 1s ease-in-out forwards';
                     break;
 
                 default :

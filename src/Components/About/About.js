@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import companyImg from '../../Medias/Image/Main/office3.png';
 import valuesImg from '../../Medias/Image/Main/values.png';
-import collabImg from '../../Medias/Image/Main/collaborators.png';
+import driverImg from '../../Medias/Image/Main/kamel.png';
 
 const aboutArray = [
     {
@@ -28,7 +28,7 @@ const aboutArray = [
             ]
     },
     {
-        title : 'Nos collaborateurs',
+        title : 'Votre chauffeur',
         p1 : 'Bk-elite est fier de compter parmi son équipe des professionnels hautement qualifiés et expérimentés dans leur domaine.',
         p2 : 'Nos chauffeurs sont sélectionnés avec soin pour leur connaissance approfondie de la conduite, leur parfaite connaissance des routes et leur capacité à fournir un service exceptionnel.'
     }
@@ -94,36 +94,36 @@ const About = ({scrollY}) => {
 
             switch(index) {
                 case 'slide1to2':
-                    slider.style.animationName = 'about1to2';
+                    slider.style.animationName = 'horizontal1to2';
                     slider.style.animationPlayState = 'running';
                     break;
                 
                 case 'slide2to1':
-                    slider.style.animationName = 'about2to1';
+                    slider.style.animationName = 'horizontal2to1';
                     slider.style.animationPlayState = 'running';
                     break;
 
                 case 'slide2to3':
-                    slider.style.animationName = 'about2to3';
+                    slider.style.animationName = 'horizontal2to3';
                     slider.style.animationPlayState = 'running';
                     break;
 
                 case 'slide3to2':
-                    slider.style.animationName = 'about3to2';
+                    slider.style.animationName = 'horizontal3to2';
                     slider.style.animationPlayState = 'running';
                     break;
                 
                 case 'slide1to3':
-                    slider.style.animationName = 'about1to3';
+                    slider.style.animationName = 'horizontal1to3';
                     slider.style.animationPlayState = 'running';
                     break;
 
                 case 'slide3to1':
-                    slider.style.animationName = 'about3to1';
+                    slider.style.animationName = 'horizontal3to1';
                     slider.style.animationPlayState = 'running';
                     break;
                 default :
-                    console.log('erreur');
+                    break;
             }
         }      
     }
@@ -144,22 +144,22 @@ const About = ({scrollY}) => {
     useEffect(() => {
         const company = document.getElementById('company-nav');
         const values = document.getElementById('values-nav');
-        const collaborators = document.getElementById('collaborators-nav');
+        const driver = document.getElementById('driver-nav');
 
         if(aboutSlide.to === 'company') {
             company.classList.add('nav-selected');
             values.classList.remove('nav-selected');
-            collaborators.classList.remove('nav-selected');
+            driver.classList.remove('nav-selected');
         }
         if(aboutSlide.to === 'values') {
             company.classList.remove('nav-selected');
             values.classList.add('nav-selected');
-            collaborators.classList.remove('nav-selected');
+            driver.classList.remove('nav-selected');
         }
-        if(aboutSlide.to === 'collaborators') {
+        if(aboutSlide.to === 'driver') {
             company.classList.remove('nav-selected');
             values.classList.remove('nav-selected');
-            collaborators.classList.add('nav-selected');
+            driver.classList.add('nav-selected');
         }
             
         if(aboutSlide.to === 'values')
@@ -170,11 +170,11 @@ const About = ({scrollY}) => {
             displayAbout('slide1to2');
         }
             
-        if(aboutSlide.from === 'values' && aboutSlide.to === 'collaborators') {
+        if(aboutSlide.from === 'values' && aboutSlide.to === 'driver') {
             displayAbout('slide2to3');           
         }
 
-        if(aboutSlide.from === 'collaborators' && aboutSlide.to === 'values') {
+        if(aboutSlide.from === 'driver' && aboutSlide.to === 'values') {
             displayAbout('slide3to2');          
         }
 
@@ -182,11 +182,11 @@ const About = ({scrollY}) => {
             displayAbout('slide2to1');     
         }
 
-        if(aboutSlide.from === 'company' && aboutSlide.to === 'collaborators') {
+        if(aboutSlide.from === 'company' && aboutSlide.to === 'driver') {
             displayAbout('slide1to3');     
         }
 
-        if(aboutSlide.from === 'collaborators' && aboutSlide.to === 'company') {
+        if(aboutSlide.from === 'driver' && aboutSlide.to === 'company') {
             displayAbout('slide3to1');     
         }
            
@@ -208,7 +208,7 @@ const About = ({scrollY}) => {
                     <div className="about-slider">      
                         <img src={companyImg} alt="bureaux de la société" />
                         <img src={valuesImg} alt="route de nuit et voitures qui défilent" /> 
-                        <img src={collabImg} alt="chauffeur ouvrant la porte d'une voiture" />        
+                        <img src={driverImg} alt="chauffeur en costume devant la ville de Gordes" />        
                     </div>
                 </div>       
                 <div className="content-title">
@@ -275,7 +275,7 @@ const About = ({scrollY}) => {
                 <ul>
                     <li id='company-nav' onClick={(() => {setAboutCtg(0); setAboutSlide({from: aboutSlide.to, to: 'company'})})}>La société</li>
                     <li id='values-nav' onClick={(() => {setAboutCtg(1); setAboutSlide({from: aboutSlide.to, to: 'values'})})}>Nos valeurs</li>
-                    <li id='collaborators-nav' onClick={(() => {setAboutCtg(2); setAboutSlide({from: aboutSlide.to, to: 'collaborators'})})}>Nos collaborateurs</li>
+                    <li id='driver-nav' onClick={(() => {setAboutCtg(2); setAboutSlide({from: aboutSlide.to, to: 'driver'})})}>Votre chauffeur</li>
                 </ul>
             </div>
         </>

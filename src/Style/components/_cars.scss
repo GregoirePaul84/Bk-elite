@@ -1,7 +1,7 @@
-.about-ctr {
+.cars-ctr {
     display: flex;
 
-    .about-main {
+    .cars-main {
         height: 100%;
         width: 75%;
         padding-top: 22vh;
@@ -16,7 +16,7 @@
             left: 0;
             overflow: hidden;
 
-            .about-slider {
+            .cars-slider {
                 height: 100%;
                 width: 100%;
                 display: flex;
@@ -29,7 +29,7 @@
                     height: 100%;
                     width: 100%;
                     flex-shrink: 0;
-                    object-position: right;
+                    object-position: left;
                 }
             }
         }
@@ -96,57 +96,15 @@
                     cursor: pointer;
                 }
             }
-
-            .banner {
-                height: auto;
-                min-height: 200px;
-                width: 70%;
-                display: flex;
-                transform: scaleX(0);
-                padding: 20px 0;
-            }
-
-            .left-banner {           
-                background-color: rgba(4, 6, 19, .80);
-                justify-content: flex-end;
-                align-items: center;
-                box-shadow: inset -15px 0 $color_tertiary;
-                transform-origin: left;
-            
-                p {
-                    height: fit-content;
-                    padding-right: 35px;
-                    opacity: 0;
-                }
-            }
-
-            .right-banner {
-                background-color: rgba(128, 114, 40, .65);
-                align-self: flex-end;
-                box-shadow: inset 15px 0 $color_primary;
-                transform-origin: right;
-
-                p {
-                    height: fit-content;
-                    padding-left: 50px;
-                    margin-top: auto;
-                    margin-bottom: auto;
-                    opacity: 0;
-                }
-
-                .value-type {
-                    opacity: 0;
-                }
-            }
         }
     }
 
-    .about-nav {
+    .cars-nav {
         height: 100%;
         width: 25%;
         margin-top: 12vh;
 
-        .about-nav__title {
+        .cars-nav__title {
             height: 220px;
             display: flex;
             flex-direction: column;
@@ -207,25 +165,3 @@
         }
     }
 }
-
-@keyframes displayBanner {
-    from {
-        transform: scaleX(0);
-    }
-    to {
-        transform: scaleX(1);
-    }
-}
-
-@keyframes displayBanner2 {
-    0% {
-        transform: scaleX(1);
-    }
-    25%, 50% {
-        transform: scaleX(0);
-    }
-    100% {
-        transform: scaleX(1);
-    }
-}
-

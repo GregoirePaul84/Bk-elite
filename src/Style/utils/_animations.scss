@@ -8,3 +8,178 @@
         opacity: 1;
     }
 }
+
+@keyframes opa0to1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Slides horizontaux
+
+@keyframes horizontal1to2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes horizontal2to1 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes horizontal2to3 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+@keyframes horizontal3to2 {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes horizontal3to1 {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes horizontal1to3 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+// Slides verticaux
+
+@keyframes vertical1to2 {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes vertical1to3 {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-200%);
+    }
+}
+
+@keyframes vertical1to4 {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-300%);
+    }
+}
+
+@keyframes vertical2to1 {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes vertical2to3 {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(-200%);
+    }
+}
+
+@keyframes vertical2to4 {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(-300%);
+    }
+}
+
+@keyframes vertical3to2 {
+    from {
+        transform: translateY(-200%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes vertical3to1 {
+    from {
+        transform: translateY(-200%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes vertical3to4 {
+    from {
+        transform: translateY(-200%);
+    }
+    to {
+        transform: translateY(-300%);
+    }
+}
+
+@keyframes vertical4to3 {
+    from {
+        transform: translateY(-300%);
+    }
+    to {
+        transform: translateY(-200%);
+    }
+}
+
+@keyframes vertical4to2 {
+    from {
+        transform: translateY(-300%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes vertical4to1 {
+    from {
+        transform: translateY(-300%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

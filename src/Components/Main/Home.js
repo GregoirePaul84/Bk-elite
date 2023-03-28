@@ -6,6 +6,7 @@ import french from '../../Medias/Image/Icons/france32.png';
 import english from '../../Medias/Image/Icons/english32.png';
 import About from '../About/About';
 import Services from '../Services/Services';
+import Cars from '../Cars/Cars';
 
 const Home = () => {
 
@@ -77,6 +78,10 @@ const Home = () => {
                 <div className="transition inverted"></div>
                 <section className="services-ctr">
                     <Services />  
+                </section>
+                <div className="transition"></div>
+                <section className='cars-ctr'>
+                    <Cars />
                 </section>
             </main>
             
