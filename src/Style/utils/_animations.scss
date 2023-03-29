@@ -183,3 +183,21 @@
         transform: translateY(0);
     }
 }
+
+@keyframes vertical4to5 {
+    from {
+        transform: translateY(-300%);
+    }
+    to {
+        transform: translateY(-400%);
+    }
+}
+
+@keyframes vertical5to4 {
+    from {
+        transform: translateY(-400%);
+    }
+    to {
+        transform: translateY(-300%);
+    }
+}

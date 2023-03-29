@@ -71,7 +71,7 @@
 
             .main-banner {
                 height: 80%;
-                width: 43%;
+                width: 50%;
                 min-width: 370px;
                 background-color: rgba(52, 46, 44, 0.85);
                 padding: 4% 3%;
@@ -127,7 +127,7 @@
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                transform: scale(1);
+                transform: scaleX(0);
                 transition: transform 300ms;
                 transform-origin: right;
 
@@ -208,6 +208,12 @@
                 }
             }
 
+            #extras-nav {
+                &::before {
+                    background-color: #9D9D9D;
+                }
+            }
+
             .nav-selected {
                 color: $color_secondary;
 
@@ -216,6 +222,15 @@
                 }
             }
         }
+    }
+}
+
+@keyframes bannerY {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
     }
 }
 

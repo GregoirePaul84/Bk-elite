@@ -77,11 +77,11 @@ const Home = () => {
                 </section>
                 <div className="transition inverted"></div>
                 <section className="services-ctr">
-                    <Services />  
+                    <Services scrollY={scrollY} />  
                 </section>
                 <div className="transition"></div>
                 <section className='cars-ctr'>
-                    <Cars />
+                    <Cars scrollY={scrollY} />
                 </section>
             </main>
             
