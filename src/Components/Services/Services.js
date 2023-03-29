@@ -42,10 +42,13 @@ const servicesArray = [
         li1 : <li dangerouslySetInnerHTML={{__html: 'Des collations et des rafraîchissements sont à votre disposition gratuitement durant votre voyage.'}} />,
         li2 : <li dangerouslySetInnerHTML={{__html: 'Vous avez besoin de transporter un excédent de bagages ? Nous mettons à votre disposition un van pour transporter tout objets volumineux.'}} />
     }
-]
+];
+
+const services = ['airport', 'distance', 'events', 'evening', 'extras'];
 
 const Services = ({scrollY}) => {
 
+    const [selectedService, setSelectedService] = useState('airport');
     const [servicesCtg, setServicesCtg] = useState(0);
     const [servicesSlide, setServicesSlide] = useState({from: undefined, to: 'airport'});
     const [isHover, setIsHover] = useState(false);
@@ -55,12 +58,8 @@ const Services = ({scrollY}) => {
     const bannerRef = useRef(null);
     const bookLinkRef = useRef(null);
     const svgBookRef = useRef(null);
-
-    const airportRef = useRef(null);
-    const distanceRef = useRef(null);
-    const eventsRef = useRef(null);
-    const eveningRef = useRef(null);
-    const extrasRef = useRef(null);
+    const textPRef = useRef([]);
+    const listRef = useRef([]);
 
     function displayServices(index) {
         const slider = sliderRef.current;
@@ -68,8 +67,8 @@ const Services = ({scrollY}) => {
         const banner = bannerRef.current;
         const bookLink = bookLinkRef.current;
         const svgBook = svgBookRef.current;
-        const textP = document.querySelectorAll('.services-ctr .content p');
-        const list = document.querySelectorAll('.services-ctr .content ul');
+        const textP = textPRef.current;
+        const list = listRef.current;
 
         if(index === 'noSlide') {
 
@@ -90,9 +89,6 @@ const Services = ({scrollY}) => {
         }
 
         else {
-            // setValue({title: aboutArray[1].values[2].title, 
-            //     description: aboutArray[1].values[2].description,
-            //     increment: 1})
                 
             banner.style.animationName = 'none';
             banner.style.animationPlayState = 'paused';
@@ -184,6 +180,30 @@ const Services = ({scrollY}) => {
                 case 'slide5to4':
                     slider.style.animation = 'vertical5to4 1s ease-in-out forwards';
                     break;
+                
+                case 'slide5to3':
+                    slider.style.animation = 'vertical5to3 1s ease-in-out forwards';
+                    break;
+
+                case 'slide3to5':
+                    slider.style.animation = 'vertical3to5 1s ease-in-out forwards';
+                    break;
+
+                case 'slide5to2':
+                    slider.style.animation = 'vertical5to2 1s ease-in-out forwards';
+                    break;
+
+                case 'slide2to5':
+                    slider.style.animation = 'vertical2to5 1s ease-in-out forwards';
+                    break;
+
+                case 'slide1to5':
+                    slider.style.animation = 'vertical1to5 1s ease-in-out forwards';
+                    break;
+
+                case 'slide5to1':
+                    slider.style.animation = 'vertical5to1 1s ease-in-out forwards';
+                    break;
 
                 default :
                     break;
@@ -192,109 +212,126 @@ const Services = ({scrollY}) => {
     }
 
     useEffect(() => {
-        const airport = airportRef.current;
-        const distance = distanceRef.current;
-        const events = eventsRef.current;
-        const evening = eveningRef.current;
-        const extras = extrasRef.current;
 
-        if(servicesSlide.to === 'airport') {
-            airport.classList.add('nav-selected');
-            distance.classList.remove('nav-selected');
-            events.classList.remove('nav-selected');
-            evening.classList.remove('nav-selected');
-            extras.classList.remove('nav-selected');
-        }
-        if(servicesSlide.to === 'distance') {
-            airport.classList.remove('nav-selected');
-            distance.classList.add('nav-selected');
-            events.classList.remove('nav-selected');
-            evening.classList.remove('nav-selected');
-            extras.classList.remove('nav-selected');
-        }
-        if(servicesSlide.to === 'events') {
-            airport.classList.remove('nav-selected');
-            distance.classList.remove('nav-selected');
-            events.classList.add('nav-selected');
-            evening.classList.remove('nav-selected');
-            extras.classList.remove('nav-selected');
-        }
-        if(servicesSlide.to === 'evening') {
-            airport.classList.remove('nav-selected');
-            distance.classList.remove('nav-selected');
-            events.classList.remove('nav-selected');
-            evening.classList.add('nav-selected');
-            extras.classList.remove('nav-selected');
-        }
-        if(servicesSlide.to === 'extras') {
-            airport.classList.remove('nav-selected');
-            distance.classList.remove('nav-selected');
-            events.classList.remove('nav-selected');
-            evening.classList.remove('nav-selected');
-            extras.classList.add('nav-selected');
-        }
-            
-        if(servicesSlide.to === 'distance')
-            document.getElementById('distance-nav').classList.add('nav-selected');
+        // Sélectionne le service choisi et ajoute la classe 'nav-selected'
+        services.forEach((service) => {
+            const nav = document.querySelector(`.${service}-nav`);
 
+            if (nav) {
+                if (service === selectedService) {
+                    nav.classList.add('nav-selected');
+                } 
+                else {
+                    nav.classList.remove('nav-selected');
+                }
+            }
+        });
 
-        if(servicesSlide.from === 'airport' && servicesSlide.to === 'distance') {
-            displayServices('slide1to2');
-        }
-            
-        if(servicesSlide.from === 'distance' && servicesSlide.to === 'events') {
-            displayServices('slide2to3');           
-        }
+        // Trouve les index du slide précédent et du slide suivant dans le tableau services
+        switch (`${services.indexOf(servicesSlide.from)}-${services.indexOf(servicesSlide.to)}`) {
+            case '0-1':
+                displayServices('slide1to2');
+                setSelectedService('distance');
+                break;
 
-        if(servicesSlide.from === 'events' && servicesSlide.to === 'distance') {
-            displayServices('slide3to2');          
-        }
+            case '1-2':
+                displayServices('slide2to3');
+                setSelectedService('events');
+                break;
+            case '2-1':
+                displayServices('slide3to2');
+                setSelectedService('distance');
+                break;
 
-        if(servicesSlide.from === 'distance' && servicesSlide.to === 'airport') {
-            displayServices('slide2to1');     
-        }
+            case '1-0':
+                displayServices('slide2to1');
+                setSelectedService('airport');
+                break;
 
-        if(servicesSlide.from === 'airport' && servicesSlide.to === 'events') {
-            displayServices('slide1to3');     
-        }
+            case '0-2':
+                displayServices('slide1to3');
+                setSelectedService('events');
+                break;
+            case '2-0':
+                displayServices('slide3to1');
+                setSelectedService('airport');
+                break;
 
-        if(servicesSlide.from === 'events' && servicesSlide.to === 'airport') {
-            displayServices('slide3to1');     
-        }
+            case '2-3':
+                displayServices('slide3to4');
+                setSelectedService('evening');
+                break;
 
-        if(servicesSlide.from === 'events' && servicesSlide.to === 'evening') {
-            displayServices('slide3to4');     
-        }
+            case '3-2':
+                displayServices('slide4to3');
+                setSelectedService('events');
+                break;
 
-        if(servicesSlide.from === 'evening' && servicesSlide.to === 'events') {
-            displayServices('slide4to3');     
-        }
+            case '3-0':
+                displayServices('slide4to1');
+                setSelectedService('airport');
+                break;
 
-        if(servicesSlide.from === 'evening' && servicesSlide.to === 'airport') {
-            displayServices('slide4to1');     
-        }
+            case '0-3':
+                displayServices('slide1to4');
+                setSelectedService('evening');
+                break;
 
-        if(servicesSlide.from === 'airport' && servicesSlide.to === 'evening') {
-            displayServices('slide1to4');     
-        }
+            case '1-3':
+                displayServices('slide2to4');
+                setSelectedService('evening');
+                break;
 
-        if(servicesSlide.from === 'distance' && servicesSlide.to === 'evening') {
-            displayServices('slide2to4');     
-        }
+            case '3-1':
+                displayServices('slide4to2');
+                setSelectedService('distance');
+                break;
 
-        if(servicesSlide.from === 'evening' && servicesSlide.to === 'distance') {
-            displayServices('slide4to2');     
-        }
+            case '3-4':
+                displayServices('slide4to5');
+                setSelectedService('extras');
+                break;
 
-        if(servicesSlide.from === 'evening' && servicesSlide.to === 'extras') {
-            displayServices('slide4to5');     
-        }
+            case '4-3':
+                displayServices('slide5to4');
+                setSelectedService('evening');
+                break;
 
-        if(servicesSlide.from === 'extras' && servicesSlide.to === 'evening') {
-            displayServices('slide5to4');     
+            case '4-2':
+                displayServices('slide5to3');
+                setSelectedService('events');
+                break;
+
+            case '2-4':
+                displayServices('slide3to5');
+                setSelectedService('extras');
+                break;
+
+            case '4-1':
+                displayServices('slide5to2');
+                setSelectedService('distance');
+                break;
+
+            case '1-4':
+                displayServices('slide2to5');
+                setSelectedService('extras');
+                break;
+
+            case '4-0':
+                displayServices('slide5to1');
+                setSelectedService('airport');
+                break;
+
+            case '0-4':
+                displayServices('slide1to5');
+                setSelectedService('extras');
+                break;
+
+            default:
+                break;
         }
-           
-    }, [servicesSlide])
+                    
+    }, [servicesSlide, selectedService])
 
     useEffect(() => {
         console.log('==== SURVOL ====');
@@ -317,6 +354,11 @@ const Services = ({scrollY}) => {
     }, [isHover])
 
     useEffect(() => {
+        textPRef.current = Array.from(document.querySelectorAll('.services-ctr .content p'));
+        listRef.current = Array.from(document.querySelectorAll('.services-ctr .content ul'));
+    }, [])
+
+    useEffect(() => {
     
         console.log(scrollY);
         if(scrollY >= 1180 && servicesSlide.from === undefined) {
@@ -334,11 +376,25 @@ const Services = ({scrollY}) => {
                         </h2>
                     </div>
                     <ul>
-                        <li id='airport-nav' ref={airportRef} onClick={(() => {setServicesCtg(0); setServicesSlide({from: servicesSlide.to, to: 'airport'})})}>Transfert aéroport</li>
-                        <li id='distance-nav' ref={distanceRef} onClick={(() => {setServicesCtg(1); setServicesSlide({from: servicesSlide.to, to: 'distance'})})}>Longues distances</li>
-                        <li id='events-nav' ref={eventsRef} onClick={(() => {setServicesCtg(2); setServicesSlide({from: servicesSlide.to, to: 'events'})})}>Événements</li>
-                        <li id='evening-nav' ref={eveningRef} onClick={(() => {setServicesCtg(3); setServicesSlide({from: servicesSlide.to, to: 'evening'})})}>Soirées</li>
-                        <li id='extras-nav' ref={extrasRef} onClick={(() => {setServicesCtg(4); setServicesSlide({from: servicesSlide.to, to: 'extras'})})}>Extras</li>
+                        <li className='airport-nav' 
+                            onClick={(() => {setServicesCtg(0); setServicesSlide({from: servicesSlide.to, to: 'airport'})})}>
+                            Transfert aéroport
+                        </li>
+                        <li className='distance-nav' 
+                            onClick={(() => {setServicesCtg(1); setServicesSlide({from: servicesSlide.to, to: 'distance'})})}>
+                            Longues distances</li>
+                        <li className='events-nav' 
+                            onClick={(() => {setServicesCtg(2); setServicesSlide({from: servicesSlide.to, to: 'events'})})}>
+                            Événements
+                        </li>
+                        <li className='evening-nav' 
+                            onClick={(() => {setServicesCtg(3); setServicesSlide({from: servicesSlide.to, to: 'evening'})})}>
+                            Soirées
+                        </li>
+                        <li className='extras-nav' 
+                            onClick={(() => {setServicesCtg(4); setServicesSlide({from: servicesSlide.to, to: 'extras'})})}>
+                            Extras
+                        </li>
                     </ul>
                 </div>
             <div className="services-main">
