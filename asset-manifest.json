@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/Bk-elite/static/css/main.01beb06b.css",
-    "main.js": "/Bk-elite/static/js/main.6c137cc0.js",
+    "main.css": "/Bk-elite/static/css/main.09582120.css",
+    "main.js": "/Bk-elite/static/js/main.5a102f48.js",
     "static/media/night_city_short.mp4": "/Bk-elite/static/media/night_city_short.59b69627588a12d8f051.mp4",
     "static/media/kamel.png": "/Bk-elite/static/media/kamel.451148c87a1867f0c0cc.png",
     "static/media/office3.png": "/Bk-elite/static/media/office3.9b702a448c93d1b56948.png",
-    "static/media/mercedes.png": "/Bk-elite/static/media/mercedes.49c9d738fe5ad0789992.png",
-    "static/media/teslamodel3.png": "/Bk-elite/static/media/teslamodel3.406b0818bd12d7c03202.png",
+    "static/media/mercedes.png": "/Bk-elite/static/media/mercedes.3dd9935783123b361f4b.png",
+    "static/media/teslamodel3.png": "/Bk-elite/static/media/teslamodel3.290f19a28027ff439332.png",
     "static/media/evening.png": "/Bk-elite/static/media/evening.7d45778139de7717aa52.png",
     "static/media/collaborators.png": "/Bk-elite/static/media/collaborators.29ff215b3ff8ee3ca619.png",
     "static/media/airplane.png": "/Bk-elite/static/media/airplane.ddaaf490391a29deff43.png",
@@ -17,12 +17,17 @@
     "static/media/bridge.jpg": "/Bk-elite/static/media/bridge.1ea52192de150bebb77e.jpg",
     "static/media/tesla-webfont.woff": "/Bk-elite/static/media/tesla-webfont.6c2ec8e0fd300778262c.woff",
     "static/media/tesla-webfont.woff2": "/Bk-elite/static/media/tesla-webfont.7088f8799f0f798149bd.woff2",
+    "static/media/food.svg": "/Bk-elite/static/media/food.c944899c7268b37794e3.svg",
+    "static/media/magazine.svg": "/Bk-elite/static/media/magazine.6fc5078e8172a4bc6765.svg",
+    "static/media/person.svg": "/Bk-elite/static/media/person.93038e2613644d1f79b3.svg",
+    "static/media/tablet.svg": "/Bk-elite/static/media/tablet.7a36c7d09af0e57a803b.svg",
     "index.html": "/Bk-elite/index.html",
-    "main.01beb06b.css.map": "/Bk-elite/static/css/main.01beb06b.css.map",
-    "main.6c137cc0.js.map": "/Bk-elite/static/js/main.6c137cc0.js.map"
+    "static/media/drop.svg": "/Bk-elite/static/media/drop.c96eac074659fb9173e0.svg",
+    "main.09582120.css.map": "/Bk-elite/static/css/main.09582120.css.map",
+    "main.5a102f48.js.map": "/Bk-elite/static/js/main.5a102f48.js.map"
   },
   "entrypoints": [
-    "static/css/main.01beb06b.css",
-    "static/js/main.6c137cc0.js"
+    "static/css/main.09582120.css",
+    "static/js/main.5a102f48.js"
   ]
 }
