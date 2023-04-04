@@ -4,17 +4,17 @@
     .cars-main {
         height: 100%;
         width: 75%;
-        padding-top: 22vh;
+        padding-top: 100px;
         position: relative;
 
         .img-ctn {
             height: 100%;
             width: 100%;
             position: absolute;
-            z-index: -1;
             top: 0;
             left: 0;
             overflow: hidden;
+            pointer-events: none;
 
             .cars-slider {
                 height: 100%;
@@ -65,37 +65,113 @@
             height: calc(100% - 65px);
             width: 100%;
             display: flex;
-            flex-direction: column;
+            align-items: flex-end;
             justify-content: space-evenly;
+            padding-left: 20%;
 
-            p {
+            .car-name-banner {
+                height: 95%;
                 width: 50%;
-                font-size: 1.4em;
-                line-height: 30px;
-            }
+                background-color: #C3C3C3;
+                box-shadow: inset 0px 15px 0px 0px $color_secondary;
 
-            ul {
-                min-width: 125px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding-left: 35px;
-                opacity: 0;
-
-                .selected {
-                    font-weight: 600;
-                    font-size: 1.5em;
-                    color: #fff;
-                }   
-
-                li {
-                    font-size: 1.3em;
-                    margin-bottom: 5px;
+                h4{
+                    padding: 25px;
+                    font-size: 2.3em;
+                    color: #000;
                     text-align: center;
-                    color: $color_secondary;
-                    cursor: pointer;
                 }
             }
+
+            .car-info-banner {
+                height: 95%;
+                width: 25%;
+                background-color: $color_secondary;
+                background-image: -webkit-linear-gradient(45deg,
+                                        rgba(255, 255, 255, .2) 25%,
+                                        transparent 25%,
+                                        transparent 50%,
+                                        rgba(255, 255, 255, .2) 50%,
+                                        rgba(255, 255, 255, .2) 75%,
+                                        transparent 75%,
+                                        transparent);
+                box-shadow: inset 0px 15px 0px 0px #C3C3C3;
+
+                ul {
+                    padding: 20% 10%;
+
+                    li {
+                        color: #000;
+                        font-weight: 600;
+                        font-size: 1.2em;
+                        margin-bottom: 17px;
+                    }
+
+                    span {
+                        display: inline-block;
+                        height: 30px;
+                        width: 30px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin-right: 10px;
+                    }
+
+                    .available-seats {      
+                        background-image: url('../../Medias/Image/Icons/person.svg');
+                    }
+
+                    .food {
+                        background-image: url('../../Medias/Image/Icons/food.svg');
+                    }
+
+                    .drinks {
+                        background-image: url('../../Medias/Image/Icons/drop.svg');
+                    }
+
+                    .video {
+                        background-image: url('../../Medias/Image/Icons/tablet.svg');
+                    }
+
+                    .magazines {
+                        background-image: url('../../Medias/Image/Icons/magazine.svg');
+                    }
+
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+
+            // p {
+            //     width: 50%;
+            //     font-size: 1.4em;
+            //     line-height: 30px;
+            // }
+
+            // ul {
+            //     min-width: 125px;
+            //     display: flex;
+            //     flex-direction: column;
+            //     justify-content: center;
+            //     padding-left: 35px;
+            //     opacity: 0;
+
+            //     .selected {
+            //         font-weight: 600;
+            //         font-size: 1.5em;
+            //         color: #fff;
+            //     }   
+
+            //     li {
+            //         font-size: 1.3em;
+            //         margin-bottom: 5px;
+            //         text-align: center;
+            //         color: $color_secondary;
+            //         cursor: pointer;
+            //     }
+            // }
         }
     }
 

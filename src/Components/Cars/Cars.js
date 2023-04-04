@@ -6,11 +6,56 @@ import vanImg from '../../Medias/Image/Main/mercedes.png';
 const carsArray = [
     {
         type: 'Berlines',
-        title : 'Tesla model 3'
-    },
+        title: 'Tesla model 3',
+        features: [
+            {
+                class: 'available-seats',
+                txt: "Jusqu'à 5 personnes"
+            },
+            {
+                class: 'food',
+                txt: "Collations"
+            },
+            {
+                class: 'drinks',
+                txt: "Rafraîchissements"
+            },
+            {
+                class: 'video',
+                txt: "Tablette Ipad"
+            },
+            {
+                class: 'magazines',
+                txt: "Magazines"
+            }
+        ]
+    }
+    ,
     {
         type: 'Vans',
-        title : 'Mercedes class V'
+        title: 'Mercedes class V',
+        features: [
+            {
+                class: 'available-seats',
+                txt: "Jusqu'à 6 personnes"
+            },
+            {
+                class: 'food',
+                txt: "Collations"
+            },
+            {
+                class: 'drinks',
+                txt: "Rafraîchissements"
+            },
+            {
+                class: 'video',
+                txt: "Tablette Ipad"
+            },
+            {
+                class: 'magazines',
+                txt: "Magazines"
+            }
+        ]
     }
 ]
 
@@ -140,7 +185,21 @@ const Cars = () => {
                                           
                 </div>
                 <div className="content">
-                   
+                   <div className="car-name-banner">
+                        <h4>{carsArray[carsCtg].title}</h4>
+                   </div>
+                   <div className="car-info-banner">
+                        <ul>
+                            {carsArray[carsCtg].features.map((li) => {
+                                return(
+                                    <li key={li.txt}>
+                                        <span className={li.class}></span>
+                                        {li.txt}
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                   </div>
                 </div>
             </div>
             <div className="cars-nav">

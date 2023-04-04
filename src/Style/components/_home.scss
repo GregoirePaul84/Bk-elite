@@ -101,7 +101,7 @@
         width: 100%;
         position: relative;
 
-        section {
+        section:not(.booking-ctr) {
             height: 100vh;
             width: 100vw;
             position: relative;

@@ -7,6 +7,7 @@ import english from '../../Medias/Image/Icons/english32.png';
 import About from '../About/About';
 import Services from '../Services/Services';
 import Cars from '../Cars/Cars';
+import Booking from '../Booking/Booking';
 
 const Home = () => {
 
@@ -79,9 +80,11 @@ const Home = () => {
                 <section className="services-ctr">
                     <Services scrollY={scrollY} />  
                 </section>
-                <div className="transition"></div>
                 <section className='cars-ctr'>
                     <Cars scrollY={scrollY} />
+                </section>
+                <section className="booking-ctr">
+                    <Booking />
                 </section>
             </main>
             
