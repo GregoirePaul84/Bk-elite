@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Company from '../Company/Company';
 import Welcome from './Welcome';
 
@@ -11,11 +11,27 @@ import Booking from '../Booking/Booking';
 
 const Home = () => {
 
+    const [isLoaded, setIsLoaded] = useState(false);
     const [isEntered, setIsEntered] = useState(false);
     const [scrollY, setScrollY] = useState(0);
+    const headerRef = useRef(null)
+
+    useEffect(() => {
+        console.log('=== LOADING ===');
+        console.log(isLoaded);
+    }, [isLoaded])
 
     useEffect(() => {
         console.log(scrollY);
+        const header = headerRef.current;
+
+        if (header !== null && scrollY > 0) {
+            header.style.backgroundColor = '#040613';
+        }
+        else {
+            header.style.backgroundColor = 'transparent';
+        }
+
     }, [scrollY])
 
     const handleScroll = () => {    
@@ -34,8 +50,8 @@ const Home = () => {
 
     return (
         <div className="page-block">
-            <Welcome setIsEntered={setIsEntered} />
-            <header>
+            <Welcome isLoaded={isLoaded} setIsEntered={setIsEntered} />
+            <header ref={headerRef}>
                 <div className="brand-logo">
                     <h1>
                         <span>B</span>k-
@@ -70,7 +86,7 @@ const Home = () => {
             </header>
             <main>  
                 <section className="company-info-ctr">
-                    <Company isEntered={isEntered} />
+                    <Company setIsLoaded={setIsLoaded} isEntered={isEntered} />
                 </section>
                 <div className="transition"></div>
                 <section className="about-ctr">

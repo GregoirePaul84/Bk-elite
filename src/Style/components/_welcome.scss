@@ -11,8 +11,8 @@
     z-index: 10;
 
     .brand-logo {
-        width: 25%;
-        min-width: 275px;
+        height: 226px;
+        width: 340px;
 
         #home-svg {
             width: 100%;
@@ -41,19 +41,24 @@
     }
 
     .btn-container {
-        margin-top: 25px;
+        height: 37px;
+        width: 110px;
         position: relative;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         button {
             height: 37px;
-            width: 120px;
+            width: 110px;
             background-color: $color_secondary;
             border: none;
             cursor: pointer;
             border-radius: 5px;
             font-size: 1.45em;
-
+            opacity: 0;
+            animation: opa0to1 ease-in-out 1s forwards;
         }
 
         .shine {
@@ -71,6 +76,18 @@
             transition: transform 0.8s linear;
             transform: skewX(340deg) translateX(300px);
         }
+
+        .loading-dot {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 32px 0 #fff, -32px 0 #fff;
+            position: relative;
+            animation: flash 0.5s ease-out infinite alternate;
+            margin-right: 10px;
+          }
     }
 }
 
@@ -87,15 +104,30 @@
     }
 }
 
+@keyframes flash {
+    0% {
+      background-color: #FFF2;
+      box-shadow: 32px 0 #FFF2, -32px 0 $color_secondary;
+    }
+    50% {
+      background-color: $color_secondary;
+      box-shadow: 32px 0 #FFF2, -32px 0 #FFF2;
+    }
+    100% {
+      background-color: #FFF2;
+      box-shadow: 32px 0 $color_secondary, -32px 0 #FFF2;
+    }
+  }
+
 @keyframes moveCar2 {
     0% {
         opacity: 1;
         transform: translateX(0);
     }
 
-    40% {
+    35% {
         opacity: 1;
-        transform: translateX(35px);
+        transform: translateX(20px);
     }
 
     100% {

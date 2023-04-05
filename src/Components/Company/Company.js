@@ -6,11 +6,17 @@ import car from '../../Medias/Image/Main/car_above_darked.jpg';
 
 let interval;
 
-const Company = ({isEntered}) => {
+const Company = ({setIsLoaded, isEntered}) => {
 
     const [handleSlide, setHandleSlide] = useState({from: undefined, to: 'slide1'});
     const [slideActive, setSlideActive] = useState(false);
     const [slideIndex, setSlideIndex] = useState(1);
+
+    function handleLoading() {
+        setTimeout(() => {
+            setIsLoaded(true);
+        }, 1800)
+    }
 
     function resetSlide(slide1 , slide2) {
         clearInterval(interval);
@@ -203,9 +209,9 @@ const Company = ({isEntered}) => {
                         width="100%" 
                         height="100%" 
                         autoPlay muted loop 
-                        // onLoadedData={() => {
-                        //     checkLoading();
-                        // }}
+                        onLoadedData={() => {
+                            handleLoading();
+                        }}
                         >
                         <source src={city} type="video/mp4"/>
                     </video>

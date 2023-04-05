@@ -51,7 +51,7 @@ const Services = ({scrollY}) => {
     const [selectedService, setSelectedService] = useState('airport');
     const [servicesCtg, setServicesCtg] = useState(0);
     const [servicesSlide, setServicesSlide] = useState({from: undefined, to: 'airport'});
-    const [isHover, setIsHover] = useState(false);
+    const [isHover, setIsHover] = useState(undefined);
 
     const sliderRef = useRef(null);
     const contentRef = useRef(null);
@@ -338,8 +338,11 @@ const Services = ({scrollY}) => {
         console.log(isHover);
         const bookLink = bookLinkRef.current;
         const content = contentRef.current;
-
-        if(isHover) {
+        
+        if(isHover === undefined) {
+            return;
+        }
+        else if(isHover) {
             bookLink.style.animationName = 'none';
             bookLink.style.animationPlayState = 'paused';
             bookLink.style.transform = 'scale(1)';

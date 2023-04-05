@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Welcome = ({setIsEntered}) => {
+const Welcome = ({isLoaded, setIsEntered}) => {
 
     function enterWebsite() {
 
@@ -11,15 +11,15 @@ const Welcome = ({setIsEntered}) => {
         const path2 = document.querySelector('#home-svg path:nth-child(3)');
         const path3 = document.querySelector('#home-svg path:nth-child(4)');
 
-        path1.style.animation = 'moveCar2 2s ease-in 1 forwards';
-        path2.style.animation = 'moveCar2 2s ease-in 1 forwards';
-        path3.style.animation = 'moveCar2 2s ease-in 1 forwards';
+        path1.style.animation = 'moveCar2 1.5s ease-in 1 forwards';
+        path2.style.animation = 'moveCar2 1.5s ease-in 1 forwards';
+        path3.style.animation = 'moveCar2 1.5s ease-in 1 forwards';
 
         setIsEntered(true);
 
         setTimeout(() => {
             container.style.animation = 'enter 1s ease-in-out 1 forwards';
-        }, 2000);
+        }, 1500);
 
         setTimeout(() => {
             html.style.overflow = 'overlay';
@@ -32,7 +32,7 @@ const Welcome = ({setIsEntered}) => {
     return (
         <div className="welcome-container">
             <div className="brand-logo">
-                <svg width="486" height="222" viewBox="0 0 486 222" fill="none" xmlns="http://www.w3.org/2000/svg" id="home-svg">
+                <svg width="340" height="226" viewBox="0 0 486 222" fill="none" xmlns="http://www.w3.org/2000/svg" id="home-svg">
                     <title>Bk-Elite, votre société de transport privé haut-de-gamme en région PACA</title>
                     <path d="M485.107 30.8667C476.786 43.1005 464.028 49.8353 448.812 50.746C437.22 51.4397 425.418 48.4967 413.666 47.9707C394.374 47.1072 375.028 46.2199 355.739 46.6389C342.845 46.9189 330.019 49.5016 317.144 50.9126C314.875 51.1613 312.578 50.9556 310.03 50.3678C313.852 46.841 355.851 39.1446 374.899 39.5421C397.261 40.0089 419.605 41.1711 442.227 41.3729C439.352 40.6889 436.484 39.9841 433.602 39.3241C398.994 31.3983 364.508 22.996 329.721 15.77C313.305 12.36 296.301 11.2702 279.581 9.02228C242.368 4.01912 207.352 12.6932 172.535 22.7973C168.342 24.0142 163.963 24.7102 159.67 25.6477C159.374 24.8314 159.078 24.0152 158.782 23.199C175.03 18.01 191.033 12.0383 207.585 7.81824C231.427 1.73978 256.069 -1.39694 280.783 0.599633C303.138 2.40557 325.542 5.34192 347.439 9.74115C381.481 16.5801 415.039 25.3489 448.955 32.7291C460.334 35.2051 472.09 34.6249 483.928 30.3826C484.649 30.3592 485.107 30.8667 485.107 30.8667Z" fill="white"/>
                     <path d="M204.684 49.393C181.48 48.9531 158.952 47.3026 136.532 48.242C109.948 49.3559 83.3733 51.9639 56.9557 55.2005C40.6637 57.1965 24.6869 61.6462 8.53129 64.8095C5.57007 65.1974 3.84227 64.6165 0 63.4992C6.66695 61.5181 13.3413 59.5609 19.9996 57.5519C49.7228 48.5832 79.8745 41.7187 111.087 40.7912C136.202 40.0449 161.332 39.6702 186.458 39.4136C209.454 39.1788 232.484 40.0315 255.443 39.0857C275.317 38.267 295.103 35.4987 314.948 33.8117C320.142 33.3701 325.408 33.7452 330.705 34.5585C289.506 44.251 247.674 48.6181 204.684 49.393Z" fill="white"/>
@@ -46,8 +46,15 @@ const Welcome = ({setIsEntered}) => {
                 </svg>
             </div>
             <div className="btn-container">
-                <button onClick={() => enterWebsite()}>Entrer</button>
-                <div className="shine"></div>
+                {(isLoaded) ?
+                    <>
+                        <button onClick={() => enterWebsite()}>Entrer</button>
+                        <div className="shine"></div>
+                    </>
+                    :
+                    <span className="loading-dot"></span>
+                }
+                
             </div>
         </div>
     );
