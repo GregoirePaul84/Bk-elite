@@ -4,13 +4,14 @@ import city from '../../Medias/Video/night_city_short.mp4';
 import bridge from '../../Medias/Image/Main/bridge.jpg';
 import car from '../../Medias/Image/Main/car_above_darked.jpg';
 
-let interval;
-
 const Company = ({setIsLoaded, isEntered}) => {
 
     const [handleSlide, setHandleSlide] = useState({from: undefined, to: 'slide1'});
     const [slideActive, setSlideActive] = useState(false);
     const [slideIndex, setSlideIndex] = useState(1);
+
+    const intervalRef = useRef();
+    const timeoutRef = useRef();
 
     function handleLoading() {
         setTimeout(() => {
@@ -19,11 +20,12 @@ const Company = ({setIsLoaded, isEntered}) => {
     }
 
     function resetSlide(slide1 , slide2) {
-        clearInterval(interval);
+        clearInterval(intervalRef.current);
+        clearTimeout(timeoutRef.current)
         setSlideActive(false);
         console.log('slide coupé');
 
-        setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
             console.log('slide réactivé');
             setSlideActive(true);
             setHandleSlide({from: slide1, to: slide2});
@@ -181,10 +183,11 @@ const Company = ({setIsLoaded, isEntered}) => {
     }, [isEntered, slideIndex])
 
     useEffect(() => {
+        console.log("=== ETAT SLIDE ===");
         console.log(slideActive);
 
         if(slideActive) {
-            interval = setInterval(function() { 
+            intervalRef.current = setInterval(function() { 
 
                 if (slideIndex < 3) { 
                     setSlideIndex((slideIndex) => slideIndex + 1);
@@ -195,7 +198,7 @@ const Company = ({setIsLoaded, isEntered}) => {
             }, 7000);
         }
        
-        return () => clearInterval(interval);
+        return () => clearInterval(intervalRef.current);
     }, [slideActive, slideIndex]);
 
 

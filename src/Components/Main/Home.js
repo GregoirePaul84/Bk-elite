@@ -16,13 +16,13 @@ const Home = () => {
     const [scrollY, setScrollY] = useState(0);
     const headerRef = useRef(null)
 
-    useEffect(() => {
-        console.log('=== LOADING ===');
-        console.log(isLoaded);
-    }, [isLoaded])
+    // useEffect(() => {
+    //     console.log('=== LOADING ===');
+    //     console.log(isLoaded);
+    // }, [isLoaded])
 
     useEffect(() => {
-        console.log(scrollY);
+        // console.log(scrollY);
         const header = headerRef.current;
 
         if (header !== null && scrollY > 0) {

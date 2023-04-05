@@ -363,7 +363,6 @@ const Services = ({scrollY}) => {
 
     useEffect(() => {
     
-        console.log(scrollY);
         if(scrollY >= 1180 && servicesSlide.from === undefined) {
             displayServices('noSlide');
         }
