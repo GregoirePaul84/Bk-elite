@@ -23,10 +23,10 @@ const servicesArray = [
     },
     {
         title : 'Événements',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous souhaitez  entreprendre un long voyage sans stress et avec une <span class=colored>expérience de première classe ?</span>'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nous prendrons en compte tous les détails pour rendre votre transport aussi <span class=colored>confortable que possible.</span>'}} />,
-        li1 : <li dangerouslySetInnerHTML={{__html: 'Nous vous offrons un service de <span class=colored>rafraîchissement</span> ainsi que de <span class=colored>collations</span> à bord.'}} />,
-        li2 : <li dangerouslySetInnerHTML={{__html: 'Vous entamerez votre voyage de manière <span class=colored>confortable et détendue.</span>'}} />
+        p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Vous préparez votre mariage</span> et vous cherchez un moyen de transport élégant et raffiné pour votre grand jour? Notre <strong>service de chauffeur privé VTC</strong> vous offre des options sur mesure pour rendre votre <span class=colored>journée inoubliable.</span>'}} />,
+        p2 : <p dangerouslySetInnerHTML={{__html: 'Nous proposons des véhicules décorés selon vos goûts et vos envies, avec des <strong>chauffeurs professionnels et expérimentés</strong> pour vous conduire en toute sécurité.'}} />,
+        li1 : <li dangerouslySetInnerHTML={{__html: 'Nous nous adaptons à vos envies et mettons à votre disposition des services complémentaires pour répondre à vos besoins.'}} />,
+        li2 : <li dangerouslySetInnerHTML={{__html: 'Contactez-nous dès maintenant pour en savoir plus sur nos offres et réserver votre véhicule de mariage!'}} />
     },
     {
         title : 'Soirées',
@@ -37,6 +37,7 @@ const servicesArray = [
     },
     {
         title : 'Extras',
+        // Vous voyagez avec des bagages encombrants  ou coûteux et vous cherchez un moyen de transport pratique, confortable et de confiance. Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements. Nous proposons des services de bagagiste pour vous aider à transporter vos valises et vos sacs en toute sécurité. Nos chauffeurs professionnels et expérimentés prendront soin de vos affaires et vous conduiront à votre destination en toute sérénité. Réservez dès maintenant votre trajet avec service de bagagiste et laissez-nous prendre soin de vous!
         p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <strong>Bk-Elite</strong>, notre priorité est de donner la meilleure expérience possible à notre clientèle.'}} />,
         p2 : <p dangerouslySetInnerHTML={{__html: 'Nous vous proposons de quoi aggrémenter votre voyage et des services personnalisés :'}} />,
         li1 : <li dangerouslySetInnerHTML={{__html: 'Des collations et des rafraîchissements sont à votre disposition gratuitement durant votre voyage.'}} />,
@@ -73,7 +74,9 @@ const Services = ({scrollY}) => {
         if(index === 'noSlide') {
 
             banner.style.animation = 'bannerY 1s ease-out 1 forwards';
-            bookLink.style.animation = 'displayBanner 1s ease-out 1 forwards';
+            // bookLink.style.animation = 'displayBanner 1s ease-out 1 forwards';
+            bookLink.style.transition = '1s';
+            bookLink.style.transform = 'scaleX(1)';
 
             textP.forEach((p) => {
                 p.style.animation = 'opa0to1 1s ease-in-out 1 forwards 1s';
@@ -346,6 +349,7 @@ const Services = ({scrollY}) => {
             bookLink.style.animationName = 'none';
             bookLink.style.animationPlayState = 'paused';
             bookLink.style.transform = 'scale(1)';
+            bookLink.style.transition = '300ms';
 
             void content.offsetWidth;
 
@@ -353,6 +357,7 @@ const Services = ({scrollY}) => {
         }
         else {
             bookLink.style.transform = 'scale(1)';
+            bookLink.style.transition = '300ms';
         }
     }, [isHover])
 

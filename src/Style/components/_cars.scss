@@ -3,7 +3,7 @@
 
     .cars-main {
         height: 100%;
-        width: 75%;
+        width: 80%;
         padding-top: 100px;
         position: relative;
 
@@ -38,6 +38,8 @@
             height: 65px;
             width: 100%;
             padding-left: 10%;
+            display: flex;
+            align-items: center;
 
             h3 {
                 display: inline-block;
@@ -45,24 +47,44 @@
                 font-size: 2.8em;
                 margin-right: 15px;
                 vertical-align: middle;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    width: 140%;
+                    background-color: $color_secondary;
+                    margin-top: 5px;
+                }
             }
 
             svg {
                 vertical-align: middle;
             }
             
-            &::after {
-                content: "";
-                display: block;
-                height: 2px;
-                width: 20%;
-                background-color: $color_secondary;
-                margin-top: 5px;
+            .cars-question {
+                flex-grow: 1;
+                h4 {
+                    font-size: 1.6em;
+                    color: $color_secondary;
+                    text-align: center;
+                }
+            }
+        }
+
+        .cars-static-message {
+            height: 100px;
+            width: 100%;
+            margin-top: 25px;
+            padding-left: 10%;
+
+            p {
+                font-size: 1.2em;
             }
         }
 
         .content {
-            height: calc(100% - 65px);
+            height: calc(100% - 190px);
             width: 100%;
             display: flex;
             align-items: flex-end;
@@ -70,7 +92,7 @@
             padding-left: 20%;
 
             .car-name-banner {
-                height: 95%;
+                height: 100%;
                 width: 50%;
                 background-color: #C3C3C3;
                 box-shadow: inset 0px 15px 0px 0px $color_secondary;
@@ -84,7 +106,7 @@
             }
 
             .car-info-banner {
-                height: 95%;
+                height: 100%;
                 width: 25%;
                 background-color: $color_secondary;
                 background-image: -webkit-linear-gradient(45deg,
@@ -98,7 +120,7 @@
                 box-shadow: inset 0px 15px 0px 0px #C3C3C3;
 
                 ul {
-                    padding: 20% 10%;
+                    padding: 12% 10%;
 
                     li {
                         color: #000;
@@ -113,7 +135,7 @@
                         width: 30px;
                         background-size: contain;
                         background-repeat: no-repeat;
-                        margin-right: 10px;
+                        margin-right: 15px;
                     }
 
                     .available-seats {      
@@ -177,7 +199,7 @@
 
     .cars-nav {
         height: 100%;
-        width: 25%;
+        width: 20%;
         margin-top: 12vh;
 
         .cars-nav__title {

@@ -54,6 +54,16 @@
             padding: 30px 5%;
             outline: 8px solid $color_tertiary;
 
+            .error {
+                height: 20px;
+                width: 50%;
+                font-family: 'Smooch Sans', sans-serif;
+                font-size: 1em;
+                font-weight: 500;
+                color: rgb(195, 29, 0);
+                white-space: nowrap;
+            }
+
             label {
                 font-size: 1.2em;
             }
@@ -83,7 +93,7 @@
             }
 
             .basic-info {
-                margin-bottom: 20px;
+                margin-bottom: 10px;
             }
 
             .row {
