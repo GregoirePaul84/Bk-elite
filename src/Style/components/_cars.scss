@@ -41,25 +41,29 @@
             display: flex;
             align-items: center;
 
-            h3 {
-                display: inline-block;
-                font-weight: 700;
-                font-size: 2.8em;
-                margin-right: 15px;
-                vertical-align: middle;
-
-                &::after {
-                    content: "";
-                    display: block;
-                    height: 2px;
-                    width: 140%;
-                    background-color: $color_secondary;
-                    margin-top: 5px;
+            .car-type {
+                min-width: 175px;
+                
+                h3 {
+                    display: inline-block;
+                    font-weight: 700;
+                    font-size: 2.8em;
+                    margin-right: 15px;
+                    vertical-align: middle;
+    
+                    &::after {
+                        content: "";
+                        display: block;
+                        height: 2px;
+                        width: 140%;
+                        background-color: $color_secondary;
+                        margin-top: 5px;
+                    }
                 }
-            }
-
-            svg {
-                vertical-align: middle;
+    
+                svg {
+                    vertical-align: middle;
+                }
             }
             
             .cars-question {

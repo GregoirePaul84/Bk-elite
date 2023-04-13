@@ -7,30 +7,33 @@ import driverImg from '../../Medias/Image/Main/kamel.png';
 const aboutArray = [
     {
         title : 'La société',
-        p1 : <span dangerouslySetInnerHTML={{__html: 'La société <span class=colored>Bk-Elite</span> est un prestataire de <strong>service de transport privé</strong>, basée en région Provence-Alpes-Côte d\'Azur.'}} />,
-        p2 : 'Nous proposons nos services hauts-de-gamme à une clientèle exigeante, soucieuse du confort et de l\'excellence.'
+        p1 : <p dangerouslySetInnerHTML={{__html: 'La société <span class=colored>Bk-Elite</span> est un prestataire de <strong>service de transport privé</strong>, basée en région Provence-Alpes-Côte d\'Azur.'}} />,
+        p2 : 'Nous proposons nos services hauts-de-gamme à une clientèle exigeante, soucieuse du confort et de l\'excellence.',
+        p3 : <p dangerouslySetInnerHTML={{__html: 'Société spécialisée dans le transport de personnes, nous vous proposons de nombreuses prestations, du <strong>service de taxi</strong> classique à la <strong>location de chauffeurs</strong> pour vos événements exceptionnels.'}} />
     },
     {
         title : 'Nos valeurs',
-        p1 : <span dangerouslySetInnerHTML={{__html: 'Chez <span class=colored>Bk-Elite</span>, nous attachons une grande importance à nos valeurs. Nous croyons que ces valeurs sont non seulement essentielles pour assurer la satisfaction de nos clients, mais aussi pour garantir l\'excellence de notre service.'}} />,
-        p2 : null,
+        p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <span class=colored>Bk-Elite</span>, nous attachons une grande importance à nos valeurs.'}} />,
+        p2 : 'Nous croyons que ces valeurs sont non seulement essentielles pour assurer la satisfaction de nos clients, mais aussi pour garantir l\'excellence de notre service.',
+        p3 : null,
         values : [
             {title :'Élégance',
-            description :  'la ponctualité est essentielle pour répondre aux attentes de nos clients. Nous comprenons que chaque minute compte pour nos clients occupés, et c\'est pourquoi nous nous engageons à arriver à l\'heure convenue.'},
+            description :  'L\'élégance de nos chauffeurs est un facteur clé pour garantir une expérience de transport haut de gamme et inoubliable pour nos clients, car nous croyons que chaque détail compte pour offrir le meilleur service possible.'},
             {title :'Fiabilité',
-            description :  'la ponctualité est essentielle pour répondre aux attentes de nos clients. Nous comprenons que chaque minute compte pour nos clients occupés, et c\'est pourquoi nous nous engageons à arriver à l\'heure convenue.'},
+            description :  'Respectueux des règles de circulation et professionnels, nos chauffeurs sauront vous garantir une expérience de voyage agréable et sereine.'},
             {title :'Ponctualité',
             description :  'la ponctualité est essentielle pour répondre aux attentes de nos clients. Nous comprenons que chaque minute compte pour nos clients occupés, et c\'est pourquoi nous nous engageons à arriver à l\'heure convenue.'},
             {title :'Discrétion',
-            description :  'la ponctualité est essentielle pour répondre aux attentes de nos clients. Nous comprenons que chaque minute compte pour nos clients occupés, et c\'est pourquoi nous nous engageons à arriver à l\'heure convenue.'},
+            description :  'Nos chauffeurs sont formés pour respecter la vie privée de nos clients et garantir leur confort et leur sécurité tout au long de leur voyage.'},
             {title :'Courtoisie',
-            description :  'lalala'},
+            description :  'Nous croyons que chaque client mérite un service personnalisé et professionnel, et nos chauffeurs sont formés pour fournir un service courtois, amical et respectueux pour garantir une expérience de transport de haute qualité.'},
             ]
     },
     {
         title : 'Votre chauffeur',
-        p1 : 'Bk-elite est fier de compter parmi son équipe des professionnels hautement qualifiés et expérimentés dans leur domaine.',
-        p2 : 'Nos chauffeurs sont sélectionnés avec soin pour leur connaissance approfondie de la conduite, leur parfaite connaissance des routes et leur capacité à fournir un service exceptionnel.'
+        p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-elite</span> est fier de compter parmi son équipe des <b>professionnels hautement qualifiés</b> et expérimentés dans leur domaine.'}} />,
+        p2 : 'Nos chauffeurs sont sélectionnés avec soin pour leur connaissance approfondie de la conduite, leur parfaite connaissance des routes et leur capacité à fournir un service exceptionnel.',
+        p3 : <p dangerouslySetInnerHTML={{__html: 'Être accompagné par l\'un de nos chauffeurs, c\'est avoir la garantie d\'un <b>service haut-de-gamme</b>, d\'un transport en toute sécurité, ainsi que d\'une expérience de voyage confortable et personnalisée. Nos chauffeurs sont des <b>professionnels de confiance</b>, formés pour répondre à vos besoins et rendre votre voyage mémorable.'}} />
     }
 ]
 
@@ -223,25 +226,27 @@ const About = ({scrollY}) => {
                             <path d="M17.3663 23.1556C10.5039 23.1556 4.94296 28.7163 4.94296 35.5787C4.94296 42.439 10.5039 48 17.3663 48C24.2266 48 29.7894 42.439 29.7894 35.5787C29.7894 28.7163 24.2269 23.1556 17.3663 23.1556ZM21.8455 42.4768L17.3666 40.1206L12.8877 42.4768L13.7418 37.4838L10.1152 33.9507L15.1253 33.2207L17.3666 28.6811L19.6088 33.2207L24.6198 33.9507L20.9941 37.4838L21.8455 42.4768Z" fill="#D1B000"/>
                         </svg>
                     : (aboutCtg === 2) ?
-                        <svg width="22" height="40" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.17047 6.11912C5.26324 6.5522 5.57065 6.96208 6.0377 7.3423C6.11644 8.53905 6.4492 9.52816 6.93998 10.3533C8.22356 8.51478 11.7124 7.19399 15.8269 7.19399C19.8427 7.19399 23.2625 8.45276 24.6167 10.2217C25.1388 9.11828 25.2413 8.05582 25.2423 7.41025C25.7256 7.0392 26.0524 6.63633 26.1737 6.21135C27.9314 5.70654 28.982 5.06961 28.982 4.37766C28.982 2.73651 22.3397 0.584623 15.8264 0C9.05357 0.650959 2.67126 2.73651 2.67126 4.37766C2.67126 5.02808 3.59943 5.62942 5.17047 6.11912ZM24.9403 6.11912L24.4339 7.1228C15.5168 2.6184 6.75823 7.07426 6.66978 7.11956L6.15042 6.12182C6.52794 5.92497 15.5125 1.35693 24.9403 6.11912Z" fill="#D1B000"/>
-                            <path d="M19.7655 22.8704H11.8871C5.33333 22.8704 0 28.2038 0 34.7586V44.3958L0.0242694 44.5462L0.688711 44.7539C6.94374 46.7078 12.379 47.3609 16.8527 47.3609C25.5891 47.3609 30.6539 44.8687 30.9677 44.7107L31.588 44.3958H31.6532V34.7586C31.6538 28.2038 26.321 22.8704 19.7655 22.8704ZM18.1276 44.7895L15.9806 47.9321C15.9509 47.9758 15.9045 48 15.8544 48C15.8533 48 15.8517 48 15.8501 48C15.7994 48 15.7519 47.9731 15.7239 47.9294L13.73 44.7841C13.7127 44.7576 13.7047 44.7258 13.7057 44.6924L14.704 29.4296C14.7094 29.3493 14.7757 29.2873 14.8566 29.2873H16.9271C17.0075 29.2873 17.0738 29.3482 17.0808 29.4296L18.153 44.6908C18.1567 44.728 18.146 44.7603 18.1276 44.7895ZM17.1558 28.8267H14.6954L12.5559 24.4042C12.5559 23.9798 12.8989 23.6379 13.3234 23.6379H18.4609C18.8843 23.6379 19.2278 23.9798 19.2278 24.4042L17.1558 28.8267Z" fill="#D1B000"/>
-                            <path d="M23.3461 10.8501C22.4314 9.65493 19.6706 8.36865 15.7724 8.36865C11.7572 8.36865 8.99803 9.70023 8.13458 10.9374L7.17836 12.3078L6.65576 11.4293C6.57648 11.9179 6.52417 12.4157 6.52417 12.9264C6.52417 15.4968 7.56667 17.8229 9.25151 19.5067C10.9326 21.1937 13.2587 22.2378 15.828 22.2378C18.7128 22.2378 21.2902 20.9219 22.9928 18.8568C24.3277 17.2464 25.1302 15.1803 25.1302 12.9259C25.1302 12.3111 25.0671 11.7119 24.9533 11.1305L24.4231 12.2534L23.3461 10.8501Z" fill="#D1B000"/>
+                        <svg width="22" height="40" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.52377 5.35436C2.60494 5.73331 2.87393 6.09196 3.28261 6.42466C3.35151 7.47184 3.64268 8.33734 4.07213 9.05937C5.19529 7.45061 8.24811 6.29489 11.8484 6.29489C15.3622 6.29489 18.3547 7.39634 19.5396 8.94422C19.9965 7.97868 20.0861 7.04901 20.0871 6.48412C20.5099 6.15945 20.7959 5.80693 20.9021 5.43506C22.44 4.99334 23.3593 4.43601 23.3593 3.83054C23.3593 2.3945 17.5472 0.511557 11.8479 0C5.92157 0.569603 0.336914 2.3945 0.336914 3.83054C0.336914 4.39967 1.14908 4.92586 2.52377 5.35436ZM19.8228 5.35436L19.3797 6.23259C11.577 2.29115 3.91309 6.19012 3.8357 6.22976L3.38124 5.35672C3.71158 5.18447 11.5732 1.18734 19.8228 5.35436Z" fill="#D1B000"/>
+                            <path d="M15.2952 20.0107H8.40149C2.66677 20.0107 0 24.2643 0 30L0.000240207 38.5L9.71556e-05 39L0.000143051 39.1903C5.47342 40.9001 8.83188 41.4404 12.7464 41.4404C20.391 41.4404 23.7254 39.3286 24.0001 39.1903V38.5V30C24.0006 24.2643 21.0314 20.0107 15.2952 20.0107ZM13.862 39.1903L12 41L10.014 39.1856C9.99893 39.1625 9.99185 39.1347 9.9928 39.1054L10.8663 25.7502C10.871 25.6799 10.9291 25.6256 10.9999 25.6256H12.8115C12.8819 25.6256 12.9399 25.6789 12.946 25.7502L13.8842 39.104C13.8875 39.1365 13.8781 39.1649 13.862 39.1903ZM13.0116 25.2226H10.8588L8.98667 21.3529C8.98667 20.9815 9.28681 20.6823 9.65821 20.6823H14.1537C14.5241 20.6823 14.8247 20.9815 14.8247 21.3529L13.0116 25.2226Z" fill="#D1B000"/>
+                            <path d="M18.4304 9.49453C17.6301 8.44876 15.2143 7.32324 11.8033 7.32324C8.2899 7.32324 5.87558 8.4884 5.12004 9.57098L4.28333 10.7701L3.99947 10C3.9301 10.4276 3.99989 11.0531 3.99989 11.5C3.99989 13.7492 4.62311 15.5959 6.09738 17.0692C7.56834 18.5454 9.60371 19.459 11.8519 19.459C14.3762 19.459 16.6315 18.3076 18.1213 16.5006C19.2893 15.0914 19.5 13.4726 19.5 11.5C19.5 10.962 19.5996 10.0087 19.5 9.5L19.3728 10.7225L18.4304 9.49453Z" fill="#D1B000"/>
                         </svg>
+                    
                     : null
                     }                   
                 </div>
                 <div className="content">
                     <div className="banner left-banner">
+                        {aboutArray[aboutCtg].p1}
                         <p>
-                            {aboutArray[aboutCtg].p1}
+                            {aboutArray[aboutCtg].p2}
                         </p>
                     </div>
                     <div className="banner right-banner">
                         {(aboutCtg === 0 || aboutCtg === 2) ?
-                            <p>
-                                {aboutArray[aboutCtg].p2}
-                            </p>
+                            <>
+                                {aboutArray[aboutCtg].p3}
+                            </>
                             :
                             <>
                                 <ul>

@@ -118,7 +118,7 @@ const Home = () => {
             </header>
             <main>  
                 <section className="company-info-ctr" ref={companyRef} >
-                    <Company setIsLoaded={setIsLoaded} isEntered={isEntered} />
+                    <Company setIsLoaded={setIsLoaded} isEntered={isEntered} navigate={navigate}/>
                     <div className="top-link" onClick={() => navigate('company')} ref={topLinkRef}>
                         <svg width="30" height="47" viewBox="0 0 40 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.0001 0L0 46.2434L20.0001 36.1916L40 46.2434L20.0001 0Z" fill="white"/>
@@ -132,7 +132,7 @@ const Home = () => {
                 </section>
                 <div className="transition inverted"></div>
                 <section className="services-ctr" ref={servicesRef}>
-                    <Services scrollY={scrollY} />  
+                    <Services scrollY={scrollY} navigate={navigate}/>  
                 </section>
                 <section className='cars-ctr' ref={carsRef}>
                     <Cars scrollY={scrollY} />
@@ -193,9 +193,12 @@ const Home = () => {
                 </div>
                 <div className="legal-notice">
                     <p>© 2023, Bk-elite</p>
-                    <p>Mentions légales | Conditions générales de vente</p>
+                    <p>
+                        <span>Mentions légales </span> 
+                        | 
+                        <span> Conditions générales de vente</span></p>
                     <p>Site développé par 
-                        <a href="">Grégoire Paulet</a>
+                        <a href=""> Grégoire Paulet</a>
                     </p>
                 </div>
             </footer>

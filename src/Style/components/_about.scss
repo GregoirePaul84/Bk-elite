@@ -69,9 +69,10 @@
             justify-content: space-evenly;
 
             p {
-                width: 50%;
-                font-size: 1.4em;
+                width: 60%;
+                font-size: 1.3em;
                 line-height: 30px;
+                margin-bottom: 10px;
             }
 
             ul {
@@ -108,8 +109,9 @@
 
             .left-banner {           
                 background-color: rgba(4, 6, 19, .80);
-                justify-content: flex-end;
-                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
                 box-shadow: inset -15px 0 $color_tertiary;
                 transform-origin: left;
             

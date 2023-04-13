@@ -110,6 +110,37 @@
                         }
                     }
                 }
+
+                .extras {
+                    flex-wrap: nowrap;
+                    justify-content: space-evenly;
+
+                    li {
+                        height: 125px;
+                        width: 125px;
+                        text-align: center;
+                        color: $color_secondary;
+                        background-color: $color_primary;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        outline: 1px solid $color_secondary;
+                        cursor: pointer;
+                        transition: 300ms;
+
+                        svg {
+                            width: auto;
+                            position: relative;
+                            bottom: 4px;
+                        }
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
                 
             }
 

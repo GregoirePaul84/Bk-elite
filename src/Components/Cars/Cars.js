@@ -170,7 +170,7 @@ const Cars = () => {
                     </div>
                 </div>       
                 <div className="content-title">
-                    <div>
+                    <div className='car-type'>
                         <h3>{carsArray[carsCtg].type}</h3>
                         {(carsCtg === 0) ?
                             <svg width="40" height="22" viewBox="0 0 84 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,7 +189,7 @@ const Cars = () => {
                     </div>
                 </div>
                 <div className="cars-static-message">
-                    <p>Notre <strong>service de chauffeur privé VTC</strong> vous offre une sélection de véhicules haut de gamme pour répondre à tous vos besoins. Nous proposons des modèles tels que la <span className="colored">Tesla Model 3</span>, la <span className="colored">Mercedes Classe V</span> et la <span className="colored">Berline Classe E</span>, tous équipés pour votre confort et votre sécurité. Nos chauffeurs professionnels et expérimentés vous conduiront à votre destination en toute sérénité, pour une expérience de voyage inoubliable.</p>
+                    <p>Notre <strong>service de chauffeur privé VTC</strong> vous offre une sélection de véhicules haut-de-gamme pour répondre à tous vos besoins. Nous proposons des modèles tels que la <span className="colored">Tesla Model 3</span>, la <span className="colored">Mercedes Classe V</span> et la <span className="colored">Berline Classe E</span>, tous équipés pour votre confort et votre sécurité. Nos chauffeurs professionnels et expérimentés vous conduiront à votre destination en toute sérénité, pour une expérience de voyage inoubliable.</p>
                 </div>
                 <div className="content">
                    <div className="car-name-banner">

@@ -188,6 +188,14 @@
             p, a {
                 width: 33.33%;
                 text-align: center;
+
+                span {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $color_secondary;
+                    }
+                }
             }
 
             a {
