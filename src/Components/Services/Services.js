@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import airplaneImg from '../../Medias/Image/Main/airplane.png';
-import distanceImg from '../../Medias/Image/Main/distance.png';
-import weddingImg from '../../Medias/Image/Main/wedding.png';
-import eveningImg from '../../Medias/Image/Main/evening.png';
-import extrasImg from '../../Medias/Image/Main/collaborators.png';
+import taxiImg from '../../Medias/Image/Main/taxi.jpg';
+import airplaneImg from '../../Medias/Image/Main/airplane.jpg';
+import distanceImg from '../../Medias/Image/Main/distance.jpg';
+import weddingImg from '../../Medias/Image/Main/wedding.jpg';
+import provenceImg from '../../Medias/Image/Main/pexels-claudio-vincenti-4106624.jpg';
 
 const servicesArray = [
+    {
+        title : 'Taxi driver',
+        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous prenez l\'avion pour votre travail ou pour le tourisme ? </br> Nous savons que voyager peut être <b>éprouvant</b>.'}} />,
+        p2 : <p dangerouslySetInnerHTML={{__html: 'Commencez votre voyage de manière <span class=colored>sereine</span> : '}} />,
+        li1 : <li dangerouslySetInnerHTML={{__html: 'Nous vous offrons un service de <span class=colored>rafraîchissement</span> ainsi que de <span class=colored>collations</span> à bord.'}} />,
+        li2 : <li dangerouslySetInnerHTML={{__html: 'Vous entamerez votre voyage de manière <span class=colored>confortable et détendue.</span>'}} />
+    },
     {
         title : 'Transfert aéroport',
         p1 : <p dangerouslySetInnerHTML={{__html: 'Vous prenez l\'avion pour votre travail ou pour le tourisme ? </br> Nous savons que voyager peut être <b>éprouvant</b>.'}} />,
@@ -29,13 +36,6 @@ const servicesArray = [
         li2 : <li dangerouslySetInnerHTML={{__html: 'Contactez-nous dès maintenant pour en savoir plus sur nos offres et réserver votre véhicule de mariage!'}} />
     },
     {
-        title : 'Soirées',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous souhaitez  entreprendre un long voyage sans stress et avec une <span class=colored>expérience de première classe ?</span>'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nous prendrons en compte tous les détails pour rendre votre transport aussi <span class=colored>confortable que possible.</span>'}} />,
-        li1 : <li dangerouslySetInnerHTML={{__html: 'Nous vous offrons un service de <span class=colored>rafraîchissement</span> ainsi que de <span class=colored>collations</span> à bord.'}} />,
-        li2 : <li dangerouslySetInnerHTML={{__html: 'Vous entamerez votre voyage de manière <span class=colored>confortable et détendue.</span>'}} />
-    },
-    {
         title : 'Extras',
         // Vous voyagez avec des bagages encombrants  ou coûteux et vous cherchez un moyen de transport pratique, confortable et de confiance. Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements. Nous proposons des services de bagagiste pour vous aider à transporter vos valises et vos sacs en toute sécurité. Nos chauffeurs professionnels et expérimentés prendront soin de vos affaires et vous conduiront à votre destination en toute sérénité. Réservez dès maintenant votre trajet avec service de bagagiste et laissez-nous prendre soin de vous!
         p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <strong>Bk-Elite</strong>, notre priorité est de donner la meilleure expérience possible à notre clientèle.'}} />,
@@ -45,13 +45,13 @@ const servicesArray = [
     }
 ];
 
-const services = ['airport', 'distance', 'events', 'evening', 'extras'];
+const services = ['taxi', 'airport', 'distance', 'events', 'extras'];
 
 const Services = ({scrollY, navigate}) => {
 
-    const [selectedService, setSelectedService] = useState('airport');
+    const [selectedService, setSelectedService] = useState('taxi');
     const [servicesCtg, setServicesCtg] = useState(0);
-    const [servicesSlide, setServicesSlide] = useState({from: undefined, to: 'airport'});
+    const [servicesSlide, setServicesSlide] = useState({from: undefined, to: 'taxi'});
     const [isHover, setIsHover] = useState(undefined);
 
     const sliderRef = useRef(null);
@@ -234,60 +234,60 @@ const Services = ({scrollY, navigate}) => {
         switch (`${services.indexOf(servicesSlide.from)}-${services.indexOf(servicesSlide.to)}`) {
             case '0-1':
                 displayServices('slide1to2');
-                setSelectedService('distance');
+                setSelectedService('airport');
                 break;
 
             case '1-2':
                 displayServices('slide2to3');
-                setSelectedService('events');
+                setSelectedService('distance');
                 break;
             case '2-1':
                 displayServices('slide3to2');
-                setSelectedService('distance');
+                setSelectedService('airport');
                 break;
 
             case '1-0':
                 displayServices('slide2to1');
-                setSelectedService('airport');
+                setSelectedService('taxi');
                 break;
 
             case '0-2':
                 displayServices('slide1to3');
-                setSelectedService('events');
+                setSelectedService('distance');
                 break;
             case '2-0':
                 displayServices('slide3to1');
-                setSelectedService('airport');
+                setSelectedService('taxi');
                 break;
 
             case '2-3':
                 displayServices('slide3to4');
-                setSelectedService('evening');
+                setSelectedService('events');
                 break;
 
             case '3-2':
                 displayServices('slide4to3');
-                setSelectedService('events');
+                setSelectedService('distance');
                 break;
 
             case '3-0':
                 displayServices('slide4to1');
-                setSelectedService('airport');
+                setSelectedService('taxi');
                 break;
 
             case '0-3':
                 displayServices('slide1to4');
-                setSelectedService('evening');
+                setSelectedService('events');
                 break;
 
             case '1-3':
                 displayServices('slide2to4');
-                setSelectedService('evening');
+                setSelectedService('events');
                 break;
 
             case '3-1':
                 displayServices('slide4to2');
-                setSelectedService('distance');
+                setSelectedService('airport');
                 break;
 
             case '3-4':
@@ -297,12 +297,12 @@ const Services = ({scrollY, navigate}) => {
 
             case '4-3':
                 displayServices('slide5to4');
-                setSelectedService('evening');
+                setSelectedService('events');
                 break;
 
             case '4-2':
                 displayServices('slide5to3');
-                setSelectedService('events');
+                setSelectedService('distance');
                 break;
 
             case '2-4':
@@ -312,7 +312,7 @@ const Services = ({scrollY, navigate}) => {
 
             case '4-1':
                 displayServices('slide5to2');
-                setSelectedService('distance');
+                setSelectedService('airport');
                 break;
 
             case '1-4':
@@ -322,7 +322,7 @@ const Services = ({scrollY, navigate}) => {
 
             case '4-0':
                 displayServices('slide5to1');
-                setSelectedService('airport');
+                setSelectedService('taxi');
                 break;
 
             case '0-4':
@@ -383,20 +383,21 @@ const Services = ({scrollY, navigate}) => {
                         </h2>
                     </div>
                     <ul>
+                        <li className='taxi-nav' 
+                            onClick={(() => {setServicesCtg(0); setServicesSlide({from: servicesSlide.to, to: 'taxi'})})}>
+                            Taxi driver
+                        </li>
                         <li className='airport-nav' 
-                            onClick={(() => {setServicesCtg(0); setServicesSlide({from: servicesSlide.to, to: 'airport'})})}>
+                            onClick={(() => {setServicesCtg(1); setServicesSlide({from: servicesSlide.to, to: 'airport'})})}>
                             Transfert aéroport
                         </li>
                         <li className='distance-nav' 
-                            onClick={(() => {setServicesCtg(1); setServicesSlide({from: servicesSlide.to, to: 'distance'})})}>
-                            Longues distances</li>
-                        <li className='events-nav' 
-                            onClick={(() => {setServicesCtg(2); setServicesSlide({from: servicesSlide.to, to: 'events'})})}>
-                            Événements
+                            onClick={(() => {setServicesCtg(2); setServicesSlide({from: servicesSlide.to, to: 'distance'})})}>
+                            Longues distances
                         </li>
-                        <li className='evening-nav' 
-                            onClick={(() => {setServicesCtg(3); setServicesSlide({from: servicesSlide.to, to: 'evening'})})}>
-                            Soirées
+                        <li className='events-nav' 
+                            onClick={(() => {setServicesCtg(3); setServicesSlide({from: servicesSlide.to, to: 'events'})})}>
+                            Événements
                         </li>
                         <li className='extras-nav' 
                             onClick={(() => {setServicesCtg(4); setServicesSlide({from: servicesSlide.to, to: 'extras'})})}>
@@ -407,29 +408,40 @@ const Services = ({scrollY, navigate}) => {
             <div className="services-main">
                 <div className="img-ctn">
                     <div className="services-slider" ref={sliderRef}>      
+                        <img src={taxiImg} alt="chauffeur qui ouvre la portière"/>  
                         <img src={airplaneImg} alt="avion qui vole au dessus d'immeubles" />
                         <img src={distanceImg} alt="route qui s'étend vers le lointain"/>
                         <img src={weddingImg} alt="mariés qui tiennent un bouquet de fleurs"/>
-                        <img src={eveningImg} alt="ville de Paris de nuit"/>    
-                        <img src={extrasImg} alt="chauffeur qui ouvre la portière"/>  
+                        <img src={provenceImg} alt="mariés qui tiennent un bouquet de fleurs"/>
+                        
                     </div>
                 </div>   
                 <div className="content-title">
                     <h3>{servicesArray[servicesCtg].title}</h3>
-                    {(servicesCtg === 0) ? 
-                        <svg width="22" height="40" viewBox="0 0 41 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24.4078 5.85708L11.922 0.308228C10.8522 -0.1624 9.66703 -0.0940827 8.64844 0.513178L5.70797 2.25146C4.99687 2.67655 4.94562 3.85311 5.61187 4.3617L15.0227 11.535L8.7125 15.3531L4.98406 13.3871C4.42672 13.0911 3.77969 13.1063 3.23516 13.4327L1.17234 14.6548C0.576562 15.0115 0.416406 15.93 0.852031 16.5297L5.535 23.0046C5.92578 23.5436 6.49594 23.8548 7.09172 23.8548H15.9131C16.2334 23.8548 16.5473 23.7637 16.8292 23.5967L34.3119 13.2429C37.2908 11.4742 39.597 8.43794 40.7694 4.74123C41.378 2.82836 40.18 0.778855 38.4503 0.778855H34.7731C33.4791 0.778855 32.1978 1.14321 31.0447 1.84156L24.4078 5.85708ZM0 33.571C0 34.9145 0.916094 36 2.05 36H38.95C40.0839 36 41 34.9145 41 33.571C41 32.2274 40.0839 31.1419 38.95 31.1419H2.05C0.916094 31.1419 0 32.2274 0 33.571Z" fill="#D1B000"/>
-                        </svg>                
+                    {(servicesCtg === 0) ?               
+                        <svg width="57" height="25" viewBox="0 0 57 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.937 13.5278H26.608L25.2592 9.89551L23.937 13.5278Z" fill="#D1B000"/>
+                            <path d="M55.9273 20.8022L50.8181 2.35291C50.4331 0.962529 49.1677 0 47.7252 0H8.35536C6.91264 0 5.64721 0.962662 5.26225 2.35291L0.116471 20.9337C-0.151134 21.9 0.048138 22.9356 0.655146 23.7336C1.26215 24.5315 2.2071 25 3.20945 25H52.8707C52.8715 25 52.8722 25 52.873 25C54.6454 25 56.0824 23.563 56.0824 21.7905C56.0824 21.4457 56.028 21.1135 55.9273 20.8022ZM17.8269 9.09659V17.0781C17.8269 17.4828 17.4988 17.8108 17.0943 17.8108H16.3087C15.9041 17.8108 15.5761 17.4828 15.5761 17.0781V9.09659H13.1965C12.7918 9.09659 12.4639 8.76864 12.4639 8.36397V7.92174C12.4639 7.51706 12.7918 7.18912 13.1965 7.18912H20.1994C20.6039 7.18912 20.932 7.51706 20.932 7.92174V8.36397C20.932 8.76864 20.6039 9.09659 20.1994 9.09659H17.8269ZM30.2252 17.4888C30.0892 17.6902 29.8617 17.8108 29.6185 17.8108H28.7564C28.4532 17.8108 28.1813 17.624 28.0725 17.3409L27.3372 15.4283H23.2372L22.5467 17.3284C22.4415 17.618 22.1664 17.8109 21.8582 17.8109H21.0524C20.8105 17.8109 20.5842 17.6915 20.4477 17.4917C20.3112 17.2922 20.282 17.0378 20.3698 16.8124L23.936 7.656C24.0458 7.37454 24.3167 7.18925 24.6187 7.18925H25.9519C26.2514 7.18925 26.5208 7.37147 26.6321 7.6496L30.2982 16.806C30.3889 17.0315 30.3615 17.2873 30.2252 17.4888ZM39.8149 17.4242C39.6873 17.6621 39.4394 17.8106 39.1692 17.8106H38.2214C37.9718 17.8106 37.7394 17.6835 37.6047 17.4733L35.5319 14.24L33.4521 17.4743C33.3173 17.6839 33.0852 17.8106 32.836 17.8106H31.892C31.6228 17.8106 31.3754 17.6632 31.2473 17.4263C31.1194 17.1896 31.1317 16.9018 31.2789 16.6765L34.1646 12.2707L31.6059 8.31988C31.4597 8.09463 31.4488 7.80745 31.5771 7.57168C31.7052 7.33578 31.9521 7.18899 32.2207 7.18899H33.1019C33.3544 7.18899 33.5894 7.31926 33.7234 7.53358L35.5743 10.4986L37.3837 7.53931C37.5168 7.32165 37.7536 7.18885 38.0086 7.18885H38.8716C39.1396 7.18885 39.3857 7.33498 39.5143 7.56981C39.6427 7.80478 39.6331 8.09104 39.4887 8.31642L36.9062 12.3486L39.779 16.6723C39.929 16.8975 39.9425 17.1863 39.8149 17.4242ZM43.6188 17.0781C43.6188 17.4828 43.2907 17.8108 42.8862 17.8108H42.1004C41.6959 17.8108 41.3678 17.4828 41.3678 17.0781V7.92174C41.3678 7.51706 41.6959 7.18912 42.1004 7.18912H42.8862C43.2907 7.18912 43.6188 7.51706 43.6188 7.92174V17.0781Z" fill="#D1B000"/>
+                        </svg>  
                     : (servicesCtg === 1) ?
-                        <svg width="22" height="40" viewBox="0 0 35 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23.3075 0L17.3663 7.9225L11.4254 0H0L17.3663 23.1557L34.7329 0H23.3075Z" fill="#D1B000"/>
-                            <path d="M17.3663 23.1556C10.5039 23.1556 4.94296 28.7163 4.94296 35.5787C4.94296 42.439 10.5039 48 17.3663 48C24.2266 48 29.7894 42.439 29.7894 35.5787C29.7894 28.7163 24.2269 23.1556 17.3663 23.1556ZM21.8455 42.4768L17.3666 40.1206L12.8877 42.4768L13.7418 37.4838L10.1152 33.9507L15.1253 33.2207L17.3666 28.6811L19.6088 33.2207L24.6198 33.9507L20.9941 37.4838L21.8455 42.4768Z" fill="#D1B000"/>
-                        </svg>
+                        <svg width="30" height="40" viewBox="0 0 41 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24.4078 5.85708L11.922 0.308228C10.8522 -0.1624 9.66703 -0.0940827 8.64844 0.513178L5.70797 2.25146C4.99687 2.67655 4.94562 3.85311 5.61187 4.3617L15.0227 11.535L8.7125 15.3531L4.98406 13.3871C4.42672 13.0911 3.77969 13.1063 3.23516 13.4327L1.17234 14.6548C0.576562 15.0115 0.416406 15.93 0.852031 16.5297L5.535 23.0046C5.92578 23.5436 6.49594 23.8548 7.09172 23.8548H15.9131C16.2334 23.8548 16.5473 23.7637 16.8292 23.5967L34.3119 13.2429C37.2908 11.4742 39.597 8.43794 40.7694 4.74123C41.378 2.82836 40.18 0.778855 38.4503 0.778855H34.7731C33.4791 0.778855 32.1978 1.14321 31.0447 1.84156L24.4078 5.85708ZM0 33.571C0 34.9145 0.916094 36 2.05 36H38.95C40.0839 36 41 34.9145 41 33.571C41 32.2274 40.0839 31.1419 38.95 31.1419H2.05C0.916094 31.1419 0 32.2274 0 33.571Z" fill="#D1B000"/>
+                        </svg>  
                     : (servicesCtg === 2) ?
+                        <svg width="50" height="36" viewBox="0 0 50 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0139 0L0 35.2853H6.07228L14.785 0H12.0139Z" fill="#D1B000"/>
+                            <path d="M37.9859 0H35.2148L43.9275 35.2853H49.9998L37.9859 0Z" fill="#D1B000"/>
+                            <path d="M17.1551 0L8.46094 35.2853H21.3263L21.6805 30.0925H28.32L28.6742 35.2853H41.5396L32.8457 0H17.1551ZM23.8562 0.404536H26.1444L26.5069 5.35262H23.4935L23.8562 0.404536ZM23.1311 10.3006H26.8696L27.2322 15.2486H22.7682L23.1311 10.3006ZM22.0433 25.1444L22.4058 20.1966H27.5948L27.9576 25.1444H22.0433Z" fill="#D1B000"/>
+                        </svg>                                      
+                    : (servicesCtg === 3) ?
                         <svg width="40" height="40" viewBox="0 0 50 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M45.6068 17.3758C44.1609 16.4942 42.5495 16.006 40.9267 15.8825C39.2761 21.1617 34.589 25.9338 30.4002 29.1358C30.6472 30.6972 31.0566 32.2214 31.5446 33.5819L26.6008 40.2018V31.3043H28.1707L27.9623 30.8687L26.6401 28.1051C32.0933 24.3874 38.2939 18.0541 38.2939 12.0326C38.2939 5.38715 32.3316 0 24.9768 0C17.622 0 11.6596 5.38715 11.6596 12.0326C11.6596 18.0541 17.8602 24.3875 23.3134 28.1051L21.9912 30.8687L21.7828 31.3043H23.3527V40.2019L18.4089 33.582C18.8968 32.2214 19.3061 30.6973 19.5533 29.1359C15.3646 25.9339 10.6773 21.1618 9.02677 15.8826C7.40406 16.006 5.79257 16.4943 4.34674 17.3759C-0.168205 20.1286 -1.35851 25.6671 1.68808 29.7466C4.35962 33.3238 10.7298 34.9067 15.7166 35.2236L23.0176 45H26.9359L34.237 35.2236C39.2237 34.9067 45.5939 33.3237 48.2654 29.7466C51.312 25.667 50.1216 20.1284 45.6068 17.3758ZM24.9766 5.86935C21.2156 5.86935 18.1556 8.63416 18.1556 12.0324H14.9075C14.9075 7.0159 19.4245 2.93459 24.9766 2.93459V5.86935Z" fill="#D1B000"/>
                         </svg>                    
-                    : null
+                    :
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 0C8.95373 0 0 8.95373 0 20C0 31.0463 8.95373 40 20 40C31.045 40 40 31.0463 40 20C40 8.95373 31.045 0 20 0ZM20 35C11.7288 35 5 28.2712 5 20C5 11.7288 11.7288 5 20 5C28.2712 5 35 11.7288 35 20C35 28.2712 28.2712 35 20 35ZM27.525 17.5H22.5V12.475C22.5 11.1075 21.3912 10 20.025 10H19.975C18.6075 10 17.5 11.1075 17.5 12.475V17.5H12.475C11.1075 17.5 10 18.6088 10 19.975V20.025C10 21.3925 11.1075 22.5001 12.475 22.5001H17.5V27.5251C17.5 28.8926 18.6075 30.0001 19.975 30.0001H20.025C21.3925 30.0001 22.5 28.8926 22.5 27.5251V22.5H27.525C28.8926 22.5 30 21.3925 30 20.025V19.975C30 18.6088 28.8912 17.5 27.525 17.5Z" fill="#D1B000"/>
+                        </svg>
+
                     }                   
                 </div>
                 <div className="content" ref={contentRef}>

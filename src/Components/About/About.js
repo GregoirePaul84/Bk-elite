@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import companyImg from '../../Medias/Image/Main/office3.png';
-import valuesImg from '../../Medias/Image/Main/values.png';
-import driverImg from '../../Medias/Image/Main/kamel.png';
+import companyImg from '../../Medias/Image/Main/office.jpg';
+import valuesImg from '../../Medias/Image/Main/values.jpg';
+import driverImg from '../../Medias/Image/Main/kamel.jpg';
 
 const aboutArray = [
     {
