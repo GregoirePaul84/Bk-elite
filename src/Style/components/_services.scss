@@ -105,17 +105,18 @@
                         width: calc(100% - 30px);
                         padding-left: 10px;
     
-                        &:nth-child(1) {
-                            margin-bottom: 25px;
-                        }
+                        // &:nth-child(1) {
+                        //     margin-bottom: 25px;
+                        // }
                     }
                 }
 
                 .extras {
                     flex-wrap: nowrap;
                     justify-content: space-evenly;
+                    // position: relative;
 
-                    li {
+                    li:not(#extras-detailed) {
                         height: 125px;
                         width: 125px;
                         text-align: center;
@@ -129,6 +130,7 @@
                         outline: 1px solid $color_secondary;
                         cursor: pointer;
                         transition: 300ms;
+                        position: relative;
 
                         svg {
                             width: auto;
@@ -137,8 +139,12 @@
                         }
 
                         &:hover {
-                            transform: scale(1.05);
+                            transform: scale(1.1);
                         }
+                    }
+
+                    .extend {
+                        transform: scale(1.1);
                     }
                 }
                 
@@ -150,6 +156,7 @@
                 min-width: 210px;
                 padding: 0 15px;
                 background-color: $color_secondary;
+                // background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
                 align-self: center;
                 position: relative;
                 bottom: 75px;

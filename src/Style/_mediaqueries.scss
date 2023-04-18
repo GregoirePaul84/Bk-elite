@@ -1,0 +1,60 @@
+/* Grande tablettes (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 1024px) {
+    #root {
+        // Header tablettes
+        header {
+            .brand-logo {
+                width: auto;
+            }
+            nav {
+                height: auto;
+                width: auto;
+                visibility: hidden;
+                position: absolute;
+                z-index: 2;
+                bottom: -153px;
+                right: 61px;
+                background-color: #100B20;
+
+                ul {
+                    flex-direction: column;
+                    font-size: 0.9em;
+
+                    li {
+                        height: 40px;
+                        width: 175px;
+                        clip-path: none;     
+
+                        .shine {
+                            left: -55px;
+                        }
+                    }
+                }
+            }
+            .languages-ctn {
+                width: auto;
+
+                .hamburger-menu {
+                    display: block;
+                }
+            }
+        }   
+    }
+    main {
+
+        .about-ctr {
+            .about-main {
+                .content {
+                    .banner {
+                        width: 90%;
+
+                        p {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // About tablettes
+}

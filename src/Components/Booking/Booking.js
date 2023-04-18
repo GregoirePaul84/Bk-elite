@@ -59,10 +59,11 @@ const Booking = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='form-subtitle'>
                         <h4>À propos de vous</h4>
+                        <p className='colored'>* : Informations obligatoires</p>
                     </div>
                     <div className='input-container basic-info'>
                         <p className='error'>{errors.lastName && errors.lastName.message}</p>
-                        <label htmlFor="lastName">Nom : *</label>
+                        <label htmlFor="lastName">Nom : <span className='colored'>*</span></label>
                         <input 
                             type="text" 
                             id="lastName" 
@@ -72,7 +73,7 @@ const Booking = () => {
                     </div>
                     <div className='input-container basic-info'>
                         <p className='error'>{errors.firstName && errors.firstName.message}</p>
-                        <label htmlFor="firstName">Prénom : *</label>
+                        <label htmlFor="firstName">Prénom : <span className='colored'>*</span></label>
                         <input 
                             type="text" 
                             id="firstName" 
@@ -82,7 +83,7 @@ const Booking = () => {
                     </div>
                     <div className='input-container basic-info'>
                         <p className='error'>{errors.phone && errors.phone.message}</p>
-                        <label htmlFor="phone">Téléphone : *</label>
+                        <label htmlFor="phone">Téléphone : <span className='colored'>*</span></label>
                         <input 
                             type="text" 
                             id="phone" 

@@ -1,0 +1,33 @@
+#extras-detailed {
+    width: 325px;
+    position: absolute;
+    bottom: 140px;
+    left: 60px;
+    background-color: $color_primary;
+    padding: 25px;
+    text-align: left;
+
+    .detailed-title {
+        margin-bottom: 25px;
+
+        h4 {
+            color: $color_secondary;
+
+            &::after {
+                content: "";
+                display: block;
+                height: 2px;
+                width: 75%;
+                background-color: #D1B000;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .detailed-description {
+        p {
+            opacity: 1;
+            font-size: 0.8em;
+        }
+    }
+}

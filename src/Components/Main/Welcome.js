@@ -26,7 +26,7 @@ const Welcome = ({isLoaded, setIsEntered}) => {
             body.style.overflow = 'auto';
             container.style.display = 'none';
             body.style.height = 'auto';
-        }, 3100);
+        }, 2500);
     }
 
     return (

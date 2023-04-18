@@ -5,12 +5,13 @@ import airplaneImg from '../../Medias/Image/Main/airplane.jpg';
 import distanceImg from '../../Medias/Image/Main/distance.jpg';
 import weddingImg from '../../Medias/Image/Main/wedding.jpg';
 import provenceImg from '../../Medias/Image/Main/pexels-claudio-vincenti-4106624.jpg';
+import Extras from './Extras';
 
 const servicesArray = [
     {
         title : 'Taxi driver',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous prenez l\'avion pour votre travail ou pour le tourisme ? </br> Nous savons que voyager peut être <b>éprouvant</b>.'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Commencez votre voyage de manière <span class=colored>sereine</span> : '}} />,
+        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous avez besoin d\'un moyen de transport rapide et fiable pour vos déplacements en ville? Notre service driver vous offre une solution pratique et économique pour tous vos trajets.'}} />,
+        p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs professionnels et expérimentés vous conduiront à votre destination en toute sécurité, avec des véhicules modernes et bien entretenus.'}} />,
         li1 : <li dangerouslySetInnerHTML={{__html: 'Nous vous offrons un service de <span class=colored>rafraîchissement</span> ainsi que de <span class=colored>collations</span> à bord.'}} />,
         li2 : <li dangerouslySetInnerHTML={{__html: 'Vous entamerez votre voyage de manière <span class=colored>confortable et détendue.</span>'}} />
     },
@@ -39,7 +40,7 @@ const servicesArray = [
         title : 'Extras',
         // Vous voyagez avec des bagages encombrants  ou coûteux et vous cherchez un moyen de transport pratique, confortable et de confiance. Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements. Nous proposons des services de bagagiste pour vous aider à transporter vos valises et vos sacs en toute sécurité. Nos chauffeurs professionnels et expérimentés prendront soin de vos affaires et vous conduiront à votre destination en toute sérénité. Réservez dès maintenant votre trajet avec service de bagagiste et laissez-nous prendre soin de vous!
         p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <strong>Bk-Elite</strong>, notre priorité est de donner la meilleure expérience possible à notre clientèle.'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nous vous proposons de quoi aggrémenter votre voyage et des services personnalisés :'}} />,
+        p2 : <p dangerouslySetInnerHTML={{__html: 'Vous voyagez avec des bagages encombrants ou coûteux, vous souhaitez faire confiance à notre connaissance de la région pour faire du tourisme, ou plus encore ?  Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements.'}} />,
         // li1 : <li className='extras' dangerouslySetInnerHTML={{__html: 'Service bagagerie'}} />,
         // li2 : <li className='extras' dangerouslySetInnerHTML={{__html: 'Vous avez besoin de transporter un excédent de bagages ? Nous mettons à votre disposition un van pour transporter tout objets volumineux.'}} />
     }
@@ -53,6 +54,7 @@ const Services = ({scrollY, navigate}) => {
     const [servicesCtg, setServicesCtg] = useState(0);
     const [servicesSlide, setServicesSlide] = useState({from: undefined, to: 'taxi'});
     const [isHover, setIsHover] = useState(undefined);
+    const [extraShown, setExtraShown] = useState({type: null, isShown: false});
 
     const sliderRef = useRef(null);
     const contentRef = useRef(null);
@@ -462,7 +464,13 @@ const Services = ({scrollY, navigate}) => {
                                 </>
                                 :
                                 <>
-                                    <li>
+                                    <li onClick={() => setExtraShown({type: 'luggage', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
+
+                                        {(extraShown.isShown && extraShown.type === 'luggage') ? 
+                                            <Extras index={0}/>
+                                            : null
+                                        }
                                         <svg width="40" height="40" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M35.7851 25.7636L38.4261 10.2352C38.6547 8.88856 38.4778 7.57669 37.9402 6.60823C37.4126 5.66443 36.6013 5.14237 35.6627 5.14237H30.8852L31.3555 2.38187C31.4582 1.76952 31.3738 1.16196 31.1173 0.70096C30.8682 0.259597 30.4775 0 30.0509 0H23.5594C22.7589 0 21.9856 0.876739 21.7977 1.99655L21.264 5.14237H16.2005C14.3233 5.14237 12.5018 7.21052 12.0526 9.84601L9.41093 25.3749C9.17892 26.7385 9.35233 28.0255 9.89755 29.0045C10.4268 29.9478 11.2334 30.4708 12.1747 30.4708H31.6391C33.5144 30.4708 35.3371 28.4055 35.7851 25.7636ZM22.941 2.38379C23.0043 2.00661 23.3004 1.66798 23.5592 1.66798H30.0507C30.0896 1.66798 30.1602 1.67517 30.1915 1.73408C30.2215 1.78844 30.2261 1.88423 30.2092 1.99847L29.6741 5.14237H22.4722L22.941 2.38379ZM10.8219 27.9756C10.5039 27.4045 10.4083 26.6197 10.5537 25.7636L13.195 10.2352C13.5108 8.37392 14.887 6.80556 16.1991 6.80556H35.6611C36.2329 6.80556 36.7134 7.103 37.0143 7.63656C37.3321 8.2082 37.4283 8.99034 37.2825 9.84601L34.6415 25.3749C34.3265 27.2359 32.9473 28.8078 31.6364 28.8078H12.1737C11.6033 28.8095 11.1227 28.514 10.8219 27.9756Z" fill="#D1B000"/>
                                             <path d="M39.5509 11.8683C39.2159 11.7527 38.9124 12.0343 38.8409 12.4778L36.2013 28.0091C35.8848 29.867 34.507 31.438 33.1988 31.438H13.7331C13.4083 31.438 13.144 31.813 13.144 32.2718C13.144 32.7266 13.4085 33.098 13.7331 33.098H33.1963C35.0735 33.098 36.8941 31.0308 37.3421 28.3944L39.9831 12.8626C40.0606 12.4234 39.8653 11.972 39.5509 11.8683Z" fill="#D1B000"/>
@@ -476,7 +484,12 @@ const Services = ({scrollY, navigate}) => {
                                         Service <br />
                                         bagagerie
                                     </li>
-                                    <li>
+                                    <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
+                                        {(extraShown.isShown && extraShown.type === 'tourism') ? 
+                                            <Extras index={1}/>
+                                            : null
+                                        }
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M13.1511 26.3294C13.1511 24.2607 11.4678 22.5774 9.39903 22.5774C7.33026 22.5774 5.64697 24.2607 5.64697 26.3294C5.64697 28.3982 7.33026 30.0815 9.39903 30.0815C11.4678 30.0815 13.1511 28.3991 13.1511 26.3294ZM9.39903 29.1331C7.85353 29.1331 6.59714 27.8758 6.59714 26.3294C6.59714 24.7849 7.85443 23.5276 9.39903 23.5276C10.9436 23.5276 12.2009 24.7849 12.2009 26.3294C12.2018 27.8758 10.9445 29.1331 9.39903 29.1331Z" fill="#D1B000"/>
                                             <path d="M33.4713 0C29.8714 0 26.9435 2.92797 26.9435 6.52782C26.9435 8.45428 27.9657 10.3096 29.1644 11.8317L22.5159 19.814C21.9855 20.322 21.5477 21.3352 21.4631 22.0656L19.814 33.0237H16.2016C16.3691 32.7814 16.5393 32.5445 16.696 32.2923C17.8056 30.51 18.6045 28.4772 18.6045 26.3121C18.6045 21.1839 14.4318 17.0094 9.30268 17.0094C4.17355 17.0094 0 21.1839 0 26.3121C0 30.6685 3.65118 34.779 6.18738 37.1117C6.71155 37.5944 7.18889 38.0051 7.57616 38.3212C8.12014 38.7661 8.49031 39.0372 8.55785 39.0877C8.77941 39.248 9.0415 39.3281 9.30268 39.3281C9.39635 39.3281 21.4631 39.3281 21.4631 39.3281C23.0644 39.3281 24.1317 37.6178 24.3172 36.0255L26.0978 23.4895C26.0978 23.4895 35.9273 13.9788 36.0921 13.7788C37.6025 11.937 40 9.51883 40 6.52692C39.9982 2.92797 37.0702 0 33.4713 0ZM2.547 26.3121C2.547 22.5871 5.57765 19.5573 9.30268 19.5573C13.0277 19.5573 16.0575 22.588 16.0575 26.3121C16.0575 30.845 11.2075 35.0123 9.3252 36.4578C7.44557 34.9348 2.547 30.5541 2.547 26.3121ZM33.4839 13.6293C31.8024 12.2775 28.7447 9.25675 28.7447 6.52602C28.7447 3.91957 30.8648 1.79947 33.4713 1.79947C36.0777 1.79947 38.1969 3.91957 38.1969 6.52602C38.1969 9.69986 34.8015 12.617 33.4839 13.6293Z" fill="#D1B000"/>
@@ -486,7 +499,12 @@ const Services = ({scrollY, navigate}) => {
                                         Circuit <br />
                                         touristique
                                     </li>
-                                    <li>
+                                    <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
+                                        {(extraShown.isShown && extraShown.type === 'provision') ? 
+                                            <Extras index={2}/>
+                                            : null
+                                        }
                                         <svg width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2.52377 5.35436C2.60494 5.73331 2.87393 6.09196 3.28261 6.42466C3.35151 7.47184 3.64268 8.33734 4.07213 9.05937C5.19529 7.45061 8.24811 6.29489 11.8484 6.29489C15.3622 6.29489 18.3547 7.39634 19.5396 8.94422C19.9965 7.97868 20.0861 7.04901 20.0871 6.48412C20.5099 6.15945 20.7959 5.80693 20.9021 5.43506C22.44 4.99334 23.3593 4.43601 23.3593 3.83054C23.3593 2.3945 17.5472 0.511557 11.8479 0C5.92157 0.569603 0.336914 2.3945 0.336914 3.83054C0.336914 4.39967 1.14908 4.92586 2.52377 5.35436ZM19.8228 5.35436L19.3797 6.23259C11.577 2.29115 3.91309 6.19012 3.8357 6.22976L3.38124 5.35672C3.71158 5.18447 11.5732 1.18734 19.8228 5.35436Z" fill="#D1B000"/>
                                             <path d="M15.2952 20.0107H8.40149C2.66677 20.0107 0 24.2643 0 30L0.000240207 38.5L9.71556e-05 39L0.000143051 39.1903C5.47342 40.9001 8.83188 41.4404 12.7464 41.4404C20.391 41.4404 23.7254 39.3286 24.0001 39.1903V38.5V30C24.0006 24.2643 21.0314 20.0107 15.2952 20.0107ZM13.862 39.1903L12 41L10.014 39.1856C9.99893 39.1625 9.99185 39.1347 9.9928 39.1054L10.8663 25.7502C10.871 25.6799 10.9291 25.6256 10.9999 25.6256H12.8115C12.8819 25.6256 12.9399 25.6789 12.946 25.7502L13.8842 39.104C13.8875 39.1365 13.8781 39.1649 13.862 39.1903ZM13.0116 25.2226H10.8588L8.98667 21.3529C8.98667 20.9815 9.28681 20.6823 9.65821 20.6823H14.1537C14.5241 20.6823 14.8247 20.9815 14.8247 21.3529L13.0116 25.2226Z" fill="#D1B000"/>
