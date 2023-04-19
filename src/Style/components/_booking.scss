@@ -161,17 +161,18 @@
                 display: flex;
                 justify-content: center;
 
-                button {
+                input {
                     height: 35px;
                     width: 90px;
                     background-color: $color_secondary;
-                    color: $color_primary;
+                    color: #fff;
                     border: none;
                     cursor: pointer;
                     font-size: 1.2em;
-                    font-weight: 600;
+                    font-weight: 500;
                     border-radius: 3px;
                     transition: 300ms;
+                    font-family: 'Smooch Sans', sans-serif;
 
                     &:hover {
                         transform: scale(1.05);

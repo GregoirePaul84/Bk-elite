@@ -69,8 +69,8 @@
             justify-content: space-evenly;
 
             p {
-                width: 60%;
-                font-size: 1.3em;
+                width: 72%;
+                font-size: 1.25em;
                 line-height: 30px;
                 margin-bottom: 10px;
             }
@@ -101,7 +101,9 @@
             .banner {
                 height: auto;
                 min-height: 200px;
-                width: 70%;
+                max-height: 220px;
+                width: 75%;
+                min-width: 654px;
                 display: flex;
                 transform: scaleX(0);
                 padding: 20px 0;
@@ -146,7 +148,7 @@
     .about-nav {
         height: 100%;
         width: 20%;
-        margin-top: 12vh;
+        padding-top: 140px;
 
         .about-nav__title {
             height: 220px;

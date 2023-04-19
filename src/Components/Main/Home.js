@@ -56,7 +56,7 @@ const Home = () => {
 
     useEffect(() => {
         const header = headerRef.current;
-        console.log(header);
+
         if(isEntered) {
             setTimeout(() => {
                 header.style.position = 'fixed';
@@ -177,7 +177,7 @@ const Home = () => {
                 </section>
                 <div className="transition"></div>
                 <section className="about-ctr" ref={aboutRef}>
-                    <About scrollY={scrollY} />
+                    <About scrollY={scrollY} width={width}/>
                 </section>
                 <div className="transition inverted"></div>
                 <section className="services-ctr" ref={servicesRef}>

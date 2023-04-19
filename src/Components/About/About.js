@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import companyImg from '../../Medias/Image/Main/office.jpg';
 import valuesImg from '../../Medias/Image/Main/values.jpg';
@@ -37,7 +37,7 @@ const aboutArray = [
     }
 ]
 
-const About = ({scrollY}) => {
+const About = ({scrollY, width}) => {
 
     const [aboutCtg, setAboutCtg] = useState(0);
     const [aboutSlide, setAboutSlide] = useState({from: undefined, to: 'company'});
@@ -194,6 +194,12 @@ const About = ({scrollY}) => {
         }
            
     }, [aboutSlide])
+
+    useEffect(() => {
+        const textP = document.querySelectorAll('.about-ctr .content p');
+        const maxValue = 500;
+        console.log(width);
+    }, [width]);
 
 
     useEffect(() => {

@@ -1,7 +1,8 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import * as yup from 'yup';
-import {yupResolver} from '@hookform/resolvers/yup'
+import {yupResolver} from '@hookform/resolvers/yup';
+import emailjs from '@emailjs/browser';
 
 const Booking = () => {
 
@@ -20,25 +21,45 @@ const Booking = () => {
             phone: yup
             .number()
             .typeError("Merci de rentrer un numéro de téléphone valide")
-            .max(10)
             .required("Merci de rentrer votre numéro de téléphone"),
-
-            city: yup
-            .string()
-            .max(50),
-
-            postalCode: yup
-            .number()
-            .max(50),
-
-            message: yup
-            .string()
         })
 
-    const {register, formState:{errors}, handleSubmit} = useForm({resolver: yupResolver(schema)})
+        .required();
 
-    const onSubmit = () => {
-        alert('formulaire envoyé')
+    const { register, formState: { errors }, handleSubmit } = useForm({
+        resolver: yupResolver(schema)
+    });
+
+    const onSubmit = (data, r) => {
+        console.log('yes');
+        const templateId = process.env.REACT_APP_TEMPLATE_ID;
+        const serviceId = process.env.REACT_APP_SERVICE_ID;
+        sendFeedback(serviceId, templateId, {
+            lastName: data.lastName,
+            firstName: data.firstName,
+            phone: data.phone,
+            postalCode: data.postalCode,
+            city: data.city,
+            date: data.date,
+            sedan: data.sedan,
+            van: data.van,
+            message: data.message,
+            reply_to: r.target.reset()
+        })
+        console.log(data);
+    }
+
+    const sendFeedback = (serviceId, templateId, variables) => {
+        if (window.confirm('Êtes-vous sûr(e) de vouloir envoyer le message ?')) {
+            emailjs
+                .send(serviceId, templateId, variables, process.env.REACT_APP_EMAILJS_KEY)
+                .then((res) => {
+                    alert('Merci pour votre message, nous reviendrons vers vous au plus vite !')
+                })
+                .catch((err) => {
+                    alert('Erreur dans l\'envoi du formulaire')
+                })
+        }
     }
 
     return (
@@ -67,7 +88,7 @@ const Booking = () => {
                         <input 
                             type="text" 
                             id="lastName" 
-                            name="user_lastName" 
+                            name="lastName" 
                             placeholder='Votre nom'
                             {...register('lastName')} />
                     </div>
@@ -77,7 +98,7 @@ const Booking = () => {
                         <input 
                             type="text" 
                             id="firstName" 
-                            name="user_firstName"
+                            name="firstName"
                             placeholder='Votre prénom'
                             {...register('firstName')}  />
                     </div>
@@ -87,7 +108,7 @@ const Booking = () => {
                         <input 
                             type="text" 
                             id="phone" 
-                            name="user_phone"
+                            name="phone"
                             placeholder='Fixe ou mobile'
                             {...register('phone')}  />
                     </div>
@@ -97,7 +118,7 @@ const Booking = () => {
                         <input 
                             type="text" 
                             id="postalCode" 
-                            name="user_postalCode" 
+                            name="postalCode" 
                             placeholder='Votre code postal'
                             {...register('postalCode')} />
                     </div>
@@ -107,7 +128,7 @@ const Booking = () => {
                         <input 
                             type="text" 
                             id="city" 
-                            name="user_city" 
+                            name="city" 
                             placeholder='Votre ville'
                             {...register('city')} />
                     </div>
@@ -128,7 +149,7 @@ const Booking = () => {
                         <input 
                             type="checkbox" 
                             id="sedan" 
-                            name="car_sedan" 
+                            name="sedan" 
                             {...register('sedan')} />
                     </div>
                     <div className='input-container row'>
@@ -136,7 +157,7 @@ const Booking = () => {
                         <input 
                             type="checkbox" 
                             id="van" 
-                            name="car_van"
+                            name="van"
                             {...register('van')}  />
                     </div>
                     <div className='form-subtitle'>
@@ -146,13 +167,13 @@ const Booking = () => {
                         <label htmlFor="message">Message :</label>
                         <textarea 
                             id="message" 
-                            name="user_message"
+                            name="message"
                             placeholder="Vous souhaitez un devis gratuit ou voulez nous poser une question particulière ? N'hésitez pas à nous faire parvenir toute demande."
                             {...register('message')} >
                         </textarea>
                     </div>
                     <div className="btn-container">
-                        <button>Envoyer !</button>
+                        <input type="submit" value="Envoyer !" />
                     </div>
                 </form>
             </div>
