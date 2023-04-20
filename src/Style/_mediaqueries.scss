@@ -41,20 +41,35 @@
         }   
     }
     main {
-
+        // About tablettes
         .about-ctr {
             .about-main {
                 .content {
                     .banner {
-                        width: 90%;
+                        width: 70%;
 
-                        // p {
-                        //     width: 70%;
-                        // }
+                        p {
+                            width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+        .services-ctr {
+            .services-main {
+                .content {
+                    padding-left: 5%;
+                    
+                    .banner {
+                        width: 70%;
+
+                        p {
+                            width: 90%;
+                        }
                     }
                 }
             }
         }
     }
-    // About tablettes
+    
 }

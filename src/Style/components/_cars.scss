@@ -98,6 +98,7 @@
             .car-name-banner {
                 height: 100%;
                 width: 50%;
+                min-width: 200px;
                 background-color: #C3C3C3;
                 box-shadow: inset 0px 15px 0px 0px $color_secondary;
 
@@ -112,6 +113,7 @@
             .car-info-banner {
                 height: 100%;
                 width: 25%;
+                min-width: 200px;
                 background-color: $color_secondary;
                 background-image: -webkit-linear-gradient(45deg,
                                         rgba(255, 255, 255, .2) 25%,

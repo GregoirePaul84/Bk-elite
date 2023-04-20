@@ -12,7 +12,7 @@
             width: 100%;
             position: absolute;
             z-index: -1;
-            top: 0;
+            top: 1px;
             left: 0;
             overflow: hidden;
 
@@ -62,7 +62,7 @@
         }
 
         .content {
-            height: calc(100% - 65px);
+            height: calc(100% - 64px);
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -71,15 +71,15 @@
 
             .main-banner {
                 height: 90%;
-                width: 60%;
-                min-width: 370px;
+                width: 50%;
+                min-width: 490px;
                 background-color: rgba(52, 46, 44, 0.85);
                 padding: 4% 3%;
                 transform: scaleY(0);
                 transform-origin: bottom;
 
                 p {
-                    font-size: 1.4em;
+                    font-size: 1.3em;
                     line-height: 30px;
                     margin-bottom: 17px;
                     opacity: 0;
@@ -101,7 +101,7 @@
                     }
     
                     li {
-                        font-size: 1.4em;
+                        font-size: 1.3em;
                         width: calc(100% - 30px);
                         padding-left: 10px;
     
@@ -117,8 +117,8 @@
                     // position: relative;
 
                     li:not(#extras-detailed) {
-                        height: 125px;
-                        width: 125px;
+                        height: 115px;
+                        width: 115px;
                         text-align: center;
                         color: $color_secondary;
                         background-color: $color_primary;
@@ -134,8 +134,7 @@
 
                         svg {
                             width: auto;
-                            position: relative;
-                            bottom: 4px;
+                            margin-bottom: 7px;
                         }
 
                         &:hover {
