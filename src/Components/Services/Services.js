@@ -12,37 +12,26 @@ const servicesArray = [
         title : 'Taxi driver',
         p1 : <p dangerouslySetInnerHTML={{__html: 'Vous avez besoin d\'un moyen de transport rapide et fiable pour vos déplacements en ville? Notre service driver vous offre une solution pratique et économique pour tous vos trajets.'}} />,
         p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs professionnels et expérimentés vous conduiront à votre destination en toute sécurité, avec des véhicules modernes et bien entretenus.'}} />,
-        // li1 : <li dangerouslySetInnerHTML={{__html: 'Nous vous offrons un service de <span class=colored>rafraîchissement</span> ainsi que de <span class=colored>collations</span> à bord.'}} />,
-        // li2 : <li dangerouslySetInnerHTML={{__html: 'Vous entamerez votre voyage de manière <span class=colored>confortable et détendue.</span>'}} />
     },
     {
         title : 'Transfert aéroport',
         p1 : <p dangerouslySetInnerHTML={{__html: 'Vous prenez l\'avion pour les affaires ou pour le tourisme ? Nous savons que voyager peut être <b>éprouvant</b>.'}} />,
         p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs expérimentés vous accueillent dès votre arrivée à l\'aéroport et vous accompagnent jusqu\'à votre destination finale en toute sécurité et confort. Nos véhicules haut-de-gamme garantissent un trajet agréable et relaxant, pour que vous puissiez vous détendre et vous concentrer sur vos affaires ou votre voyage.'}} />,
-        // li1 : <li dangerouslySetInnerHTML={{__html: 'Nous vous offrons un service de <span class=colored>rafraîchissement</span> ainsi que de <span class=colored>collations</span> à bord.'}} />,
-        // li2 : <li dangerouslySetInnerHTML={{__html: 'Vous entamerez votre voyage de manière <span class=colored>confortable et détendue.</span>'}} />
     },
     {
         title : 'Longues distances',
         p1 : <p dangerouslySetInnerHTML={{__html: 'Vous souhaitez  entreprendre un long voyage sans stress et avec une <span class=colored>expérience de première classe ?</span>'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nous prendrons en compte tous les détails pour rendre votre transport aussi <span class=colored>confortable que possible.</span>'}} />,
-        // li1 : <li dangerouslySetInnerHTML={{__html: 'Nous vous offrons un service de <span class=colored>rafraîchissement</span> ainsi que de <span class=colored>collations</span> à bord.'}} />,
-        // li2 : <li dangerouslySetInnerHTML={{__html: 'Vous entamerez votre voyage de manière <span class=colored>confortable et détendue.</span>'}} />
+        p2 : <p dangerouslySetInnerHTML={{__html: ' Que vous ayez besoin d\'un transport pour une réunion d\'affaires dans une autre ville ou d\'un voyage de plusieurs heures pour vous rendre à une destination spéciale, nos chauffeurs expérimentés sont à votre disposition pour vous accompagner tout au long de votre trajet.'}} />,
     },
     {
         title : 'Événements',
         p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Vous préparez votre mariage</span> et vous cherchez un moyen de transport élégant et raffiné pour votre grand jour? Notre <strong>service de chauffeur privé VTC</strong> vous offre des options sur mesure pour rendre votre <span class=colored>journée inoubliable.</span>'}} />,
         p2 : <p dangerouslySetInnerHTML={{__html: 'Nous proposons des véhicules décorés selon vos goûts et vos envies, avec des <strong>chauffeurs professionnels et expérimentés</strong> pour vous conduire en toute sécurité.'}} />,
-        // li1 : <li dangerouslySetInnerHTML={{__html: 'Nous nous adaptons à vos envies et mettons à votre disposition des services complémentaires pour répondre à vos besoins.'}} />,
-        // li2 : <li dangerouslySetInnerHTML={{__html: 'Contactez-nous dès maintenant pour en savoir plus sur nos offres et réserver votre véhicule de mariage!'}} />
     },
     {
         title : 'Extras',
-        // Vous voyagez avec des bagages encombrants  ou coûteux et vous cherchez un moyen de transport pratique, confortable et de confiance. Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements. Nous proposons des services de bagagiste pour vous aider à transporter vos valises et vos sacs en toute sécurité. Nos chauffeurs professionnels et expérimentés prendront soin de vos affaires et vous conduiront à votre destination en toute sérénité. Réservez dès maintenant votre trajet avec service de bagagiste et laissez-nous prendre soin de vous!
         p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <strong>Bk-Elite</strong>, notre priorité est de donner la meilleure expérience possible à notre clientèle.'}} />,
         p2 : <p dangerouslySetInnerHTML={{__html: 'Vous voyagez avec des bagages encombrants ou coûteux, vous souhaitez faire confiance à notre connaissance de la région pour faire du tourisme, ou plus encore ?  Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements.'}} />,
-        // li1 : <li className='extras' dangerouslySetInnerHTML={{__html: 'Service bagagerie'}} />,
-        // li2 : <li className='extras' dangerouslySetInnerHTML={{__html: 'Vous avez besoin de transporter un excédent de bagages ? Nous mettons à votre disposition un van pour transporter tout objets volumineux.'}} />
     }
 ];
 
@@ -453,10 +442,10 @@ const Services = ({scrollY, navigate}) => {
                         <ul className="extras">
                             {(servicesCtg === 0) ? 
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'luggage', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
+                                    <li onClick={() => setExtraShown({type: 'ponctual', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
 
-                                        {(extraShown.isShown && extraShown.type === 'luggage') ? 
+                                        {(extraShown.isShown && extraShown.type === 'ponctual') ? 
                                             <Extras index={0}/>
                                             : null
                                         }
@@ -468,9 +457,9 @@ const Services = ({scrollY, navigate}) => {
                                         Chauffeur <br />
                                         ponctuel
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
-                                        {(extraShown.isShown && extraShown.type === 'tourism') ? 
+                                    <li onClick={() => setExtraShown({type: 'allDay', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'allDay') ? 'extend' : null} >
+                                        {(extraShown.isShown && extraShown.type === 'allDay') ? 
                                             <Extras index={1}/>
                                             : null
                                         }
@@ -481,9 +470,9 @@ const Services = ({scrollY, navigate}) => {
                                         À toute <br />
                                         heure
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
-                                        {(extraShown.isShown && extraShown.type === 'provision') ? 
+                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
+                                        {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras index={2}/>
                                             : null
                                         }
@@ -504,10 +493,10 @@ const Services = ({scrollY, navigate}) => {
                                 </>
                                 : (servicesCtg === 1) ?
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'luggage', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
+                                    <li onClick={() => setExtraShown({type: 'ponctual', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
 
-                                        {(extraShown.isShown && extraShown.type === 'luggage') ? 
+                                        {(extraShown.isShown && extraShown.type === 'ponctual') ? 
                                             <Extras index={0}/>
                                             : null
                                         }
@@ -519,10 +508,10 @@ const Services = ({scrollY, navigate}) => {
                                         Chauffeur <br />
                                         ponctuel
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
-                                        {(extraShown.isShown && extraShown.type === 'tourism') ? 
-                                            <Extras index={1}/>
+                                    <li onClick={() => setExtraShown({type: 'delay', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'delay') ? 'extend' : null} >
+                                        {(extraShown.isShown && extraShown.type === 'delay') ? 
+                                            <Extras index={3}/>
                                             : null
                                         }
                                         <svg width="22" height="32" viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -533,9 +522,9 @@ const Services = ({scrollY, navigate}) => {
                                         Attente en cas <br />
                                         de vol retardé
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
-                                        {(extraShown.isShown && extraShown.type === 'provision') ? 
+                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
+                                        {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras index={2}/>
                                             : null
                                         }
@@ -556,11 +545,11 @@ const Services = ({scrollY, navigate}) => {
                                 </>
                                 : (servicesCtg === 2) ?
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'luggage', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
+                                    <li onClick={() => setExtraShown({type: 'music', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'music') ? 'extend' : null}>
 
-                                        {(extraShown.isShown && extraShown.type === 'luggage') ? 
-                                            <Extras index={0}/>
+                                        {(extraShown.isShown && extraShown.type === 'music') ? 
+                                            <Extras index={4}/>
                                             : null
                                         }
                                         <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -570,10 +559,10 @@ const Services = ({scrollY, navigate}) => {
                                         Service <br />
                                         personnalisé
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
-                                        {(extraShown.isShown && extraShown.type === 'tourism') ? 
-                                            <Extras index={1}/>
+                                    <li onClick={() => setExtraShown({type: 'drinks', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'drinks') ? 'extend' : null} >
+                                        {(extraShown.isShown && extraShown.type === 'drinks') ? 
+                                            <Extras index={5}/>
                                             : null
                                         }
                                         <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -584,9 +573,9 @@ const Services = ({scrollY, navigate}) => {
                                         Boissons et <br />
                                         collations
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
-                                        {(extraShown.isShown && extraShown.type === 'provision') ? 
+                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
+                                        {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras index={2}/>
                                             : null
                                         }
@@ -607,11 +596,11 @@ const Services = ({scrollY, navigate}) => {
                                 </>
                                 : (servicesCtg === 3) ?
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'luggage', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
+                                    <li onClick={() => setExtraShown({type: 'flowers', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'flowers') ? 'extend' : null}>
 
-                                        {(extraShown.isShown && extraShown.type === 'luggage') ? 
-                                            <Extras index={0}/>
+                                        {(extraShown.isShown && extraShown.type === 'flowers') ? 
+                                            <Extras index={6}/>
                                             : null
                                         }
                                         <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -626,10 +615,10 @@ const Services = ({scrollY, navigate}) => {
                                         Décoration <br />
                                         florale
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
-                                        {(extraShown.isShown && extraShown.type === 'tourism') ? 
-                                            <Extras index={1}/>
+                                    <li onClick={() => setExtraShown({type: 'elegance', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'elegance') ? 'extend' : null} >
+                                        {(extraShown.isShown && extraShown.type === 'elegance') ? 
+                                            <Extras index={7}/>
                                             : null
                                         }
                                         <svg width="21" height="32" viewBox="0 0 21 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -641,9 +630,9 @@ const Services = ({scrollY, navigate}) => {
                                         Chauffeur <br />
                                         élégant
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
-                                        {(extraShown.isShown && extraShown.type === 'provision') ? 
+                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
+                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
+                                        {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras index={2}/>
                                             : null
                                         }
@@ -668,7 +657,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'luggage') ? 
-                                            <Extras index={0}/>
+                                            <Extras index={8}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -687,7 +676,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'tourism') ? 
-                                            <Extras index={1}/>
+                                            <Extras index={9}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -702,7 +691,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'provision') ? 
-                                            <Extras index={2}/>
+                                            <Extras index={10}/>
                                             : null
                                         }
                                         <svg width="24" height="30" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">
