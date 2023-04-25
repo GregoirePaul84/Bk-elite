@@ -67,9 +67,22 @@
                             width: 90%;
                         }
                     }
+
+                    .book-link {
+                        width: 10px;
+                        min-width: auto;
+
+                        div {
+                            display: none;
+                        }
+                    }
                 }
             }
         }
     }
-    
+}
+
+/* Petites tablettes (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 768px) {
+
 }

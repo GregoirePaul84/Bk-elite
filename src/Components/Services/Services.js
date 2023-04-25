@@ -16,7 +16,7 @@ const servicesArray = [
     {
         title : 'Transfert aéroport',
         p1 : <p dangerouslySetInnerHTML={{__html: 'Vous prenez l\'avion pour les affaires ou pour le tourisme ? Nous savons que voyager peut être <b>éprouvant</b>.'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs expérimentés vous accueillent dès votre arrivée à l\'aéroport et vous accompagnent jusqu\'à votre destination finale en toute sécurité et confort. Nos véhicules haut-de-gamme garantissent un trajet agréable et relaxant, pour que vous puissiez vous détendre et vous concentrer sur vos affaires ou votre voyage.'}} />,
+        p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs vous accueillent dès votre arrivée à l\'aéroport et vous accompagnent jusqu\'à votre destination finale en toute sécurité et confort. Nous vous garantissons un trajet agréable et relaxant, pour que vous puissiez vous détendre et vous concentrer sur vos affaires ou votre voyage.'}} />,
     },
     {
         title : 'Longues distances',
