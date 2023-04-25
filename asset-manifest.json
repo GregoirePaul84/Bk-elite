@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/Bk-elite/static/css/main.4d17785d.css",
-    "main.js": "/Bk-elite/static/js/main.7aa10cd5.js",
+    "main.css": "/Bk-elite/static/css/main.d0781064.css",
+    "main.js": "/Bk-elite/static/js/main.7a96e36b.js",
     "static/media/night_city_short.mp4": "/Bk-elite/static/media/night_city_short.59b69627588a12d8f051.mp4",
     "static/media/taxi.jpg": "/Bk-elite/static/media/taxi.4da2340855dc4de0701a.jpg",
-    "static/media/teslamodel3.png": "/Bk-elite/static/media/teslamodel3.89edbbb57a8a62b22134.png",
+    "static/media/teslamodel3.png": "/Bk-elite/static/media/teslamodel3.fa9818ef8b65e21e20ed.png",
+    "static/media/mercedes.png": "/Bk-elite/static/media/mercedes.db42c06e74d5d9d002d8.png",
     "static/media/car_above_darked.jpg": "/Bk-elite/static/media/car_above_darked.681bc89b6b5129678c20.jpg",
-    "static/media/mercedes.png": "/Bk-elite/static/media/mercedes.3da9aca105247f4fa849.png",
     "static/media/pexels-claudio-vincenti-4106624.jpg": "/Bk-elite/static/media/pexels-claudio-vincenti-4106624.52906f4f1e0d67879479.jpg",
     "static/media/office.jpg": "/Bk-elite/static/media/office.d7c8bc2059bae5c63dcc.jpg",
     "static/media/bridge.jpg": "/Bk-elite/static/media/bridge.1ea52192de150bebb77e.jpg",
@@ -23,11 +23,11 @@
     "static/media/person.svg": "/Bk-elite/static/media/person.93038e2613644d1f79b3.svg",
     "static/media/tablet.svg": "/Bk-elite/static/media/tablet.7a36c7d09af0e57a803b.svg",
     "static/media/drop.svg": "/Bk-elite/static/media/drop.c96eac074659fb9173e0.svg",
-    "main.4d17785d.css.map": "/Bk-elite/static/css/main.4d17785d.css.map",
-    "main.7aa10cd5.js.map": "/Bk-elite/static/js/main.7aa10cd5.js.map"
+    "main.d0781064.css.map": "/Bk-elite/static/css/main.d0781064.css.map",
+    "main.7a96e36b.js.map": "/Bk-elite/static/js/main.7a96e36b.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d17785d.css",
-    "static/js/main.7aa10cd5.js"
+    "static/css/main.d0781064.css",
+    "static/js/main.7a96e36b.js"
   ]
 }
