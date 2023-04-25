@@ -85,7 +85,7 @@
                     opacity: 0;
 
                     &:nth-child(2) {
-                        margin-bottom: 40px;
+                        margin-bottom: 30px;
                     }
                 }
 
@@ -155,7 +155,6 @@
                 min-width: 210px;
                 padding: 0 15px;
                 background-color: $color_secondary;
-                // background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
                 align-self: center;
                 position: relative;
                 bottom: 75px;

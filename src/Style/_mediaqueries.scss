@@ -69,11 +69,18 @@
                     }
 
                     .book-link {
-                        width: 10px;
+                        height: auto;
+                        width: 100px;
                         min-width: auto;
+                        flex-direction: column;
+                        padding: 15px 7px;
 
-                        div {
-                            display: none;
+                        svg {
+                            margin: 0;
+                        }
+
+                        p {
+                            font-size: 1.3em;
                         }
                     }
                 }
