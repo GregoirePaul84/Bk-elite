@@ -61,7 +61,7 @@
             }
         }
 
-        .content {
+        .about-content {
             height: calc(100% - 65px);
             width: 100%;
             display: flex;
@@ -72,7 +72,10 @@
                 width: 85%;
                 font-size: 1.25em;
                 line-height: 30px;
-                margin-bottom: 10px;
+
+                &:nth-child(1) {
+                    margin-bottom: 10px;
+                }
             }
 
             ul {
@@ -114,7 +117,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-end;
-                box-shadow: inset -15px 0 $color_tertiary;
+                box-shadow: inset -13px 0 $color_tertiary;
                 transform-origin: left;
             
                 p {
@@ -127,7 +130,7 @@
             .right-banner {
                 background-color: rgba(128, 114, 40, .65);
                 align-self: flex-end;
-                box-shadow: inset 15px 0 $color_primary;
+                box-shadow: inset 13px 0 $color_primary;
                 transform-origin: right;
 
                 p {

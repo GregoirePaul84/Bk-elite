@@ -67,7 +67,7 @@ const Cars = () => {
 
     function displayCars(index) {
         const slider = document.querySelector('.img-ctn .cars-slider');
-        const content = document.querySelector('.cars-ctr .content');
+        const content = document.querySelector('.cars-ctr .cars-content');
         // const banners = document.querySelectorAll('.left-banner, .right-banner');
         // const textP = document.querySelectorAll('.about-ctr .content p');
         // const list = document.querySelectorAll('.about-ctr .content ul');
@@ -192,7 +192,7 @@ const Cars = () => {
                 {/* <div className="cars-static-message">
                     <p>Notre <strong>service de chauffeur privé VTC</strong> vous offre une sélection de véhicules haut-de-gamme pour répondre à tous vos besoins. Nous proposons des modèles tels que la <span className="colored">Tesla Model 3</span>, la <span className="colored">Mercedes Classe V</span> et la <span className="colored">Berline Classe E</span>, tous équipés pour votre confort et votre sécurité.</p>
                 </div> */}
-                <div className="content">
+                <div className="cars-content">
                     <div className="left-info" onClick={() => setShowInfo(!showInfo)}>
                         <div className="scaled-color"></div>
                         <svg width="16" height="32" viewBox="0 0 16 32" fill="none" xmlns="http://www.w3.org/2000/svg">

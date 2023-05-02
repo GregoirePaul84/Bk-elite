@@ -7,7 +7,7 @@ import driverImg from '../../Medias/Image/Main/kamel.jpg';
 const aboutArray = [
     {
         title : 'La société',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'La société <span class=colored>Bk-Elite</span> est un prestataire de <strong>service de transport privé</strong>, basée en région Provence-Alpes-Côte d\'Azur.'}} />,
+        p1 : <p dangerouslySetInnerHTML={{__html: 'La société <span class=colored>Bk-Elite</span> est un prestataire de <strong>service de transport privé</strong>, basée en région <strong>Provence-Alpes-Côte d\'Azur</strong>.'}} />,
         p2 : 'Nous proposons nos services hauts-de-gamme à une clientèle exigeante, soucieuse du confort et de l\'excellence.',
         p3 : <p dangerouslySetInnerHTML={{__html: 'Société spécialisée dans le transport de personnes, nous vous proposons de nombreuses prestations, du <strong>service de taxi</strong> classique à la <strong>location de chauffeurs</strong> pour vos événements exceptionnels.'}} />
     },
@@ -47,10 +47,10 @@ const About = ({scrollY, width}) => {
 
     function displayAbout(index) {
         const slider = document.querySelector('.img-ctn .about-slider');
-        const content = document.querySelector('.about-ctr .content');
+        const content = document.querySelector('.about-ctr .about-content');
         const banners = document.querySelectorAll('.left-banner, .right-banner');
-        const textP = document.querySelectorAll('.about-ctr .content p');
-        const list = document.querySelectorAll('.about-ctr .content ul');
+        const textP = document.querySelectorAll('.about-ctr .about-content p');
+        const list = document.querySelectorAll('.about-ctr .about-content ul');
 
         if(index === 'noSlide') {
             banners.forEach((banner) => {
@@ -196,7 +196,7 @@ const About = ({scrollY, width}) => {
     }, [aboutSlide])
 
     useEffect(() => {
-        const textP = document.querySelectorAll('.about-ctr .content p');
+        const textP = document.querySelectorAll('.about-ctr .about-content p');
         const maxValue = 500;
         console.log(width);
     }, [width]);
@@ -241,7 +241,7 @@ const About = ({scrollY, width}) => {
                     : null
                     }                   
                 </div>
-                <div className="content">
+                <div className="about-content">
                     <div className="banner left-banner">
                         {aboutArray[aboutCtg].p1}
                         <p>

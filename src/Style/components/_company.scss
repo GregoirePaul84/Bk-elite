@@ -61,11 +61,11 @@
                 background-color: $transparent_black;
                 margin-left: 10%;
                 box-shadow: inset 10px 0 $color_secondary;
-                padding: 1.5% 2.5%;
+                padding: 20px 30px;
         
                 .card-title {
                     height: auto;
-                    width: 60ch;
+                    width: 100%;
                     margin-bottom: 20px;
                     white-space: nowrap;
                     overflow: hidden;
@@ -78,8 +78,8 @@
                 }
         
                 .card-info {
-                    height: 50%;
                     width: 100%;
+                    margin-bottom: 20px;
         
                     p {
                         font-size: 1.6em;

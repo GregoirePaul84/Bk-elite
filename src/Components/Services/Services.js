@@ -353,8 +353,8 @@ const Services = ({scrollY, navigate}) => {
     }, [isHover])
 
     useEffect(() => {
-        textPRef.current = Array.from(document.querySelectorAll('.services-ctr .content p'));
-        listRef.current = Array.from(document.querySelectorAll('.services-ctr .content ul'));
+        textPRef.current = Array.from(document.querySelectorAll('.services-ctr .services-content p'));
+        listRef.current = Array.from(document.querySelectorAll('.services-ctr .services-content ul'));
     }, [])
 
     useEffect(() => {
@@ -435,7 +435,7 @@ const Services = ({scrollY, navigate}) => {
 
                     }                   
                 </div>
-                <div className="content" ref={contentRef}>
+                <div className="services-content" ref={contentRef}>
                     <div className="main-banner" ref={bannerRef}>
                         {servicesArray[servicesCtg].p1}
                         {servicesArray[servicesCtg].p2}
@@ -710,6 +710,7 @@ const Services = ({scrollY, navigate}) => {
                     </div>
                     <div 
                         className="book-link" 
+                        id='book-link'
                         ref={bookLinkRef} 
                         onMouseEnter={() => setIsHover(true)} 
                         onMouseLeave={() => setIsHover(false)}
