@@ -65,7 +65,7 @@
         
                 .card-title {
                     height: auto;
-                    width: 100%;
+                    width: 60ch;
                     margin-bottom: 20px;
                     white-space: nowrap;
                     overflow: hidden;
@@ -121,7 +121,7 @@
       
 @keyframes blink {
     50% {
-      border-color: transparent
+      border-color: transparent;
     }
 }
 

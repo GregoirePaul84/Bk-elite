@@ -18,7 +18,7 @@ const carsArray = [
             },
             {
                 class: 'drinks',
-                txt: "Rafraîchissements"
+                txt: "Boissons"
             },
             {
                 class: 'video',
@@ -45,7 +45,7 @@ const carsArray = [
             },
             {
                 class: 'drinks',
-                txt: "Rafraîchissements"
+                txt: "Boissons"
             },
             {
                 class: 'video',

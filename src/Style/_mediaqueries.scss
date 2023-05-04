@@ -196,19 +196,36 @@
             .company-info-ctr {
                 #company-slider {
                     .company-ctn {
+                        .company-background {
+                            filter: brightness(0.75);
+                        }
                         .company-foreground{
                             justify-content: center;
 
                             .company-card {
-                                width: 70%;
+                                width: 75%;
                                 min-width: auto;
                                 height: auto;
                                 min-height: auto;
                                 margin-left: 0;
+                                box-shadow: none;
+                                background: none;
 
                                 .card-title {
+                                    width: 100%;
+                                    margin-bottom: 40px;
+
                                     h2 {
                                         font-size: 2.5em;
+                                    }
+                                }
+
+                                .card-info {
+                                    margin-bottom: 45px;
+
+                                    p {
+                                        font-size: 1.5em;
+                                        // padding-right: 15%;
                                     }
                                 }
                             }
@@ -221,15 +238,166 @@
                 }
             }
             .about-ctr {
+                height: auto;
+                scroll-margin-top: 50px;
+
                 .about-main{
+
+                    .img-ctn {
+                        img {
+                            filter: brightness(0.75);
+                        }
+                    }
+
+                    .content-title {
+                        margin-bottom: 40px;
+                    }
+
                     .about-content{
                         .banner {
-                            width: 90%;
+                            width: 100%;
                             max-height: none;
+                            margin-bottom: 40px;
+                            box-shadow: none;
+                        }
+
+                        .right-banner {
+                            padding: 20px 0px 20px 100px;
+                            flex-direction: column;
+                            // min-height: 248px;
+
+                            ul {
+                                flex-direction: row;
+                                justify-content: space-evenly;
+                                padding-left: 0;
+
+                                li {
+                                    font-size: 1.15em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .services-ctr {
+                height: auto;
+                min-height: 100vh;
+                scroll-margin-top: 50px;
+
+                .services-main{
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .content-title {
+                        margin: 40px 0 20px 0;
+                    }
+
+                    .services-content {
+                        height: calc(100% - 125px);
+                        width: 100%;
+                        padding: 0;
+                        justify-content: flex-end;
+
+                        .main-banner {
+                            min-height: 500px;
+                            width: calc(100% - 140px);
+                            min-width: auto;
+                            margin: 0 20px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+
+                            .extras {
+                                flex-wrap: wrap;
+                                li {
+                                    height: 100px;
+                                    width: 100px;
+                                    margin: 0 5px;
+                                }
+                            }
+                        }
+
+                        #book-link {
+                            display: none;
+                        }  
+                    }
+                }
+            }
+
+            .cars-ctr {
+                height: auto;
+                min-height: 100vh;
+                scroll-margin-top: 50px;
+
+                .img-ctn {
+                    .cars-slider {
+                        align-items: flex-end;
+
+                        img {
+                            max-height: 90%;
+                            object-position: 40%;
+
+                            &:nth-child(1) {
+                                max-height: 80%;
+                                object-position: 20% 50px;
+                            }
+
+                            &:nth-child(2) {
+                                max-height: 70%;
+                                object-position: 20% 10px;
+                            }
+                        }
+                    }
+                }
+
+                .cars-main {
+                    min-height: 100vh;
+
+                    .content-title {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        height: 175px;
+                        margin-bottom: 20px;
+
+                        .car-type {
+                            margin-bottom: 20px;
+                        }
+                    }
+
+                    .cars-content {
+                        height: 543px;
+
+                        .left-info {
+                            outline: 3px solid #040613;
+                        }
+
+                        .car-name-banner {
+                            width: 40%;
+                            height: 100%;
+                            min-width: 175px;
+                        }
+
+                        .car-info-banner {
+                            width: 35%;
+                            height: 100%;
+                            min-width: 175px;
+
+                            ul {
+                                padding: 12% 2% 12% 15%;
+                            }
                         }
                     }
                 }
             }
         }
     }
+}
+
+/* Mobiles (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 480px) {
+
 }

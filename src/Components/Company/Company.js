@@ -25,11 +25,11 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         setSlideActive(false);
         console.log('slide coupé');
 
-        timeoutRef.current = setTimeout(() => {
-            console.log('slide réactivé');
-            setSlideActive(true);
-            setHandleSlide({from: slide1, to: slide2});
-        }, 9000)
+        // timeoutRef.current = setTimeout(() => {
+        //     console.log('slide réactivé');
+        //     setSlideActive(true);
+        //     setHandleSlide({from: slide1, to: slide2});
+        // }, 9000)
     }
    
     useEffect(() => {
