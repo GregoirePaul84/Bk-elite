@@ -1,8 +1,19 @@
+.li1 {
+    left: 20px;
+}
+
+.li2 {
+    left: -90px;
+}
+
+.li3 {
+    left: -240px;
+}
+
 #extras-detailed {
     width: 325px;
     position: absolute;
-    bottom: 115px;
-    left: 60px;
+    bottom: 125px;
     background-color: $color_primary;
     padding: 25px;
     text-align: left;

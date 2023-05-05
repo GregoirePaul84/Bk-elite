@@ -195,12 +195,6 @@ const About = ({scrollY, width}) => {
            
     }, [aboutSlide])
 
-    useEffect(() => {
-        const textP = document.querySelectorAll('.about-ctr .about-content p');
-        const maxValue = 500;
-        console.log(width);
-    }, [width]);
-
 
     useEffect(() => {
     

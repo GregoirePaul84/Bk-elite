@@ -6,6 +6,9 @@
         width: 80%;
         padding-top: 22vh;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .img-ctn {
             height: 100%;
@@ -62,7 +65,7 @@
         }
 
         .services-content {
-            height: calc(100% - 125px);
+            height: calc(100% - 65px);
             width: 100%;
             display: flex;
             justify-content: space-between;

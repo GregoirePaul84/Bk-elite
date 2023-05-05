@@ -47,9 +47,9 @@ const extrasArray = [
     }
 ]
 
-const Extras = ({index}) => {
+const Extras = ({index, liNb}) => {
     return (
-        <div id='extras-detailed'>
+        <div id='extras-detailed' className={liNb}>
             <div className="detailed-title">
                 <h4>{extrasArray[index].title}</h4>
             </div>

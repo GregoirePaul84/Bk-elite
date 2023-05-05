@@ -446,7 +446,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'ponctual') ? 
-                                            <Extras index={0}/>
+                                            <Extras index={0} liNb={"li1"} />
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -460,7 +460,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'allDay', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'allDay') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'allDay') ? 
-                                            <Extras index={1}/>
+                                            <Extras index={1} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -473,7 +473,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2}/>
+                                            <Extras index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -21,15 +21,15 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
 
     function resetSlide(slide1 , slide2) {
         clearInterval(intervalRef.current);
-        clearTimeout(timeoutRef.current)
+        clearTimeout(timeoutRef.current);
         setSlideActive(false);
         console.log('slide coupé');
 
-        // timeoutRef.current = setTimeout(() => {
-        //     console.log('slide réactivé');
-        //     setSlideActive(true);
-        //     setHandleSlide({from: slide1, to: slide2});
-        // }, 9000)
+        timeoutRef.current = setTimeout(() => {
+            console.log('slide réactivé');
+            setSlideActive(true);
+            setHandleSlide({from: slide1, to: slide2});
+        }, 9000)
     }
    
     useEffect(() => {
@@ -114,23 +114,33 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
     }, [handleSlide]);
 
     useEffect(() => {
-        const h2Ctn = document.querySelectorAll('.card-title');
+        const h2Ctn = document.querySelectorAll('.card-title h2');
+
+        function typeWriter(el) {
+            const textArray = el.innerHTML.split('');
+            el.innerHTML = '';
+            textArray.forEach((letter, i) =>
+                setTimeout(() => (el.innerHTML += letter), 60 * i)
+            );
+        }
+
+        console.log(handleSlide);
 
         if(isEntered && handleSlide.from === undefined && handleSlide.to === 'slide1') {
             setTimeout(() => {
-                h2Ctn[0].style.animation = 'typing 2s steps(32), blink 0.5s step-end infinite alternate';
+                typeWriter(h2Ctn[0]);
                 h2Ctn[0].style.visibility = 'visible';
-            }, 3100)
+                h2Ctn[1].style.visibility = 'hidden';
+                h2Ctn[2].style.visibility = 'hidden';
+            }, 1500)
         }
 
         if(isEntered && handleSlide.from !== undefined && handleSlide.to === 'slide1') {
 
             setTimeout(() => {
-                h2Ctn[0].style.animation = 'typing 2s steps(32), blink 0.5s step-end infinite alternate';
+                typeWriter(h2Ctn[0]);
                 h2Ctn[0].style.visibility = 'visible';
-                h2Ctn[1].style.animation = 'none';
                 h2Ctn[1].style.visibility = 'hidden';
-                h2Ctn[2].style.animation = 'none';
                 h2Ctn[2].style.visibility = 'hidden';
             }, 1500) 
         }
@@ -138,11 +148,9 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         if(isEntered && handleSlide.to === 'slide2') {
 
             setTimeout(() => {
-                h2Ctn[0].style.animation = 'none';
+                typeWriter(h2Ctn[1]);
                 h2Ctn[0].style.visibility = 'hidden';
-                h2Ctn[1].style.animation = 'typing 2s steps(30), blink 0.5s step-end infinite alternate';
                 h2Ctn[1].style.visibility = 'visible';
-                h2Ctn[2].style.animation = 'none';
                 h2Ctn[2].style.visibility = 'hidden';
             }, 1500)        
         }
@@ -150,11 +158,9 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         if(isEntered && handleSlide.to === 'slide3') {
 
             setTimeout(() => {
-                h2Ctn[0].style.animation = 'none';
+                typeWriter(h2Ctn[2]);
                 h2Ctn[0].style.visibility = 'hidden';
-                h2Ctn[1].style.animation = 'none';
                 h2Ctn[1].style.visibility = 'hidden';
-                h2Ctn[2].style.animation = 'typing 2s steps(27), blink 0.5s step-end infinite alternate';
                 h2Ctn[2].style.visibility = 'visible';
             }, 1500)        
         }
@@ -170,7 +176,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
             setSlideActive(true);
         }
 
-        if(isEntered && slideIndex === 1) {
+        if(isEntered && slideIndex === 1 && handleSlide.from !== undefined) {
             setHandleSlide({from: 'slide3', to: 'slide1'});
         }
         if(isEntered && slideIndex === 2) {
@@ -180,11 +186,10 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
             setHandleSlide({from: 'slide2', to: 'slide3'});
         }
 
+    // eslint-disable-next-line
     }, [isEntered, slideIndex])
 
     useEffect(() => {
-        console.log("=== ETAT SLIDE ===");
-        console.log(slideActive);
 
         if(slideActive) {
             intervalRef.current = setInterval(function() { 
