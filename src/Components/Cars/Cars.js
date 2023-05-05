@@ -27,6 +27,10 @@ const carsArray = [
             {
                 class: 'magazines',
                 txt: "Magazines"
+            },
+            {
+                class: 'available-seats',
+                txt: "Jusqu'à 5 personnes"
             }
         ]
     }
@@ -54,6 +58,10 @@ const carsArray = [
             {
                 class: 'magazines',
                 txt: "Magazines"
+            },
+            {
+                class: 'available-seats',
+                txt: "Jusqu'à 6 personnes"
             }
         ]
     }
@@ -189,9 +197,6 @@ const Cars = () => {
                         <h4>Vous cherchez un moyen de transport confortable et élégant pour vos déplacements?</h4>                             
                     </div>
                 </div>
-                {/* <div className="cars-static-message">
-                    <p>Notre <strong>service de chauffeur privé VTC</strong> vous offre une sélection de véhicules haut-de-gamme pour répondre à tous vos besoins. Nous proposons des modèles tels que la <span className="colored">Tesla Model 3</span>, la <span className="colored">Mercedes Classe V</span> et la <span className="colored">Berline Classe E</span>, tous équipés pour votre confort et votre sécurité.</p>
-                </div> */}
                 <div className="cars-content">
                     <div className="left-info" onClick={() => setShowInfo(!showInfo)}>
                         <div className="scaled-color"></div>
