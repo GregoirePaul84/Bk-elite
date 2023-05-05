@@ -392,6 +392,21 @@
                 }
             }
         }
+
+        footer {
+            .footer-column {
+                .footer-content {
+                    li {
+                        flex-direction: column;
+
+                        svg {
+                            margin: 0 0 7px 0;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 
@@ -509,6 +524,8 @@
                         .main-banner {
                             width: calc(100% - 80px);
                             margin: 0;
+                            padding: 5%;
+
                             .extras {
                                 li {
                                     height: 90px;
@@ -656,12 +673,17 @@
                         padding: 0 5%;
                     }
 
+                    .static-info p {
+                        margin: 0;
+                    }
+
                     .form-container {
                         margin: 40px 0;
                         padding: 0 5% 0 0;
 
                         form {
                             outline: none;
+                            padding: 30px 5% 30px 10%;
 
                             .input-container {
                                 align-items: flex-start;
@@ -687,6 +709,28 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+
+            .footer-column {
+                width: 100%;
+            }
+
+            .legal-notice {
+                flex-direction: column;
+
+                p {
+                    margin-bottom: 25px;
+                    width: 100%;
+
+                    &:nth-child(1) {
+                        margin: 25px 0 25px 0;
                     }
                 }
             }
