@@ -173,6 +173,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
             document.getElementsByTagName('video')[0].pause();
         }
         else {
+            document.getElementsByTagName('video')[0].play();
             setSlideActive(true);
         }
 

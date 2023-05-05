@@ -46,6 +46,7 @@
             .about-ctr, .services-ctr, .cars-ctr, .booking-ctr {
                 flex-direction: row-reverse;
                 align-items: flex-end;
+                scroll-margin-top: 50px;
     
                 .about-main, .services-main, .cars-main {
                     height: 100%;
@@ -236,9 +237,12 @@
             .about-ctr {
                 height: auto;
                 min-height: 100vh;
-                scroll-margin-top: 50px;
 
                 .about-main{
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
 
                     .img-ctn {
                         img {
@@ -281,7 +285,6 @@
             .services-ctr {
                 height: auto;
                 min-height: 100vh;
-                scroll-margin-top: 50px;
 
                 .services-main{
                     min-height: 100vh;
@@ -328,7 +331,6 @@
             .cars-ctr {
                 height: auto;
                 min-height: 100vh;
-                scroll-margin-top: 50px;
 
                 .img-ctn {
                     .cars-slider {
@@ -397,137 +399,145 @@
 @media only screen and (max-device-width : 480px) {
     #root {
         main {
-            // .company-info-ctr {
-            //     #company-slider {
-            //         .company-ctn {
-            //             .company-background {
-            //                 filter: brightness(0.75);
-            //             }
-            //             .company-foreground{
-            //                 justify-content: center;
+            .company-info-ctr {
+                #company-slider {
+                    .company-ctn {
+                        .company-foreground{
+                            .company-card {
+                                padding: 0;
+                                .card-title {
+                                    height: 96px;
+                                    h2 {
+                                        font-size: 2.5em;
 
-            //                 .company-card {
-            //                     width: 70%;
-            //                     min-width: auto;
-            //                     height: auto;
-            //                     min-height: auto;
-            //                     margin-left: 0;
-            //                     box-shadow: none;
-            //                     background: none;
+                                        &::after {
+                                            height: 50px;
+                                        }
+                                    }
+                                }
 
-            //                     .card-title {
-            //                         width: 100%;
-            //                         margin-bottom: 40px;
-            //                         white-space: pre-wrap;
+                                .card-info p {
+                                    font-size: 1.5em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-            //                         h2 {
-            //                             text-align: center;
-            //                         }
-            //                     }
+            .about-ctr {
+                .about-main{
+                    .content-title {
+                        h3 {
+                            font-size: 2.5em;
+                            margin-right: 0;
+                        }
 
-            //                     .card-info {
-            //                         margin-bottom: 45px;
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
+                        svg {
+                            display: none;
+                        }
+                    }
 
-            //     .company-nav {
-            //         right: 0;
-            //     }
-            // }
-            // .about-ctr {
-            //     height: auto;
-            //     min-height: 100vh;
-            //     scroll-margin-top: 50px;
+                    .about-content{
+                        .banner {
+                            height: auto;
+                            min-height: 370px;
 
-            //     .about-main{
+                            &:nth-child(1) {
+                                padding: 20px 0px 20px 80px;
+                            }
+                        }
 
-            //         .img-ctn {
-            //             img {
-            //                 filter: brightness(0.75);
-            //             }
-            //         }
+                        .right-banner {
+                            padding: 20px 0px 20px 80px;
 
-            //         .content-title {
-            //             margin-bottom: 40px;
-            //         }
+                            ul {
+                                flex-wrap: wrap;
+                                li {
+                                    width: 33.33%;
+                                }
+                            }
 
-            //         .about-content{
-            //             .banner {
-            //                 height: 250px;
-            //                 width: 100%;
-            //                 max-height: none;
-            //                 margin-bottom: 40px;
-            //                 box-shadow: none;
-            //             }
+                            .value-type {
+                                width: 100%;
+                                padding: 0 10%;
+                            }
+                        }
+                    }
+                }
 
-            //             .right-banner {
-            //                 padding: 20px 0px 20px 100px;
-            //                 flex-direction: column;
-            //                 // min-height: 248px;
+                .about-nav {
+                    width: 80px;
 
-            //                 ul {
-            //                     flex-direction: row;
-            //                     justify-content: space-evenly;
-            //                     padding-left: 0;
+                    ul {
+                        li {
+                            font-size: 1.1em;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
 
-            //                     li {
-            //                         font-size: 1.15em;
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
+            .services-ctr {
+                .services-nav {
+                    width: 80px;
 
-            // .services-ctr {
-            //     height: auto;
-            //     min-height: 100vh;
-            //     scroll-margin-top: 50px;
+                    ul {
+                        li {
+                            font-size: 1.1em;
+                            padding: 0;
+                        }
+                    }
+                }
 
-            //     .services-main{
-            //         min-height: 100vh;
-            //         display: flex;
-            //         flex-direction: column;
-            //         justify-content: space-between;
+                .services-main{
+                    .content-title {
+                        height: auto;
+                        min-height: 65px;
 
-            //         .content-title {
-            //             margin: 40px 0 20px 0;
-            //         }
+                        h3 {
+                            font-size: 2.5em;
+                            margin-right: 0;
+                        }
 
-            //         .services-content {
-            //             height: calc(100% - 125px);
-            //             width: 100%;
-            //             padding: 0;
-            //             justify-content: flex-end;
+                        svg {
+                            display: none;
+                        }
+                    }
 
-            //             .main-banner {
-            //                 min-height: 500px;
-            //                 width: calc(100% - 140px);
-            //                 min-width: auto;
-            //                 margin: 0 20px;
-            //                 display: flex;
-            //                 flex-direction: column;
-            //                 justify-content: space-evenly;
+                    .services-content {
+                        .main-banner {
+                            width: calc(100% - 80px);
+                            margin: 0;
+                            .extras {
+                                li {
+                                    height: 90px;
+                                    font-size: 1.2em;
+                                    width: 90px;
 
-            //                 .extras {
-            //                     flex-wrap: wrap;
-            //                     li {
-            //                         height: 100px;
-            //                         width: 100px;
-            //                         margin: 0 5px;
-            //                     }
-            //                 }
-            //             }
+                                    #extras-detailed {
+                                        max-width: 230px;
+                                        left: -24px;
+                                        bottom: 100px;
 
-            //             #book-link {
-            //                 display: none;
-            //             }  
-            //         }
-            //     }
-            // }
+                                        .detailed-title {
+                                            margin-bottom: 15px;
+                                        }
+
+                                        .detailed-description p{
+                                            line-height: 25px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        #book-link {
+                            display: none;
+                        }  
+                    }
+                }
+            }
 
             .cars-ctr {
                 .cars-main {
@@ -535,41 +545,56 @@
                         .cars-slider {
                             img {
                                 &:nth-child(1) {
-                                    max-height: 68%;
+                                    max-height: 65%;
                                     object-position: 26% 0px;
                                 }
     
                                 &:nth-child(2) {
-                                    max-height: 66%;
-                                    object-position: 20% 0;
+                                    max-height: 68%;
+                                    object-position: 28% 0;
                                 }
                             }
                         }
                     }
     
-                    // .content-title {
-                    //     display: flex;
-                    //     flex-direction: column;
-                    //     align-items: flex-start;
-                    //     height: 175px;
-                    //     margin-bottom: 20px;
+                    .content-title {
+                        height: auto;
+                        min-height: 175px;
+                        padding: 0 0 0 100px;
 
-                    //     .car-type {
-                    //         margin-bottom: 20px;
-                    //     }
-                    // }
+                        h3 {
+                            font-size: 2.5em;
+                            margin-right: 0;
+                        }
+
+                        svg {
+                            display: none;
+                        }
+
+                        .cars-question {
+                            padding: 0 5%;
+
+                            h4 {
+                                font-size: 1.4em;
+                            }
+                        }
+                    }
 
                     .cars-content {
                         flex-direction: column-reverse;
-                        padding: 0 0 0 100px;
+                        padding: 0 0 0 80px;
 
                         .left-info {
                             top: 370px;
+
+                            .cars-info {
+                                max-width: 250px;
+                            }
                         }
 
                         .car-name-banner {
                             width: 70%;
-                            height: 75%;
+                            height: 80%;
                             align-self: center;
                         }
 
@@ -595,6 +620,70 @@
                                     width: 100%;
                                     flex-shrink: 0;
                                     margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .cars-nav {
+                    width: 80px;
+
+                    ul {
+                        li {
+                            font-size: 1.1em;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+            .booking-ctr {
+                .booking-nav {
+                    width: 80px;
+
+                    ul {
+                        li {
+                            font-size: 1.1em;
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .booking-main {
+                    .static-info, .form-container {
+                        width: calc(100% - 80px);
+                        padding: 0 5%;
+                    }
+
+                    .form-container {
+                        margin: 40px 0;
+                        padding: 0 5% 0 0;
+
+                        form {
+                            outline: none;
+
+                            .input-container {
+                                align-items: flex-start;
+
+                                #date {
+                                    width: 80%;
+                                }
+                            }
+
+                            .basic-info {
+                                .error, label {
+                                    width: 100%;
+                                }
+
+                                input {
+                                    width: 75%;
+                                }
+                            }
+
+                            .message-container {
+                                label, textarea {
+                                    width: 100%;
                                 }
                             }
                         }

@@ -9,26 +9,32 @@ const carsArray = [
         title: 'Tesla model 3',
         features: [
             {
+                id: 0,
                 class: 'available-seats',
                 txt: "Jusqu'à 5 personnes"
             },
             {
+                id: 1,
                 class: 'food',
                 txt: "Collations"
             },
             {
+                id: 2,
                 class: 'drinks',
                 txt: "Boissons"
             },
             {
+                id: 3,
                 class: 'video',
                 txt: "Tablette Ipad"
             },
             {
+                id: 4,
                 class: 'magazines',
                 txt: "Magazines"
             },
             {
+                id: 5,
                 class: 'available-seats',
                 txt: "Jusqu'à 5 personnes"
             }
@@ -40,26 +46,32 @@ const carsArray = [
         title: 'Mercedes class V',
         features: [
             {
+                id: 6,
                 class: 'available-seats',
                 txt: "Jusqu'à 6 personnes"
             },
             {
+                id: 7,
                 class: 'food',
                 txt: "Collations"
             },
             {
+                id: 8,
                 class: 'drinks',
                 txt: "Boissons"
             },
             {
+                id: 9,
                 class: 'video',
                 txt: "Tablette Ipad"
             },
             {
+                id: 10,
                 class: 'magazines',
                 txt: "Magazines"
             },
             {
+                id: 11,
                 class: 'available-seats',
                 txt: "Jusqu'à 6 personnes"
             }
@@ -231,7 +243,7 @@ const Cars = () => {
                         <ul>
                             {carsArray[carsCtg].features.map((li) => {
                                 return(
-                                    <li key={li.txt}>
+                                    <li key={li.id}>
                                         <span className={li.class}></span>
                                         {li.txt}
                                     </li>
