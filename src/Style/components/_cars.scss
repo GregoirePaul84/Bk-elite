@@ -187,10 +187,16 @@
                     padding: 12% 10%;
 
                     li {
+                        display: flex;
+                        align-items: center;
                         color: #000;
                         font-weight: 600;
                         font-size: 1.2em;
                         margin-bottom: 17px;
+
+                        &:last-child{
+                            display: none;
+                        }
                     }
 
                     span {
@@ -220,12 +226,6 @@
 
                     .magazines {
                         background-image: url('../../Medias/Image/Icons/magazine.svg');
-                    }
-
-
-                    li {
-                        display: flex;
-                        align-items: center;
                     }
                 }
             }

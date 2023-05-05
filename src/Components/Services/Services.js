@@ -497,7 +497,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'ponctual') ? 
-                                            <Extras index={0}/>
+                                            <Extras index={0} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -511,7 +511,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'delay', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'delay') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'delay') ? 
-                                            <Extras index={3}/>
+                                            <Extras index={3} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="22" height="32" viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -525,7 +525,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2}/>
+                                            <Extras index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -549,7 +549,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'music') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'music') ? 
-                                            <Extras index={4}/>
+                                            <Extras index={4} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -562,7 +562,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'drinks', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'drinks') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'drinks') ? 
-                                            <Extras index={5}/>
+                                            <Extras index={5} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -576,7 +576,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2}/>
+                                            <Extras index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -600,7 +600,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'flowers') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'flowers') ? 
-                                            <Extras index={6}/>
+                                            <Extras index={6} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -618,7 +618,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'elegance', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'elegance') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'elegance') ? 
-                                            <Extras index={7}/>
+                                            <Extras index={7} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="21" height="32" viewBox="0 0 21 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -633,7 +633,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2}/>
+                                            <Extras index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -657,7 +657,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'luggage') ? 
-                                            <Extras index={8}/>
+                                            <Extras index={8} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -676,7 +676,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'tourism') ? 
-                                            <Extras index={9}/>
+                                            <Extras index={9} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -691,7 +691,7 @@ const Services = ({scrollY, navigate}) => {
                                     <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'provision') ? 
-                                            <Extras index={10}/>
+                                            <Extras index={10} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="24" height="30" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">

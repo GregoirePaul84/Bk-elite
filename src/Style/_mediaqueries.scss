@@ -312,11 +312,15 @@
                             justify-content: space-evenly;
 
                             .extras {
-                                flex-wrap: wrap;
+                                // flex-wrap: wrap;
                                 li {
                                     height: 100px;
                                     width: 100px;
                                     margin: 0 5px;
+
+                                    #extras-detailed {
+                                        max-width: 300px;
+                                    }
                                 }
                             }
                         }
@@ -371,20 +375,20 @@
                     .cars-content {
                         height: 543px;
                         justify-content: space-between;
-                        padding: 0 3% 0 120px;
+                        padding: 0 3% 0 21%;
 
                         .left-info {
                             outline: 3px solid #040613;
                         }
 
                         .car-name-banner {
-                            width: 40%;
+                            width: 50%;
                             height: 83%;
                             min-width: 160px;
                         }
 
                         .car-info-banner {
-                            width: 35%;
+                            width: 40%;
                             height: 100%;
                             min-width: 160px;
                         }
@@ -527,15 +531,14 @@
                             padding: 5%;
 
                             .extras {
+                                flex-wrap: wrap;
                                 li {
-                                    height: 90px;
                                     font-size: 1.2em;
                                     width: 90px;
 
                                     #extras-detailed {
                                         max-width: 230px;
-                                        left: -24px;
-                                        bottom: 100px;
+                                        bottom: 110px;
 
                                         .detailed-title {
                                             margin-bottom: 15px;
@@ -544,6 +547,16 @@
                                         .detailed-description p{
                                             line-height: 25px;
                                         }
+                                    }
+
+                                    .li1 {
+                                        left: 0;
+                                    }
+                                    .li2 {
+                                        left: -116px;
+                                    }
+                                    .li3 {
+                                        left: -105px;
                                     }
                                 }
                             }
@@ -637,6 +650,10 @@
                                     width: 100%;
                                     flex-shrink: 0;
                                     margin: 0;
+
+                                    &:last-child{
+                                        display: flex;
+                                    }
                                 }
                             }
                         }
@@ -684,6 +701,8 @@
                         form {
                             outline: none;
                             padding: 30px 5% 30px 10%;
+                            margin: 0;
+                            width: 100%;
 
                             .input-container {
                                 align-items: flex-start;
