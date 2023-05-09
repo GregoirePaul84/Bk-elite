@@ -86,6 +86,7 @@ const Home = () => {
         if (header !== null && topLink !== null & scrollY > 0) {
             header.style.backgroundColor = '#040613';
             topLink.style.display = 'flex';
+            console.log(-scrollY);
         }
         else {
             header.style.backgroundColor = 'transparent';
@@ -96,7 +97,7 @@ const Home = () => {
 
     // Détection du scroll de l'écran
     const handleScroll = () => {    
-        setScrollY(window.scrollY);
+        setScrollY(window.scrollY / window.innerHeight);
     }
 
     useEffect(() => {

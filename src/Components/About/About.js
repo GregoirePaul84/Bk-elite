@@ -37,7 +37,7 @@ const aboutArray = [
     }
 ]
 
-const About = ({scrollY, width}) => {
+const About = ({scrollY}) => {
 
     const [aboutCtg, setAboutCtg] = useState(0);
     const [aboutSlide, setAboutSlide] = useState({from: undefined, to: 'company'});
@@ -198,7 +198,7 @@ const About = ({scrollY, width}) => {
 
     useEffect(() => {
     
-        if(scrollY >= 580 && aboutSlide.from === undefined) {
+        if(-scrollY <= -0.7 && aboutSlide.from === undefined) {
             displayAbout('noSlide');
         }
 
