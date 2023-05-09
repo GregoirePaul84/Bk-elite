@@ -10,6 +10,7 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
     const [slideActive, setSlideActive] = useState(false);
     const [slideIndex, setSlideIndex] = useState(1);
     const [companyStatus, setCompanyStatus] = useState(true);
+    const [visibilityState, setVisibilityState] = useState(document.visibilityState);
 
     const sliderRef = useRef(null);
     const square1Ref = useRef(null);
@@ -45,6 +46,7 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
         const square2 = square2Ref.current;
         const square3 = square3Ref.current;
 
+        // Pause la vidéo si l'utilisateur scroll en dehors de la 1ère section
         if(companyStatus === false) {
             video.pause();
             return;
@@ -106,14 +108,17 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
             square3.classList.add('square-active');
         }
 
-        if(handleSlide.from === 'slide2' && handleSlide.to === 'slide1')
-            slide1from2();
-        
         if(handleSlide.from === 'slide1' && handleSlide.to === 'slide2')
            slide2from1();
 
+        if(handleSlide.from === 'slide2' && handleSlide.to === 'slide1')
+            slide1from2();
+        
         if(handleSlide.from === 'slide2' && handleSlide.to === 'slide3')
            slide3from2();
+
+        if(handleSlide.from === 'slide3' && handleSlide.to === 'slide2')
+           slide2from3();
 
         if(handleSlide.from === 'slide3' && handleSlide.to === 'slide1')
            slide1from3();
@@ -121,9 +126,6 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
         if(handleSlide.from === 'slide1' && handleSlide.to === 'slide3')
            slide3from1();
 
-        if(handleSlide.from === 'slide3' && handleSlide.to === 'slide2')
-           slide2from3();
-    
     }, [companyStatus, handleSlide]);
 
     useEffect(() => {
@@ -187,6 +189,7 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
         }
         else {
             video.play();
+
             setSlideActive(true);
         }
 
@@ -229,11 +232,34 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
             setCompanyStatus(false);
             setSlideActive(false);
         }
-        else {
+        else if(isEntered) {
             setCompanyStatus(true);
             setSlideActive(true);
         }
-    }, [scrollY])
+    }, [scrollY]);
+
+    function handleVisibilityChange() {
+        setVisibilityState(document.visibilityState)
+    }
+
+    // Met le slide + video sur pause si l'utilisateur choisit un nouvel onglet
+    useEffect(() => {
+
+        if (visibilityState === "hidden") {
+            setCompanyStatus(false);
+
+        } else {
+            setCompanyStatus(true);
+        }
+    }, [visibilityState])
+
+    useEffect(() => {
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    })
 
 
     return (

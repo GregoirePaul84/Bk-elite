@@ -328,8 +328,6 @@ const Services = ({scrollY, navigate}) => {
     }, [servicesSlide, selectedService])
 
     useEffect(() => {
-        console.log('==== SURVOL ====');
-        console.log(isHover);
         const bookLink = bookLinkRef.current;
         const content = contentRef.current;
         
