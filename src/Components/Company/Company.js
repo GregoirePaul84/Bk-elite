@@ -4,12 +4,18 @@ import city from '../../Medias/Video/night_city_short.mp4';
 import bridge from '../../Medias/Image/Main/bridge.jpg';
 import car from '../../Medias/Image/Main/car_above_darked.jpg';
 
-const Company = ({setIsLoaded, isEntered, navigate}) => {
+const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
 
     const [handleSlide, setHandleSlide] = useState({from: undefined, to: 'slide1'});
     const [slideActive, setSlideActive] = useState(false);
     const [slideIndex, setSlideIndex] = useState(1);
+    const [companyStatus, setCompanyStatus] = useState(true);
 
+    const sliderRef = useRef(null);
+    const square1Ref = useRef(null);
+    const square2Ref = useRef(null);
+    const square3Ref = useRef(null);
+    const videoRef = useRef(null);
     const intervalRef = useRef();
     const timeoutRef = useRef();
 
@@ -33,16 +39,22 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
     }
    
     useEffect(() => {
-        const slider = document.getElementById('company-slider');
-        const video = document.getElementsByTagName('video');
-        const square1 = document.querySelector('.company-nav .square:nth-child(1)');
-        const square2 = document.querySelector('.company-nav .square:nth-child(2)');
-        const square3 = document.querySelector('.company-nav .square:nth-child(3)');
+        const slider = sliderRef.current;
+        const video = videoRef.current;
+        const square1 = square1Ref.current;
+        const square2 = square2Ref.current;
+        const square3 = square3Ref.current;
+
+        if(companyStatus === false) {
+            video.pause();
+            return;
+        }
 
         // Slide 1 depuis slide 2
         function slide1from2() {
             slider.style.animation = 'slide1from2 1.5s ease-out 1 forwards';
-            video[0].play();
+            video.currentTime = 0;
+            video.play();
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
             square3.classList.remove('square-active');
@@ -51,7 +63,8 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         // Slide 1 depuis slide 3
         function slide1from3() {
             slider.style.animation = 'slide1from3 1.5s ease-out 1 forwards';
-            video[0].play();
+            video.currentTime = 0;
+            video.play();
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
             square3.classList.remove('square-active');
@@ -60,7 +73,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         // Slide 2 depuis slide 1
         function slide2from1() {
             slider.style.animation = 'slide2from1 1.5s ease-out 1 forwards';
-            video[0].pause();
+            video.pause();
             square1.classList.remove('square-active');
             square2.classList.add('square-active');
             square3.classList.remove('square-active');
@@ -69,7 +82,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         // Slide 2 depuis slide 3
         function slide2from3() {
             slider.style.animation = 'slide2from3 1.5s ease-out 1 forwards';
-            video[0].pause();
+            video.pause();
             square1.classList.remove('square-active');
             square2.classList.add('square-active');
             square3.classList.remove('square-active');
@@ -78,7 +91,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         // Slide 3 depuis slide 1
         function slide3from1() {
             slider.style.animation = 'slide3from1 1.5s ease-out 1 forwards';
-            video[0].pause();
+            video.pause();
             square1.classList.remove('square-active');
             square2.classList.remove('square-active');
             square3.classList.add('square-active');
@@ -87,7 +100,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         // Slide 3 depuis slide 2
         function slide3from2() {
             slider.style.animation = 'slide3from2 1.5s ease-out 1 forwards';
-            video[0].pause();
+            video.pause();
             square1.classList.remove('square-active');
             square2.classList.remove('square-active');
             square3.classList.add('square-active');
@@ -111,7 +124,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
         if(handleSlide.from === 'slide3' && handleSlide.to === 'slide2')
            slide2from3();
     
-    }, [handleSlide]);
+    }, [companyStatus, handleSlide]);
 
     useEffect(() => {
         const h2Ctn = document.querySelectorAll('.card-title h2');
@@ -123,8 +136,6 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
                 setTimeout(() => (el.innerHTML += letter), 60 * i)
             );
         }
-
-        console.log(handleSlide);
 
         if(isEntered && handleSlide.from === undefined && handleSlide.to === 'slide1') {
             setTimeout(() => {
@@ -169,11 +180,13 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
     }, [isEntered, handleSlide]);
 
     useEffect(() => {
+        const video = videoRef.current;
+
         if(!isEntered) {
-            document.getElementsByTagName('video')[0].pause();
+            video.pause();
         }
         else {
-            document.getElementsByTagName('video')[0].play();
+            video.play();
             setSlideActive(true);
         }
 
@@ -203,14 +216,29 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
                 }
             }, 7000);
         }
+        else {
+            clearInterval(intervalRef.current);
+        }
        
         return () => clearInterval(intervalRef.current);
     }, [slideActive, slideIndex]);
 
+    useEffect(() => {
+
+        if(-scrollY <= -0.9) {
+            setCompanyStatus(false);
+            setSlideActive(false);
+        }
+        else {
+            setCompanyStatus(true);
+            setSlideActive(true);
+        }
+    }, [scrollY])
+
 
     return (
         <>
-       <div id="company-slider">
+       <div id="company-slider" ref={sliderRef}>
             {/* Slide 1 */}
             <div className="company-ctn">
                 <div className='company-background'>
@@ -221,6 +249,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
                         onLoadedData={() => {
                             handleLoading();
                         }}
+                        ref={videoRef}
                         >
                         <source src={city} type="video/mp4"/>
                     </video>
@@ -250,7 +279,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
             {/* Slide 2 */}
             <div className="company-ctn">
                 <div className='company-background'>
-                    <img src={bridge} alt="" />
+                    <img src={bridge} alt="voitures roulant sur un pont la nuit" />
                 </div>
                 <div className="company-foreground">
                     <div className="company-card">
@@ -275,7 +304,7 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
             {/* Slide 3 */}
             <div className="company-ctn">
                 <div className='company-background'>
-                    <img src={car} alt="" />
+                    <img src={car} alt="voiture blanche vue du dessus" />
                 </div>
                 <div className="company-foreground">
                     <div className="company-card">
@@ -299,9 +328,18 @@ const Company = ({setIsLoaded, isEntered, navigate}) => {
 
         </div>
         <nav className="company-nav">
-            <div className="square square-active" onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide1'}); resetSlide('slide1', 'slide2')}}></div>
-            <div className="square" onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide2'}); resetSlide('slide2', 'slide3')}}></div>
-            <div className="square" onClick={() =>  {setHandleSlide({from: handleSlide.to, to: 'slide3'}); resetSlide('slide3', 'slide1')}}></div>
+            <div className="square square-active" 
+                 onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide1'}); resetSlide('slide1', 'slide2')}}
+                 ref={square1Ref}>   
+            </div>
+            <div className="square" 
+                 onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide2'}); resetSlide('slide2', 'slide3')}}
+                 ref={square2Ref}>
+            </div>
+            <div className="square" 
+                 onClick={() =>  {setHandleSlide({from: handleSlide.to, to: 'slide3'}); resetSlide('slide3', 'slide1')}}
+                 ref={square3Ref}>
+            </div>
         </nav>
         </>
     );
