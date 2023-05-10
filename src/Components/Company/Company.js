@@ -6,11 +6,12 @@ import car from '../../Medias/Image/Main/car_above_darked.jpg';
 
 const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
 
-    const [handleSlide, setHandleSlide] = useState({from: undefined, to: 'slide1'});
+    const [handleSlide, setHandleSlide] = useState({from: undefined, to: 1});
     const [slideActive, setSlideActive] = useState(false);
     const [slideIndex, setSlideIndex] = useState(1);
     const [companyStatus, setCompanyStatus] = useState(true);
     const [visibilityState, setVisibilityState] = useState(document.visibilityState);
+    const [slideManual, setSlideManual] = useState(false);
 
     const sliderRef = useRef(null);
     const square1Ref = useRef(null);
@@ -27,14 +28,18 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
     }
 
     function resetSlide(slide1 , slide2) {
-        clearInterval(intervalRef.current);
-        clearTimeout(timeoutRef.current);
-        setSlideActive(false);
         console.log('slide coupé');
-
+        clearTimeout(timeoutRef.current);
+        clearInterval(intervalRef.current);
+        setSlideManual(true);
+        setSlideActive(false);
+        setSlideIndex(slide1);
+      
         timeoutRef.current = setTimeout(() => {
             console.log('slide réactivé');
+            setSlideManual(false);
             setSlideActive(true);
+            setSlideIndex(slide2);
             setHandleSlide({from: slide1, to: slide2});
         }, 9000)
     }
@@ -46,17 +51,31 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
         const square2 = square2Ref.current;
         const square3 = square3Ref.current;
 
-        // Pause la vidéo si l'utilisateur scroll en dehors de la 1ère section
-        if(companyStatus === false) {
+        if(isEntered === false) {
             video.pause();
+            video.currentTime = 0;
             return;
+        }
+
+        if(companyStatus === false) {
+            console.log('reset');
+            // clearTimeout(timeoutRef.current);
+            video.pause();
+            video.currentTime = 0;
+            return;
+        }
+        else {
+            if (handleSlide.to === 1) {
+                video.play();
+            }
         }
 
         // Slide 1 depuis slide 2
         function slide1from2() {
-            slider.style.animation = 'slide1from2 1.5s ease-out 1 forwards';
             video.currentTime = 0;
             video.play();
+            slider.style.animation = 'slide1from2 1.5s ease-out 1 forwards';
+            video.currentTime = 0;
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
             square3.classList.remove('square-active');
@@ -64,9 +83,10 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
 
         // Slide 1 depuis slide 3
         function slide1from3() {
-            slider.style.animation = 'slide1from3 1.5s ease-out 1 forwards';
             video.currentTime = 0;
             video.play();
+            slider.style.animation = 'slide1from3 1.5s ease-out 1 forwards';
+            video.currentTime = 0;
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
             square3.classList.remove('square-active');
@@ -74,8 +94,8 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
 
         // Slide 2 depuis slide 1
         function slide2from1() {
-            slider.style.animation = 'slide2from1 1.5s ease-out 1 forwards';
             video.pause();
+            slider.style.animation = 'slide2from1 1.5s ease-out 1 forwards';
             square1.classList.remove('square-active');
             square2.classList.add('square-active');
             square3.classList.remove('square-active');
@@ -83,8 +103,8 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
 
         // Slide 2 depuis slide 3
         function slide2from3() {
-            slider.style.animation = 'slide2from3 1.5s ease-out 1 forwards';
             video.pause();
+            slider.style.animation = 'slide2from3 1.5s ease-out 1 forwards';
             square1.classList.remove('square-active');
             square2.classList.add('square-active');
             square3.classList.remove('square-active');
@@ -92,8 +112,8 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
   
         // Slide 3 depuis slide 1
         function slide3from1() {
-            slider.style.animation = 'slide3from1 1.5s ease-out 1 forwards';
             video.pause();
+            slider.style.animation = 'slide3from1 1.5s ease-out 1 forwards';
             square1.classList.remove('square-active');
             square2.classList.remove('square-active');
             square3.classList.add('square-active');
@@ -101,32 +121,32 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
 
         // Slide 3 depuis slide 2
         function slide3from2() {
-            slider.style.animation = 'slide3from2 1.5s ease-out 1 forwards';
             video.pause();
+            slider.style.animation = 'slide3from2 1.5s ease-out 1 forwards';
             square1.classList.remove('square-active');
             square2.classList.remove('square-active');
             square3.classList.add('square-active');
         }
 
-        if(handleSlide.from === 'slide1' && handleSlide.to === 'slide2')
+        if(handleSlide.from === 1 && handleSlide.to === 2)
            slide2from1();
 
-        if(handleSlide.from === 'slide2' && handleSlide.to === 'slide1')
+        if(handleSlide.from === 2 && handleSlide.to === 1)
             slide1from2();
         
-        if(handleSlide.from === 'slide2' && handleSlide.to === 'slide3')
+        if(handleSlide.from === 2 && handleSlide.to === 3)
            slide3from2();
 
-        if(handleSlide.from === 'slide3' && handleSlide.to === 'slide2')
+        if(handleSlide.from === 3 && handleSlide.to === 2)
            slide2from3();
 
-        if(handleSlide.from === 'slide3' && handleSlide.to === 'slide1')
+        if(handleSlide.from === 3 && handleSlide.to === 1)
            slide1from3();
            
-        if(handleSlide.from === 'slide1' && handleSlide.to === 'slide3')
+        if(handleSlide.from === 1 && handleSlide.to === 3)
            slide3from1();
 
-    }, [companyStatus, handleSlide]);
+    }, [isEntered, companyStatus, handleSlide]);
 
     useEffect(() => {
         const h2Ctn = document.querySelectorAll('.card-title h2');
@@ -139,7 +159,7 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
             );
         }
 
-        if(isEntered && handleSlide.from === undefined && handleSlide.to === 'slide1') {
+        if(isEntered && handleSlide.from === undefined && handleSlide.to === 1) {
             setTimeout(() => {
                 typeWriter(h2Ctn[0]);
                 h2Ctn[0].style.visibility = 'visible';
@@ -148,7 +168,7 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
             }, 1500)
         }
 
-        if(isEntered && handleSlide.from !== undefined && handleSlide.to === 'slide1') {
+        if(isEntered && handleSlide.from !== undefined && handleSlide.to === 1) {
 
             setTimeout(() => {
                 typeWriter(h2Ctn[0]);
@@ -158,7 +178,7 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
             }, 1500) 
         }
 
-        if(isEntered && handleSlide.to === 'slide2') {
+        if(isEntered && handleSlide.to === 2) {
 
             setTimeout(() => {
                 typeWriter(h2Ctn[1]);
@@ -168,7 +188,7 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
             }, 1500)        
         }
 
-        if(isEntered && handleSlide.to === 'slide3') {
+        if(isEntered && handleSlide.to === 3) {
 
             setTimeout(() => {
                 typeWriter(h2Ctn[2]);
@@ -182,33 +202,28 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
     }, [isEntered, handleSlide]);
 
     useEffect(() => {
-        const video = videoRef.current;
 
-        if(!isEntered) {
-            video.pause();
-        }
-        else {
-            video.play();
-
+        if(isEntered) {
             setSlideActive(true);
         }
 
-        if(isEntered && slideIndex === 1 && handleSlide.from !== undefined) {
-            setHandleSlide({from: 'slide3', to: 'slide1'});
+        if(isEntered && slideIndex === 1 && handleSlide.from !== undefined && slideManual === false) {
+            setHandleSlide({from: 3, to: 1});
         }
-        if(isEntered && slideIndex === 2) {
-            setHandleSlide({from: 'slide1', to: 'slide2'});
+        if(isEntered && slideIndex === 2 && slideManual === false) {
+            setHandleSlide({from: 1, to: 2});
         }
-        if(isEntered && slideIndex === 3) {
-            setHandleSlide({from: 'slide2', to: 'slide3'});
+        if(isEntered && slideIndex === 3 && slideManual === false) {
+            setHandleSlide({from: 2, to: 3});
         }
 
     // eslint-disable-next-line
     }, [isEntered, slideIndex])
 
     useEffect(() => {
+        // console.log('slide index', slideIndex);
 
-        if(slideActive) {
+        if(slideActive && companyStatus && slideManual === false) {
             intervalRef.current = setInterval(function() { 
 
                 if (slideIndex < 3) { 
@@ -224,34 +239,25 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
         }
        
         return () => clearInterval(intervalRef.current);
-    }, [slideActive, slideIndex]);
+    }, [slideActive, companyStatus, slideIndex, slideManual]);
 
     useEffect(() => {
+        // console.log(-scrollY);
 
-        if(-scrollY <= -0.9) {
+        if(-scrollY <= -0.3 || visibilityState === 'hidden') {
             setCompanyStatus(false);
-            setSlideActive(false);
+            setSlideActive(false); 
         }
         else if(isEntered) {
             setCompanyStatus(true);
-            setSlideActive(true);
+            setSlideActive(true); 
         }
-    }, [scrollY]);
+    
+    }, [scrollY, isEntered, visibilityState]);
 
     function handleVisibilityChange() {
         setVisibilityState(document.visibilityState)
     }
-
-    // Met le slide + video sur pause si l'utilisateur choisit un nouvel onglet
-    useEffect(() => {
-
-        if (visibilityState === "hidden") {
-            setCompanyStatus(false);
-
-        } else {
-            setCompanyStatus(true);
-        }
-    }, [visibilityState])
 
     useEffect(() => {
         document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -355,16 +361,25 @@ const Company = ({scrollY, setIsLoaded, isEntered, navigate}) => {
         </div>
         <nav className="company-nav">
             <div className="square square-active" 
-                 onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide1'}); resetSlide('slide1', 'slide2')}}
-                 ref={square1Ref}>   
+                onClick={handleSlide.to !== 1 ? () => {
+                    setHandleSlide({from: handleSlide.to, to: 1});
+                    resetSlide(1, 2);
+                } : undefined}
+                ref={square1Ref}>   
             </div>
             <div className="square" 
-                 onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide2'}); resetSlide('slide2', 'slide3')}}
-                 ref={square2Ref}>
+                onClick={handleSlide.to !== 2 ? () => {
+                    setHandleSlide({from: handleSlide.to, to: 2});
+                    resetSlide(2, 3);
+                } : undefined}
+                ref={square2Ref}>
             </div>
             <div className="square" 
-                 onClick={() =>  {setHandleSlide({from: handleSlide.to, to: 'slide3'}); resetSlide('slide3', 'slide1')}}
-                 ref={square3Ref}>
+                onClick={handleSlide.to !== 3 ? () => {
+                    setHandleSlide({from: handleSlide.to, to: 3});
+                    resetSlide(3, 1);
+                } : undefined}
+                ref={square3Ref}>
             </div>
         </nav>
         </>

@@ -6,8 +6,7 @@
     align-items: center;
     justify-content: center;
     background: radial-gradient(circle at center, rgb(15 7 36) 0, #040613 35%, rgb(10, 5, 25) 100%);
-    position: absolute;
-    top: 0;
+    position: fixed;
     z-index: 10;
 
     .brand-logo {
