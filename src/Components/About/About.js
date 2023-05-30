@@ -6,43 +6,99 @@ import driverImg from '../../Medias/Image/Main/kamel.jpg';
 
 const aboutArray = [
     {
-        title : 'La société',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'La société <span class=colored>Bk-Elite</span> est un prestataire de <strong>service de transport privé</strong>, basée en région <strong>Provence-Alpes-Côte d\'Azur</strong>.'}} />,
-        p2 : 'Nous proposons nos services hauts-de-gamme à une clientèle exigeante, soucieuse du confort et de l\'excellence.',
-        p3 : <p dangerouslySetInnerHTML={{__html: 'Société spécialisée dans le transport de personnes, nous vous proposons de nombreuses prestations, du <strong>service de taxi</strong> classique à la <strong>location de chauffeurs</strong> pour vos événements exceptionnels.'}} />
+        fr: {
+            title : 'La société',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'La société <span class=colored>Bk-Elite</span> est un prestataire de <strong>service de transport privé</strong>, basée en région <strong>Provence-Alpes-Côte d\'Azur</strong>.'}} />,
+            p2 : 'Nous proposons nos services hauts-de-gamme à une clientèle exigeante, soucieuse du confort et de l\'excellence.',
+            p3 : <p dangerouslySetInnerHTML={{__html: 'Société spécialisée dans le transport de personnes, nous vous proposons de nombreuses prestations, du <strong>service de taxi</strong> classique à la <strong>location de chauffeurs</strong> pour vos événements exceptionnels.'}} />       
+        },
+
+        eng: {
+            p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-Elite</span> is a Provence-Alpes-Côte d\'Azur-based <strong>private transport service</strong>.'}} />,
+            p2 : 'We offer our services to high-quality customers seeking comfort and excellence.',
+            p3 : <p dangerouslySetInnerHTML={{__html: 'Our company is specialized in transporting people. Have a look at our various services ranging from a classic <strong>taxi ride</strong> to a <strong>private chauffeur</strong> for exceptional events.'}} />      
+        }
     },
     {
-        title : 'Nos valeurs',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <span class=colored>Bk-Elite</span>, nous attachons une grande importance à nos valeurs.'}} />,
-        p2 : 'Nous croyons que ces valeurs sont non seulement essentielles pour assurer la satisfaction de nos clients, mais aussi pour garantir l\'excellence de notre service.',
-        p3 : null,
-        values : [
-            {title :'Élégance',
-            description :  'L\'élégance de nos chauffeurs est un facteur clé pour garantir une expérience de transport haut de gamme et inoubliable pour nos clients, car nous croyons que chaque détail compte pour offrir le meilleur service possible.'},
-            {title :'Fiabilité',
-            description :  'Respectueux des règles de circulation et professionnels, nos chauffeurs sauront vous garantir une expérience de voyage agréable et sereine.'},
-            {title :'Ponctualité',
-            description :  'la ponctualité est essentielle pour répondre aux attentes de nos clients. Nous comprenons que chaque minute compte pour nos clients occupés, et c\'est pourquoi nous nous engageons à arriver à l\'heure convenue.'},
-            {title :'Discrétion',
-            description :  'Nos chauffeurs sont formés pour respecter la vie privée de nos clients et garantir leur confort et leur sécurité tout au long de leur voyage.'},
-            {title :'Courtoisie',
-            description :  'Nous croyons que chaque client mérite un service personnalisé et professionnel, et nos chauffeurs sont formés pour fournir un service courtois, amical et respectueux pour garantir une expérience de transport de haute qualité.'},
-            ]
+        fr: {
+            title : 'Nos valeurs',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <span class=colored>Bk-Elite</span>, nous attachons une grande importance à nos valeurs.'}} />,
+            p2 : 'Nous croyons que ces valeurs sont non seulement essentielles pour assurer la satisfaction de nos clients, mais aussi pour garantir l\'excellence de notre service.',
+            p3 : null,
+            values : [
+                {title :'Élégance',
+                description :  'L\'élégance de nos chauffeurs est un facteur clé pour garantir une expérience de transport haut de gamme et inoubliable pour nos clients, car nous croyons que chaque détail compte pour offrir le meilleur service possible.'},
+                {title :'Fiabilité',
+                description :  'Respectueux des règles de circulation et professionnels, nos chauffeurs sauront vous garantir une expérience de voyage agréable et sereine.'},
+                {title :'Ponctualité',
+                description :  'la ponctualité est essentielle pour répondre aux attentes de nos clients. Nous comprenons que chaque minute compte pour nos clients occupés, et c\'est pourquoi nous nous engageons à arriver à l\'heure convenue.'},
+                {title :'Discrétion',
+                description :  'Nos chauffeurs sont formés pour respecter la vie privée de nos clients et garantir leur confort et leur sécurité tout au long de leur voyage.'},
+                {title :'Courtoisie',
+                description :  'Nous croyons que chaque client mérite un service personnalisé et professionnel, et nos chauffeurs sont formés pour fournir un service courtois, amical et respectueux pour garantir une expérience de transport de haute qualité.'},
+            ]        
+        },
+
+        eng: {
+            title : 'Our values',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'At <span class=colored>Bk-Elite</span>, we have a strong attachment to our values.'}} />,
+            p2 : 'Our values are essential in keeping our clients satisfied but also to always guarantee excellence.',
+            p3 : null,
+            values : [
+                {title :'Elegance',
+                description :  'Our chauffeurs are smartly dressed because we think that every detail counts when providing the best high class, unforgettable experience.'},
+                {title :'Reliability',
+                description :  'You can sit back, enjoy the smooth ride, and rely on our experienced chauffeurs to always be respectful of road safety.'},
+                {title :'Punctuality',
+                description :  'Punctuality is essential. Every minute is precious for busy customers, and we are fully committed to getting you where you need to be on time.'},
+                {title :'Discretion',
+                description :  'Our drivers are especially aware of the necessity to respect our customers\' privacy and to make sure they are offered the best in comfort and safety during their entire trip.'},
+                {title :'Courtesy',
+                description :  'We believe that each customer deserves a professional and personalised service. Our chauffeurs are trained to offer a tactful, friendly and respectful, high-quality transport experience.'},
+            ]       
+        }     
     },
     {
-        title : 'Votre chauffeur',
-        p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-elite</span> est fier de compter parmi son équipe des <b>professionnels hautement qualifiés</b> et expérimentés dans leur domaine.'}} />,
-        p2 : 'Nos chauffeurs sont sélectionnés avec soin pour leur connaissance approfondie de la conduite, leur parfaite connaissance des routes et leur capacité à fournir un service exceptionnel.',
-        p3 : <p dangerouslySetInnerHTML={{__html: 'Être accompagné par l\'un de nos chauffeurs, c\'est avoir la garantie d\'un <b>service haut-de-gamme</b>, d\'un transport en toute sécurité, ainsi que d\'une expérience de voyage confortable et personnalisée. Nos chauffeurs sont des <b>professionnels de confiance</b>, formés pour répondre à vos besoins et rendre votre voyage mémorable.'}} />
+        fr: {
+            title : 'Votre chauffeur',
+            p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-elite</span> est fier de compter parmi son équipe des <b>professionnels hautement qualifiés</b> et expérimentés dans leur domaine.'}} />,
+            p2 : 'Nos chauffeurs sont sélectionnés avec soin pour leur connaissance approfondie de la conduite, leur parfaite connaissance des routes et leur capacité à fournir un service exceptionnel.',
+            p3 : <p dangerouslySetInnerHTML={{__html: 'Être accompagné par l\'un de nos chauffeurs, c\'est avoir la garantie d\'un <b>service haut-de-gamme</b>, d\'un transport en toute sécurité, ainsi que d\'une expérience de voyage confortable et personnalisée. Nos chauffeurs sont des <b>professionnels de confiance</b>, formés pour répondre à vos besoins et rendre votre voyage mémorable.'}} />     
+        },
+
+        eng: {
+            title : 'Your chauffeur',
+            p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-Elite</span> is proud of its team of <b>high-skilled, experienced professionals</b>.'}} />,
+            p2 : 'Our chauffeurs are carefully chosen based on their driving abilities, their perfect knowledge of the roads and their ability to provide an exceptional experience.',
+            p3 : <p dangerouslySetInnerHTML={{__html: 'Our chauffeurs are reliable professionals trained to meet your needs and provide an <b>unforgettable experience</b>. With them, you are sure to receive <b>high-quality service</b> and experience a safe, comfortable and personalised journey.'}} />   
+        }     
     }
 ]
 
-const About = ({scrollY}) => {
+const aboutTxt = {
+    fr: {
+        mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>À </span>propos'}} />,
+        nav1: 'La société',
+        nav2: 'Nos valeurs',
+        nav3: 'Votre chauffeur',
+        title : 'La société',
+    },
+
+    eng: {
+        mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>A</span>bout'}} />,
+        nav1: 'The company',
+        nav2: 'Our values',
+        nav3: 'Your chauffeur',
+        title : 'The company',
+    }
+}
+
+const About = ({lang, scrollY}) => {
 
     const [aboutCtg, setAboutCtg] = useState(0);
     const [aboutSlide, setAboutSlide] = useState({from: undefined, to: 'company'});
-    const [value, setValue] = useState( {title: aboutArray[1].values[2].title, 
-                                        description: aboutArray[1].values[2].description,
+    const [value, setValue] = useState( {title: aboutArray[1][lang].values[2].title, 
+                                        description: aboutArray[1][lang].values[2].description,
                                         increment: 1} );
 
     function displayAbout(index) {
@@ -64,8 +120,8 @@ const About = ({scrollY}) => {
         }
 
         else {
-            setValue({title: aboutArray[1].values[2].title, 
-                description: aboutArray[1].values[2].description,
+            setValue({title: aboutArray[1][lang].values[2].title, 
+                description: aboutArray[1][lang].values[2].description,
                 increment: 1})
                 
             banners.forEach((banner) => {
@@ -130,6 +186,11 @@ const About = ({scrollY}) => {
             }
         }      
     }
+
+    useEffect(() => {
+        console.log(aboutArray[aboutCtg][lang]);
+
+    }, [aboutCtg])
 
     useEffect(() => {
         const valueP = document.querySelector('.value-type');
@@ -215,7 +276,7 @@ const About = ({scrollY}) => {
                     </div>
                 </div>       
                 <div className="content-title">
-                    <h3>{aboutArray[aboutCtg].title}</h3>
+                    <h3>{aboutArray[aboutCtg][lang].title}</h3>
                     {(aboutCtg === 0) ? 
                         <svg width="22" height="40" viewBox="0 0 41 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.125 0C2.29557 0 0 2.01562 0 4.5V43.5C0 45.9844 2.29557 48 5.125 48H15.375V40.5C15.375 38.0156 17.6706 36 20.5 36C23.3294 36 25.625 38.0156 25.625 40.5V48H35.875C38.7044 48 41 45.9844 41 43.5V4.5C41 2.01562 38.7044 0 35.875 0H5.125ZM6.83333 22.5C6.83333 21.675 7.60208 21 8.54167 21H11.9583C12.8979 21 13.6667 21.675 13.6667 22.5V25.5C13.6667 26.325 12.8979 27 11.9583 27H8.54167C7.60208 27 6.83333 26.325 6.83333 25.5V22.5ZM18.7917 21H22.2083C23.1479 21 23.9167 21.675 23.9167 22.5V25.5C23.9167 26.325 23.1479 27 22.2083 27H18.7917C17.8521 27 17.0833 26.325 17.0833 25.5V22.5C17.0833 21.675 17.8521 21 18.7917 21ZM27.3333 22.5C27.3333 21.675 28.1021 21 29.0417 21H32.4583C33.3979 21 34.1667 21.675 34.1667 22.5V25.5C34.1667 26.325 33.3979 27 32.4583 27H29.0417C28.1021 27 27.3333 26.325 27.3333 25.5V22.5ZM8.54167 9H11.9583C12.8979 9 13.6667 9.675 13.6667 10.5V13.5C13.6667 14.325 12.8979 15 11.9583 15H8.54167C7.60208 15 6.83333 14.325 6.83333 13.5V10.5C6.83333 9.675 7.60208 9 8.54167 9ZM17.0833 10.5C17.0833 9.675 17.8521 9 18.7917 9H22.2083C23.1479 9 23.9167 9.675 23.9167 10.5V13.5C23.9167 14.325 23.1479 15 22.2083 15H18.7917C17.8521 15 17.0833 14.325 17.0833 13.5V10.5ZM29.0417 9H32.4583C33.3979 9 34.1667 9.675 34.1667 10.5V13.5C34.1667 14.325 33.3979 15 32.4583 15H29.0417C28.1021 15 27.3333 14.325 27.3333 13.5V10.5C27.3333 9.675 28.1021 9 29.0417 9Z" fill="#D1B000"/>
@@ -237,20 +298,20 @@ const About = ({scrollY}) => {
                 </div>
                 <div className="about-content">
                     <div className="banner left-banner">
-                        {aboutArray[aboutCtg].p1}
+                        {aboutArray[aboutCtg][lang].p1}
                         <p>
-                            {aboutArray[aboutCtg].p2}
+                            {aboutArray[aboutCtg][lang].p2}
                         </p>
                     </div>
                     <div className="banner right-banner">
                         {(aboutCtg === 0 || aboutCtg === 2) ?
                             <>
-                                {aboutArray[aboutCtg].p3}
+                                {aboutArray[aboutCtg][lang].p3}
                             </>
                             :
                             <>
                                 <ul>
-                                    {aboutArray[1].values.map
+                                    {aboutArray[1][lang].values.map
                                         ((elt) => 
                                             <li key={elt.title} onClick={() => 
                                                 setValue(
@@ -272,15 +333,18 @@ const About = ({scrollY}) => {
             </div>
             <div className="about-nav">
                 <div className="about-nav__title">
-                    <h2 className='h-section'>
-                        <span>À </span>
-                        propos
-                    </h2>
+                    {aboutTxt[lang].mainTitle}
                 </div>
                 <ul>
-                    <li id='company-nav' onClick={(() => {setAboutCtg(0); setAboutSlide({from: aboutSlide.to, to: 'company'})})}>La société</li>
-                    <li id='values-nav' onClick={(() => {setAboutCtg(1); setAboutSlide({from: aboutSlide.to, to: 'values'})})}>Nos valeurs</li>
-                    <li id='driver-nav' onClick={(() => {setAboutCtg(2); setAboutSlide({from: aboutSlide.to, to: 'driver'})})}>Votre chauffeur</li>
+                    <li id='company-nav' onClick={(() => {setAboutCtg(0); setAboutSlide({from: aboutSlide.to, to: 'company'})})}>
+                        {aboutTxt[lang].nav1}
+                    </li>
+                    <li id='values-nav' onClick={(() => {setAboutCtg(1); setAboutSlide({from: aboutSlide.to, to: 'values'})})}>
+                        {aboutTxt[lang].nav2}
+                    </li>
+                    <li id='driver-nav' onClick={(() => {setAboutCtg(2); setAboutSlide({from: aboutSlide.to, to: 'driver'})})}>
+                        {aboutTxt[lang].nav3}
+                    </li>
                 </ul>
             </div>
         </>

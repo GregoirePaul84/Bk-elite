@@ -124,7 +124,6 @@
                         height: 115px;
                         width: 115px;
                         text-align: center;
-                        color: $color_secondary;
                         background-color: $color_primary;
                         margin: 0;
                         padding: 0;
@@ -143,6 +142,10 @@
 
                         &:hover {
                             transform: scale(1.1);
+                        }
+
+                        span {
+                            color: $color_secondary; 
                         }
                     }
 

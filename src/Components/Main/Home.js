@@ -9,8 +9,39 @@ import Services from '../Services/Services';
 import Cars from '../Cars/Cars';
 import Booking from '../Booking/Booking';
 
+const homeTxt = {
+    fr: {
+        nav1: 'À propos',
+        nav2: 'Services',
+        nav3: 'Véhicules',
+        nav4: 'Réservations',
+        topPage: 'Haut de page',
+        footerTitle2: 'Zone d\'intervention',
+        footerP1: 'Bk-elite est une société de taxi / chauffeur VTC spécialisé dans le transport de personnes à Avignon, Marseille, et dans tout le sud-est de la France.',
+        footerP2: 'Votre chauffeur vous accompagne dans vos déplacements dans toute la France et en Europe.',
+        legal: 'Mentions légales',
+        cgv: 'Conditions générales de vente',
+        devBy: 'Développé par',
+    },
+
+    eng: {
+        nav1: 'About',
+        nav2: 'Services',
+        nav3: 'Vehicles',
+        nav4: 'Booking',
+        topPage: 'Scroll to top',
+        footerTitle2: 'Intervention Zone',
+        footerP1: 'Bk-elite is a taxi/VTC company specialized in passenger transportation in Avignon, Marseille, and throughout the southeastern region of France.',
+        footerP2: 'Our driver accompanies you during your trips throughout France and Europe.',
+        legal: 'Legal Notice',
+        cgv: 'Terms of Sales',
+        devBy: 'Developed by'
+    }
+}
+
 const Home = () => {
 
+    const [lang, setLang] = useState('fr');
     const [isLoaded, setIsLoaded] = useState(false);
     const [isEntered, setIsEntered] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -126,7 +157,7 @@ const Home = () => {
 
     return (
         <div className="page-block">
-            <Welcome isLoaded={isLoaded} setIsEntered={setIsEntered} />
+            <Welcome lang={lang} isLoaded={isLoaded} setIsEntered={setIsEntered} />
             <header ref={headerRef}>
                 <div className="brand-logo" onClick={() => navigate('company')}>
                     <h1>
@@ -139,19 +170,19 @@ const Home = () => {
                         
                         <li onClick={() => navigate('about')}>
                             <div className="shine"></div>
-                            À propos
+                            {homeTxt[lang].nav1}
                         </li>
                         <li onClick={() => navigate('services')}>
                             <div className="shine"></div>
-                            Services
+                            {homeTxt[lang].nav2}
                         </li>
                         <li onClick={() => navigate('cars')}>
                             <div className="shine"></div>
-                            Véhicules
+                            {homeTxt[lang].nav3}
                         </li>
                         <li onClick={() => navigate('booking')}>
                             <div className="shine"></div>
-                            Réservations
+                            {homeTxt[lang].nav4}
                         </li>
                     </ul>
                 </nav>
@@ -161,33 +192,33 @@ const Home = () => {
                         <path d="M3.2 6.4H22.4C24.16 6.4 25.6 4.96 25.6 3.2C25.6 1.44 24.16 0 22.4 0H3.2C1.44 0 0 1.44 0 3.2C0 4.96 1.44 6.4 3.2 6.4Z" fill="white"/>
                         <path d="M22.4 19.2H3.2C1.44 19.2 0 20.64 0 22.4C0 24.16 1.44 25.6 3.2 25.6H22.4C24.16 25.6 25.6 24.16 25.6 22.4C25.6 20.64 24.16 19.2 22.4 19.2Z" fill="white"/>
                     </svg>
-                    <img src={french} alt="drapeau français" />
-                    <img src={english} alt="drapeau anglais" />
+                    <img src={french} alt="drapeau français" onClick={() => setLang('fr')}/>
+                    <img src={english} alt="drapeau anglais" onClick={() => setLang('eng')}/>
                 </div>
             </header>
             <main>  
                 <section className="company-info-ctr" ref={companyRef} >
-                    <Company scrollY={scrollY} setIsLoaded={setIsLoaded} isEntered={isEntered} navigate={navigate}/>
+                    <Company lang={lang} scrollY={scrollY} setIsLoaded={setIsLoaded} isEntered={isEntered} navigate={navigate}/>
                     <div className="top-link" onClick={() => navigate('company')} ref={topLinkRef}>
                         <svg width="30" height="47" viewBox="0 0 40 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.0001 0L0 46.2434L20.0001 36.1916L40 46.2434L20.0001 0Z" fill="white"/>
                         </svg>
-                        <p>Haut de page</p>
+                        <p>{homeTxt[lang].topPage}</p>
                     </div>
                 </section>
                 <div className="transition"></div>
                 <section className="about-ctr" ref={aboutRef}>
-                    <About scrollY={scrollY} width={width}/>
+                    <About lang={lang} scrollY={scrollY} width={width}/>
                 </section>
                 <div className="transition inverted"></div>
                 <section className="services-ctr" ref={servicesRef}>
-                    <Services scrollY={scrollY} navigate={navigate}/>  
+                    <Services lang={lang} scrollY={scrollY} navigate={navigate}/>  
                 </section>
                 <section className='cars-ctr' ref={carsRef}>
-                    <Cars scrollY={scrollY} />
+                    <Cars lang={lang} scrollY={scrollY} />
                 </section>
                 <section className="booking-ctr" ref={bookingRef}>
-                    <Booking />
+                    <Booking lang={lang} />
                 </section>
             </main>
             <footer>
@@ -199,17 +230,17 @@ const Home = () => {
                         </h4>
                     </div>
                     <div className="footer-content">
-                        <p>Bk-elite est une société de taxi / chauffeur VTC spécialisé dans le transport de personnes à Avignon, Marseille, et dans tout le sud-est de la France.</p>
+                        <p>{homeTxt[lang].footerP1}</p>
                     </div>
                 </div>
                 <div className="footer-column">
                     <div className="footer-title">
                             <h4>
-                                Zone d'intervention
+                                {homeTxt[lang].footerTitle2}
                             </h4>
                         </div>
                         <div className="footer-content">
-                            <p>Votre chauffeur vous accompagne dans vos déplacements dans toute la France et en Europe.</p>
+                            <p>{homeTxt[lang].footerP2}</p>
                         </div>
                     </div>
                 <div className="footer-column">
@@ -243,11 +274,11 @@ const Home = () => {
                 <div className="legal-notice">
                     <p>© 2023, Bk-elite</p>
                     <p>
-                        <span>Mentions légales </span> 
+                        <span>{homeTxt[lang].legal} </span> 
                         | 
-                        <span> Conditions générales de vente</span></p>
-                    <p>Site développé par 
-                        <a href=""> Grégoire Paulet</a>
+                        <span> {homeTxt[lang].cgv}</span></p>
+                    <p>{homeTxt[lang].devBy} 
+                        <a href="mailto:gregoirepaulet84@gmail.com"> Grégoire Paulet</a>
                     </p>
                 </div>
             </footer>

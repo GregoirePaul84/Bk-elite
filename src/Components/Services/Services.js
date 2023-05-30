@@ -9,35 +9,119 @@ import Extras from './Extras';
 
 const servicesArray = [
     {
-        title : 'Taxi driver',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous avez besoin d\'un moyen de transport rapide et fiable pour vos déplacements en ville? Notre service driver vous offre une solution pratique et économique pour tous vos trajets.'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs professionnels et expérimentés vous conduiront à votre destination en toute sécurité, avec des véhicules modernes et bien entretenus.'}} />,
+        fr: {
+            title : 'Taxi driver',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'Vous avez besoin d\'un moyen de transport rapide et fiable pour vos déplacements en ville? Notre service driver vous offre une solution pratique et économique pour tous vos trajets.'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs professionnels et expérimentés vous conduiront à votre destination en toute sécurité, avec des véhicules modernes et bien entretenus.'}} />
+        },
+
+        eng: {
+            title : 'Taxi driver',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'A fast, reliable trip in the city is what you are looking for? Our taxi service offers a low-price, practical solution for all journeys.'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'Our professional and experienced drivers will drive you in comfort, style and safety aboard one of our high-class vehicles.'}} />
+        }   
     },
     {
-        title : 'Transfert aéroport',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous prenez l\'avion pour les affaires ou pour le tourisme ? Nous savons que voyager peut être <b>éprouvant</b>.'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs vous accueillent dès votre arrivée à l\'aéroport et vous accompagnent jusqu\'à votre destination finale en toute sécurité et confort. Nous vous garantissons un trajet agréable et relaxant, pour que vous puissiez vous détendre et vous concentrer sur vos affaires ou votre voyage.'}} />,
+        fr: {
+            title : 'Transfert aéroport',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'Vous prenez l\'avion pour les affaires ou pour le tourisme ? Nous savons que voyager peut être <b>éprouvant</b>.'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs vous accueillent dès votre arrivée à l\'aéroport et vous accompagnent jusqu\'à votre destination finale en toute sécurité et confort. Nous vous garantissons un trajet agréable et relaxant, pour que vous puissiez vous détendre et vous concentrer sur vos affaires ou votre voyage.'}} />
+        },
+
+        eng: {
+            title : 'Airport transfer',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'Traveling by plane for business or for a holiday? We know that it can be <b>exhausting</b>.'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'You will be welcomed by our chauffeurs and driven safely and comfortably to your destination. We guarantee a smooth and stress-free journey so that you can relax and focus on your work or destination.'}} />
+        }   
     },
     {
-        title : 'Longues distances',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Vous souhaitez  entreprendre un long voyage sans stress et avec une <span class=colored>expérience de première classe ?</span>'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: ' Que vous ayez besoin d\'un transport pour une réunion d\'affaires dans une autre ville ou d\'un voyage de plusieurs heures pour vous rendre à une destination spéciale, nos chauffeurs expérimentés sont à votre disposition pour vous accompagner tout au long de votre trajet.'}} />,
+        fr: {
+            title : 'Longues distances',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'Vous souhaitez  entreprendre un long voyage sans stress et avec une <span class=colored>expérience de première classe ?</span>'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: ' Que vous ayez besoin d\'un transport pour une réunion d\'affaires dans une autre ville ou d\'un voyage de plusieurs heures pour vous rendre à une destination spéciale, nos chauffeurs expérimentés sont à votre disposition pour vous accompagner tout au long de votre trajet.'}} />
+        },
+
+        eng: {
+            title : 'Long distances',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'Looking for a <span class=colored>first class, stress-free journey ?</span>'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: ' Our experienced chauffeurs will make sure you have the best experience whether you need transport for a business meeting in another city or a several hour ride to a special destination. '}} />
+        }   
     },
     {
-        title : 'Événements',
-        p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Vous préparez votre mariage</span> et vous cherchez un moyen de transport élégant et raffiné pour votre grand jour? Notre <strong>service de chauffeur privé VTC</strong> vous offre des options sur mesure pour rendre votre <span class=colored>journée inoubliable.</span>'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Nous proposons des véhicules décorés selon vos goûts et vos envies, avec des <strong>chauffeurs professionnels et expérimentés</strong> pour vous conduire en toute sécurité.'}} />,
+        fr: {
+            title : 'Événements',
+            p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Vous préparez votre mariage</span> et vous cherchez un moyen de transport élégant et raffiné pour votre grand jour? Notre <strong>service de chauffeur privé VTC</strong> vous offre des options sur mesure pour rendre votre <span class=colored>journée inoubliable.</span>'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'Nous proposons des véhicules décorés selon vos goûts et vos envies, avec des <strong>chauffeurs professionnels et expérimentés</strong> pour vous conduire en toute sécurité.'}} />
+        },
+
+        eng: {
+            title : 'Events',
+            p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Planning your wedding</span> and looking for an elegant, high-class vehicle for the big day? Our <strong>private chauffeur service</strong> offers tailored solutions for your <span class=colored>unforgettable moment.</span>'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'Our vehicles will be decorated and customised according to your tastes and wishes. Our <strong>experienced and professional chauffeurs</strong> will drive you safely and in style.'}} />
+        } 
     },
     {
-        title : 'Extras',
-        p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <strong>Bk-Elite</strong>, notre priorité est de donner la meilleure expérience possible à notre clientèle.'}} />,
-        p2 : <p dangerouslySetInnerHTML={{__html: 'Vous voyagez avec des bagages encombrants ou coûteux, vous souhaitez faire confiance à notre connaissance de la région pour faire du tourisme, ou plus encore ?  Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements.'}} />,
+        fr: {
+            title : 'Extras',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'Chez <strong>Bk-Elite</strong>, notre priorité est de donner la meilleure expérience possible à notre clientèle.'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'Vous voyagez avec des bagages encombrants ou coûteux, vous souhaitez faire confiance à notre connaissance de la région pour faire du tourisme, ou plus encore ? Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements.'}} />,
+        },
+
+        eng: {
+            title : 'Extras',
+            p1 : <p dangerouslySetInnerHTML={{__html: 'At <strong>Bk-Elite</strong>, our priority is to give the best experience possible at the best price.'}} />,
+            p2 : <p dangerouslySetInnerHTML={{__html: 'Traveling with bulky or expensive luggage? Do you want to rely on our knowledge of the region and to be shown around? Or do you have a special request? Our private chauffeur service offers you a customisable solution for every journey.'}} />,
+        } 
     }
 ];
 
+const servicesTxt = {
+    fr: {
+        mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>S</span>ervices'}} />,
+        nav1: 'Taxi driver',
+        nav2: 'Transfert aéroport',
+        nav3: 'Longues distances',
+        nav4: 'Événements',
+        nav5: 'Extras',
+        ponctual: <span dangerouslySetInnerHTML={{__html: 'Chauffeur <br> ponctuel'}} />,
+        aroundClock: <span dangerouslySetInnerHTML={{__html: 'À toute <br> heure'}} />,
+        flightDelay: <span dangerouslySetInnerHTML={{__html: 'Attente en cas <br> de vol retardé'}} />,
+        competitiveRate: <span dangerouslySetInnerHTML={{__html: 'Tarifs <br> compétitifs'}} />,
+        music: <span dangerouslySetInnerHTML={{__html: 'Service <br> personnalisé'}} />,
+        drinks: <span dangerouslySetInnerHTML={{__html: 'Boissons et <br> collations'}} />,
+        floral: <span dangerouslySetInnerHTML={{__html: 'Décoration <br> florale'}} />,
+        elegance: <span dangerouslySetInnerHTML={{__html: 'Chauffeur <br> élégant'}} />,
+        luggage: <span dangerouslySetInnerHTML={{__html: 'Service <br> bagagerie'}} />,
+        turism: <span dangerouslySetInnerHTML={{__html: 'Circuit <br> touristique'}} />,
+        avaibility: <span dangerouslySetInnerHTML={{__html: 'Mise à <br> disposition'}} />,
+        book: 'Réservez votre course'
+    },
+
+    eng: {
+        mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>S</span>ervices'}} />,
+        nav1: 'Taxi driver',
+        nav2: 'Airport transfer',
+        nav3: 'Long distances',
+        nav4: 'Events',
+        nav5: 'Extras',
+        ponctual: <span dangerouslySetInnerHTML={{__html: 'Punctual <br> driver'}} />,
+        aroundClock: <span dangerouslySetInnerHTML={{__html: 'Around the <br> clock'}} />,
+        flightDelay: <span dangerouslySetInnerHTML={{__html: 'Delayed <br> flight'}} />,
+        competitiveRate: <span dangerouslySetInnerHTML={{__html: 'Competitive <br> rates'}} />,
+        music: <span dangerouslySetInnerHTML={{__html: 'Personalised <br> service'}} />,
+        drinks: <span dangerouslySetInnerHTML={{__html: 'Drinks and <br> snacks'}} />,
+        floral: <span dangerouslySetInnerHTML={{__html: 'Floral <br> decoration'}} />,
+        elegance: <span dangerouslySetInnerHTML={{__html: 'A dapper <br> chauffeur'}} />,
+        luggage: <span dangerouslySetInnerHTML={{__html: 'Baggage <br> service'}} />,
+        turism: <span dangerouslySetInnerHTML={{__html: 'Sightseeing <br> tours'}} />,
+        avaibility: <span dangerouslySetInnerHTML={{__html: 'Driver\'s <br> availability'}} />,
+        book: 'Book a ride'
+    }
+}
+
 const services = ['taxi', 'airport', 'distance', 'events', 'extras'];
 
-const Services = ({scrollY, navigate}) => {
+const Services = ({lang, scrollY, navigate}) => {
 
     const [selectedService, setSelectedService] = useState('taxi');
     const [servicesCtg, setServicesCtg] = useState(0);
@@ -367,30 +451,28 @@ const Services = ({scrollY, navigate}) => {
         <>
             <div className="services-nav">
                 <div className="services-nav__title">
-                        <h2 className='h-section'>
-                            <span>S</span>ervices
-                        </h2>
+                        {servicesTxt[lang].mainTitle}
                     </div>
                     <ul>
                         <li className='taxi-nav' 
                             onClick={(() => {setServicesCtg(0); setServicesSlide({from: servicesSlide.to, to: 'taxi'})})}>
-                            Taxi driver
+                            {servicesTxt[lang].nav1}
                         </li>
                         <li className='airport-nav' 
                             onClick={(() => {setServicesCtg(1); setServicesSlide({from: servicesSlide.to, to: 'airport'})})}>
-                            Transfert aéroport
+                            {servicesTxt[lang].nav2}
                         </li>
                         <li className='distance-nav' 
                             onClick={(() => {setServicesCtg(2); setServicesSlide({from: servicesSlide.to, to: 'distance'})})}>
-                            Longues distances
+                            {servicesTxt[lang].nav3}
                         </li>
                         <li className='events-nav' 
                             onClick={(() => {setServicesCtg(3); setServicesSlide({from: servicesSlide.to, to: 'events'})})}>
-                            Événements
+                            {servicesTxt[lang].nav4}
                         </li>
                         <li className='extras-nav' 
                             onClick={(() => {setServicesCtg(4); setServicesSlide({from: servicesSlide.to, to: 'extras'})})}>
-                            Extras
+                            {servicesTxt[lang].nav5}
                         </li>
                     </ul>
                 </div>
@@ -406,7 +488,7 @@ const Services = ({scrollY, navigate}) => {
                     </div>
                 </div>   
                 <div className="content-title">
-                    <h3>{servicesArray[servicesCtg].title}</h3>
+                    <h3>{servicesArray[servicesCtg][lang].title}</h3>
                     {(servicesCtg === 0) ?               
                         <svg width="57" height="25" viewBox="0 0 57 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23.937 13.5278H26.608L25.2592 9.89551L23.937 13.5278Z" fill="#D1B000"/>
@@ -435,8 +517,8 @@ const Services = ({scrollY, navigate}) => {
                 </div>
                 <div className="services-content" ref={contentRef}>
                     <div className="main-banner" ref={bannerRef}>
-                        {servicesArray[servicesCtg].p1}
-                        {servicesArray[servicesCtg].p2}
+                        {servicesArray[servicesCtg][lang].p1}
+                        {servicesArray[servicesCtg][lang].p2}
                         <ul className="extras">
                             {(servicesCtg === 0) ? 
                                 <>
@@ -444,34 +526,29 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'ponctual') ? 
-                                            <Extras index={0} liNb={"li1"} />
+                                            <Extras lang={lang} index={0} liNb={"li1"} />
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.9999 30C6.729 30 0 23.271 0 15.0001C0 6.72914 6.729 0 14.9999 0C23.271 0 30 6.729 30 14.9999C30 23.2709 23.271 30 14.9999 30ZM14.9999 0.876266C7.21211 0.876266 0.876266 7.21211 0.876266 15.0001C0.876266 22.788 7.21211 29.1237 14.9999 29.1237C22.7877 29.1237 29.1237 22.7879 29.1237 15.0001C29.1237 7.21226 22.7877 0.876266 14.9999 0.876266ZM14.9999 27.5538C8.07786 27.5538 2.44624 21.9221 2.44624 15.0001C2.44624 8.07801 8.07786 2.44624 14.9999 2.44624C21.922 2.44624 27.5536 8.07786 27.5536 14.9999C27.5536 21.922 21.922 27.5538 14.9999 27.5538ZM14.9999 3.32251C8.56098 3.32251 3.32251 8.56098 3.32251 14.9999C3.32251 21.4389 8.56098 26.6773 14.9999 26.6773C21.4389 26.6773 26.6773 21.4389 26.6773 14.9999C26.6773 8.56098 21.4389 3.32251 14.9999 3.32251ZM14.9999 25.8802C14.7579 25.8802 14.5618 25.6841 14.5618 25.4421V24.4684C14.5618 24.2264 14.7579 24.0303 14.9999 24.0303C15.2419 24.0303 15.4381 24.2264 15.4381 24.4684V25.4421C15.4381 25.6841 15.2419 25.8802 14.9999 25.8802ZM14.9999 16.8256C13.9932 16.8256 13.1744 16.0068 13.1744 15.0001C13.1744 14.3719 13.4932 13.8168 13.9776 13.4882V5.18151C13.9776 4.61778 14.4362 4.1592 14.9999 4.1592C15.5635 4.1592 16.0222 4.61778 16.0222 5.18151V13.4882C16.2147 13.6189 16.3811 13.7851 16.5118 13.9778H20.9301C21.4936 13.9778 21.9524 14.4363 21.9524 15.0001C21.9524 15.5638 21.4936 16.0224 20.9301 16.0224H16.5118C16.1832 16.5067 15.6281 16.8256 14.9999 16.8256ZM14.9999 14.0508C14.4765 14.0508 14.0506 14.4766 14.0506 15.0001C14.0506 15.5235 14.4765 15.9494 14.9999 15.9494C15.5234 15.9494 15.9492 15.5235 15.9492 15.0001C15.9492 14.4766 15.5234 14.0508 14.9999 14.0508ZM16.8255 15.1461H20.9299C21.0105 15.1461 21.076 15.0805 21.076 15.0001C21.076 14.9196 21.0105 14.854 20.9299 14.854H16.8255V15.1461ZM14.8539 13.1745H15.146V5.18151C15.146 5.10104 15.0805 5.03546 14.9999 5.03546C14.9195 5.03546 14.8539 5.10104 14.8539 5.18151V13.1745ZM25.4449 15.5526H24.4712C24.2292 15.5526 24.0331 15.3564 24.0331 15.1144C24.0331 14.8724 24.2292 14.6763 24.4712 14.6763H25.4449C25.6869 14.6763 25.883 14.8724 25.883 15.1144C25.883 15.3564 25.6869 15.5526 25.4449 15.5526ZM5.80191 15.5526H4.82823C4.58623 15.5526 4.39009 15.3564 4.39009 15.1144C4.39009 14.8724 4.58623 14.6763 4.82823 14.6763H5.80191C6.0439 14.6763 6.24004 14.8724 6.24004 15.1144C6.24004 15.3564 6.04376 15.5526 5.80191 15.5526Z" fill="#D1B000"/>
                                         </svg>
-
-
-                                        Chauffeur <br />
-                                        ponctuel
+                                        {servicesTxt[lang].ponctual}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'allDay', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'allDay') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'allDay') ? 
-                                            <Extras index={1} liNb={"li2"}/>
+                                            <Extras lang={lang} index={1} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.5355 20.8269C10.5355 17.8254 14.4278 17.3452 14.4278 15.6917C14.4278 14.9651 13.8655 14.5308 13.1619 14.5308C12.1891 14.5308 11.6611 15.516 11.6611 15.516L10.5356 14.7657C10.5356 14.7657 11.2974 13.1007 13.2908 13.1007C14.7562 13.1007 15.9992 13.9914 15.9992 15.5628C15.9992 18.2359 12.2711 18.6932 12.2358 20.2646H16.1281V21.5658H10.6062C10.5708 21.2966 10.5355 21.0618 10.5355 20.8269ZM16.9758 18.4937L20.5636 13.241H22.3574V18.1653H23.4362V19.4207H22.3574V21.5659H20.8681V19.4207H16.9758V18.4937ZM20.8681 18.1653V15.5867C20.8681 15.1762 20.9272 14.7189 20.9272 14.7189H20.9033C20.9033 14.7189 20.7162 15.1638 20.4928 15.4807L18.5701 18.1424V18.1653H20.8681ZM28.2109 17.724L27.9212 18.7617C26.2746 24.6603 20.2659 28.3825 14.3221 26.9072C8.61307 25.4903 5.06497 19.9584 5.91813 14.3224L7.63835 14.8026C8.03707 14.9139 8.40684 14.5518 8.30382 14.1508L6.43308 6.86626C6.33012 6.46529 5.83173 6.32616 5.53592 6.61581L0.161866 11.8779C-0.133949 12.1675 -0.00527469 12.6688 0.393552 12.7801L2.26596 13.3028C0.868633 20.9266 5.57193 28.5197 13.247 30.5183C21.2167 32.5937 29.3456 27.6606 31.56 19.7284L31.837 18.7363C31.9168 18.4502 31.7497 18.1536 31.4636 18.0737L28.8735 17.3506C28.5875 17.2707 28.2908 17.438 28.2109 17.724ZM31.2715 13.1849L28.5553 13.5378C28.2608 13.576 28.0531 13.8458 28.0913 14.1404L28.1983 14.9642C28.2366 15.2587 28.5064 15.4665 28.8009 15.4282L31.5171 15.0753C31.8116 15.037 32.0193 14.7672 31.9811 14.4727L31.874 13.6489C31.8358 13.3544 31.566 13.1466 31.2715 13.1849ZM29.1805 8.05234L26.7944 9.39704C26.5356 9.54286 26.4441 9.87081 26.5899 10.1296L26.9977 10.8533C27.1435 11.1121 27.4715 11.2037 27.7303 11.0578L30.1164 9.71313C30.3751 9.56732 30.4667 9.23936 30.3209 8.98055L29.9131 8.25685C29.7673 7.99809 29.4393 7.90652 29.1805 8.05234ZM25.3192 4.07682L23.6105 6.21745C23.4251 6.44955 23.4632 6.78802 23.6953 6.97324L24.3446 7.49149C24.5767 7.67682 24.9151 7.63882 25.1003 7.40667L26.8091 5.26603C26.9944 5.03388 26.9563 4.69547 26.7242 4.51019L26.075 3.99194C25.8429 3.80672 25.5045 3.84466 25.3192 4.07682ZM20.2497 1.83725L19.4673 4.46211C19.3824 4.74674 19.5445 5.04632 19.829 5.13114L20.6252 5.36842C20.9098 5.4533 21.2093 5.29128 21.2942 5.0067L22.0766 2.38184C22.1614 2.09721 21.9995 1.79769 21.7148 1.71281L20.9188 1.47553C20.6341 1.39065 20.3345 1.55262 20.2497 1.83725ZM14.7105 1.65981L14.9683 4.38664C14.9962 4.68235 15.2587 4.8994 15.5543 4.87144L16.3813 4.7932C16.677 4.76524 16.8941 4.50287 16.8661 4.20716L16.6083 1.48034C16.5803 1.18463 16.3179 0.967628 16.0222 0.99559L15.1952 1.07378C14.8995 1.10174 14.6825 1.3641 14.7105 1.65981ZM9.50809 3.57038L10.7686 6.00202C10.9053 6.26569 11.2299 6.36865 11.4937 6.23193L12.2312 5.84967C12.4948 5.71294 12.5978 5.38838 12.4611 5.12466L11.2005 2.69302C11.0638 2.42935 10.7392 2.32639 10.4755 2.46311L9.738 2.84542C9.47433 2.98204 9.37142 3.30665 9.50809 3.57038Z" fill="#D1B000"/>
                                         </svg>
-
-                                        À toute <br />
-                                        heure
+                                        {servicesTxt[lang].aroundClock}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2} liNb={"li3"}/>
+                                            <Extras lang={lang} index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -484,9 +561,7 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M21.3116 22.2437C17.213 22.2437 13.7798 20.662 12.8642 18.5349C12.7084 18.8982 12.6235 19.2768 12.6235 19.6667C12.6235 22.3399 16.513 24.5075 21.3116 24.5075C26.1105 24.5075 30.0001 22.3399 30.0001 19.6667C30.0001 19.2769 29.9152 18.8983 29.7586 18.5349C28.8437 20.662 25.4102 22.2437 21.3116 22.2437Z" fill="#D1B000"/>
                                             <path d="M21.3116 27.3544C17.213 27.3544 13.7798 25.7732 12.8642 23.646C12.7084 24.0093 12.6235 24.3879 12.6235 24.7779C12.6235 27.451 16.513 29.618 21.3116 29.618C26.1105 29.618 30.0001 27.451 30.0001 24.7779C30.0001 24.3879 29.9152 24.0093 29.7586 23.646C28.8437 25.7732 25.4102 27.3544 21.3116 27.3544Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Tarifs <br />
-                                        compétitifs
+                                        {servicesTxt[lang].competitiveRate}
                                     </li>
                                 </>
                                 : (servicesCtg === 1) ?
@@ -495,35 +570,29 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'ponctual') ? 
-                                            <Extras index={0} liNb={"li1"}/>
+                                            <Extras lang={lang} index={0} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.9999 30C6.729 30 0 23.271 0 15.0001C0 6.72914 6.729 0 14.9999 0C23.271 0 30 6.729 30 14.9999C30 23.2709 23.271 30 14.9999 30ZM14.9999 0.876266C7.21211 0.876266 0.876266 7.21211 0.876266 15.0001C0.876266 22.788 7.21211 29.1237 14.9999 29.1237C22.7877 29.1237 29.1237 22.7879 29.1237 15.0001C29.1237 7.21226 22.7877 0.876266 14.9999 0.876266ZM14.9999 27.5538C8.07786 27.5538 2.44624 21.9221 2.44624 15.0001C2.44624 8.07801 8.07786 2.44624 14.9999 2.44624C21.922 2.44624 27.5536 8.07786 27.5536 14.9999C27.5536 21.922 21.922 27.5538 14.9999 27.5538ZM14.9999 3.32251C8.56098 3.32251 3.32251 8.56098 3.32251 14.9999C3.32251 21.4389 8.56098 26.6773 14.9999 26.6773C21.4389 26.6773 26.6773 21.4389 26.6773 14.9999C26.6773 8.56098 21.4389 3.32251 14.9999 3.32251ZM14.9999 25.8802C14.7579 25.8802 14.5618 25.6841 14.5618 25.4421V24.4684C14.5618 24.2264 14.7579 24.0303 14.9999 24.0303C15.2419 24.0303 15.4381 24.2264 15.4381 24.4684V25.4421C15.4381 25.6841 15.2419 25.8802 14.9999 25.8802ZM14.9999 16.8256C13.9932 16.8256 13.1744 16.0068 13.1744 15.0001C13.1744 14.3719 13.4932 13.8168 13.9776 13.4882V5.18151C13.9776 4.61778 14.4362 4.1592 14.9999 4.1592C15.5635 4.1592 16.0222 4.61778 16.0222 5.18151V13.4882C16.2147 13.6189 16.3811 13.7851 16.5118 13.9778H20.9301C21.4936 13.9778 21.9524 14.4363 21.9524 15.0001C21.9524 15.5638 21.4936 16.0224 20.9301 16.0224H16.5118C16.1832 16.5067 15.6281 16.8256 14.9999 16.8256ZM14.9999 14.0508C14.4765 14.0508 14.0506 14.4766 14.0506 15.0001C14.0506 15.5235 14.4765 15.9494 14.9999 15.9494C15.5234 15.9494 15.9492 15.5235 15.9492 15.0001C15.9492 14.4766 15.5234 14.0508 14.9999 14.0508ZM16.8255 15.1461H20.9299C21.0105 15.1461 21.076 15.0805 21.076 15.0001C21.076 14.9196 21.0105 14.854 20.9299 14.854H16.8255V15.1461ZM14.8539 13.1745H15.146V5.18151C15.146 5.10104 15.0805 5.03546 14.9999 5.03546C14.9195 5.03546 14.8539 5.10104 14.8539 5.18151V13.1745ZM25.4449 15.5526H24.4712C24.2292 15.5526 24.0331 15.3564 24.0331 15.1144C24.0331 14.8724 24.2292 14.6763 24.4712 14.6763H25.4449C25.6869 14.6763 25.883 14.8724 25.883 15.1144C25.883 15.3564 25.6869 15.5526 25.4449 15.5526ZM5.80191 15.5526H4.82823C4.58623 15.5526 4.39009 15.3564 4.39009 15.1144C4.39009 14.8724 4.58623 14.6763 4.82823 14.6763H5.80191C6.0439 14.6763 6.24004 14.8724 6.24004 15.1144C6.24004 15.3564 6.04376 15.5526 5.80191 15.5526Z" fill="#D1B000"/>
                                         </svg>
-
-
-                                        Chauffeur <br />
-                                        ponctuel
+                                        {servicesTxt[lang].ponctual}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'delay', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'delay') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'delay') ? 
-                                            <Extras index={3} liNb={"li2"}/>
+                                            <Extras lang={lang} index={3} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="22" height="32" viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.8313 7.64808V5.01847H19.4581C20.4606 5.01847 21.2762 4.20291 21.2762 3.20042V1.81805C21.2761 0.815558 20.4606 0 19.4581 0H1.81818C0.815682 0 0.000124931 0.815558 0.000124931 1.81805V3.20048C0.000124931 4.20291 0.815682 5.01853 1.81818 5.01853H2.44505V7.63408C2.44499 7.63883 2.4443 7.64339 2.4443 7.64814C2.4443 9.91513 3.34954 12.0239 4.98935 13.582C5.07791 13.6674 5.17003 13.7514 5.27078 13.8384C5.37128 13.9252 5.46547 14.0033 5.55503 14.0739C5.60028 14.11 5.64628 14.1461 5.69303 14.1809C5.73809 14.2156 5.78384 14.2494 5.83028 14.2826C5.87803 14.3179 5.92646 14.3524 5.97128 14.3829C6.01815 14.4155 6.06596 14.4482 6.11365 14.4799C6.11571 14.4814 6.11778 14.4827 6.11984 14.484L6.14784 14.5023C6.18284 14.5251 6.21828 14.5482 6.25721 14.573C6.25759 14.5733 6.25778 14.5735 6.25815 14.5737C6.25865 14.574 6.25921 14.5743 6.25984 14.5747C6.26015 14.5748 6.26034 14.575 6.26065 14.5752C6.26259 14.5764 6.26465 14.5775 6.26659 14.5787C6.94083 15.0073 7.66764 15.3293 8.43283 15.5432V16.462C4.92953 17.4383 2.44449 20.6644 2.44449 24.3527C2.44449 24.3544 2.44467 24.356 2.44467 24.3577V26.9819H1.81805C0.81562 26.9819 0 27.7975 0 28.8V30.1819C0 31.1844 0.815557 32 1.81805 32H19.4579C20.4604 32 21.276 31.1844 21.276 30.1819V28.8C21.276 27.7975 20.4604 26.9819 19.4579 26.9819H18.8313V24.3577C18.8313 24.356 18.8315 24.3544 18.8315 24.3527C18.8315 20.6644 16.3463 17.4382 12.8429 16.4619V15.5382C16.3462 14.5617 18.8313 11.3359 18.8313 7.64808ZM1.81818 3.56404C1.61768 3.56404 1.45455 3.40092 1.45455 3.20042V1.81805C1.45455 1.61755 1.61768 1.45443 1.81818 1.45443H19.4581C19.6586 1.45443 19.8218 1.61755 19.8218 1.81805V3.20048C19.8218 3.40098 19.6586 3.5641 19.4581 3.5641H18.1041H3.17229L1.81818 3.56404ZM3.89885 7.65933C3.89891 7.65558 3.89941 7.65183 3.89941 7.64808V5.01847H17.3768V7.64808C17.3768 7.84008 17.3682 8.03039 17.3521 8.21895H3.92266C3.90729 8.03395 3.89916 7.84733 3.89885 7.65933ZM18.1037 28.4363C18.1045 28.4363 18.1051 28.4362 18.1058 28.4362H19.4579C19.6584 28.4362 19.8216 28.5993 19.8216 28.7998V30.1818C19.8216 30.3823 19.6584 30.5454 19.4579 30.5454H1.81811C1.61762 30.5454 1.45449 30.3823 1.45449 30.1818V28.7998C1.45449 28.5993 1.61762 28.4362 1.81811 28.4362H3.17198H18.1013C18.102 28.4362 18.1028 28.4363 18.1037 28.4363ZM6.17428 26.9818L10.1721 24.9247C10.4639 24.7747 10.8121 24.7747 11.1037 24.9247L15.1016 26.9818H6.17428ZM17.377 24.349C17.377 24.3502 17.3768 24.3512 17.3768 24.3524V26.5169L11.7692 23.6315C11.0609 23.2669 10.2151 23.2669 9.50669 23.6315L3.89916 26.5169V24.3524C3.89916 24.3512 3.89904 24.3502 3.89904 24.349C3.90079 21.151 6.17246 18.3747 9.3022 17.7466C9.37513 17.7321 9.44419 17.7069 9.50763 17.6724C9.52288 17.6641 9.53744 17.6547 9.55201 17.6455C9.55701 17.6423 9.56232 17.6396 9.56719 17.6362C9.58382 17.625 9.59976 17.6127 9.61532 17.6002C9.61788 17.5981 9.62057 17.5965 9.62313 17.5943C9.63776 17.5823 9.65151 17.5693 9.66507 17.5562C9.66826 17.5531 9.67182 17.5503 9.67501 17.547C9.68669 17.5353 9.6975 17.5228 9.70832 17.5104C9.71288 17.5051 9.71782 17.5003 9.72219 17.4948C9.73107 17.484 9.73907 17.4725 9.74738 17.4612C9.753 17.4536 9.75894 17.4462 9.76426 17.4383C9.77101 17.4281 9.777 17.4175 9.78325 17.407C9.78907 17.3974 9.79526 17.388 9.80057 17.3781C9.80669 17.3669 9.81175 17.3551 9.81719 17.3435C9.82169 17.334 9.82663 17.3248 9.83069 17.3151C9.83882 17.2957 9.84588 17.2759 9.85238 17.2558C9.85301 17.2536 9.854 17.2516 9.85463 17.2495C9.8765 17.1794 9.88769 17.1054 9.88725 17.0295V15.813C10.1402 15.8365 10.3949 15.8487 10.6501 15.8487C10.8967 15.8487 11.1433 15.8371 11.3884 15.8151V17.0332C11.3884 17.0333 11.3884 17.0335 11.3884 17.0335C11.3884 17.0832 11.3934 17.1322 11.4032 17.1797C11.4037 17.182 11.4045 17.1842 11.405 17.1867C11.4094 17.2072 11.4145 17.2276 11.4207 17.2477C11.4267 17.2673 11.4339 17.2863 11.4415 17.3051C11.4426 17.3078 11.4434 17.3107 11.4446 17.3135C11.4524 17.3321 11.4613 17.3503 11.4706 17.3682C11.4721 17.371 11.4732 17.374 11.4747 17.3767C11.4831 17.3922 11.4924 17.407 11.5017 17.4218C11.5049 17.4268 11.5077 17.4321 11.5111 17.4371C11.5189 17.4487 11.5276 17.4597 11.536 17.4709C11.5417 17.4785 11.5471 17.4865 11.5532 17.4939C11.5597 17.5018 11.5669 17.5091 11.5737 17.5168C11.5826 17.5268 11.5912 17.5369 11.6006 17.5463C11.6054 17.5511 11.6107 17.5555 11.6156 17.5601C11.6276 17.5716 11.6397 17.5831 11.6526 17.5938C11.6559 17.5966 11.6596 17.599 11.6629 17.6017C11.6777 17.6136 11.6928 17.6252 11.7086 17.6359C11.7126 17.6385 11.7167 17.6407 11.7207 17.6433C11.7362 17.6535 11.7519 17.6634 11.7684 17.6723C11.8312 17.7065 11.8999 17.7316 11.9723 17.7461C11.9724 17.7461 11.9725 17.7461 11.9726 17.7461C15.103 18.3741 17.3753 21.1506 17.377 24.349ZM11.9735 14.2535C11.9361 14.2609 11.9001 14.2717 11.865 14.2847C11.0489 14.4332 10.1906 14.4292 9.3817 14.2744C9.37788 14.2732 9.37413 14.2719 9.37032 14.2709C9.34826 14.2642 9.32588 14.2584 9.30301 14.2538C8.49908 14.0925 7.73746 13.7874 7.03927 13.3467C7.00677 13.3259 6.97427 13.3048 6.94208 13.2837L6.91671 13.2672C6.87808 13.2414 6.8394 13.215 6.79677 13.1854C6.76077 13.1607 6.72534 13.1356 6.69059 13.1098C6.68696 13.107 6.68321 13.1044 6.67952 13.1017C6.64434 13.0767 6.60971 13.051 6.57571 13.0247C6.57134 13.0214 6.56696 13.0181 6.56265 13.0149C6.52884 12.99 6.49577 12.9638 6.45934 12.9348C6.38346 12.875 6.30596 12.8107 6.22196 12.7381C6.14121 12.6684 6.06828 12.602 5.99515 12.5314C5.15003 11.7284 4.54235 10.7497 4.20541 9.67344H17.0639C16.339 11.9619 14.418 13.7628 11.9735 14.2535Z" fill="#D1B000"/>
                                         </svg>
-
-
-                                        Attente en cas <br />
-                                        de vol retardé
+                                        {servicesTxt[lang].flightDelay}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2} liNb={"li3"}/>
+                                            <Extras lang={lang} index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -536,9 +605,7 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M21.3116 22.2437C17.213 22.2437 13.7798 20.662 12.8642 18.5349C12.7084 18.8982 12.6235 19.2768 12.6235 19.6667C12.6235 22.3399 16.513 24.5075 21.3116 24.5075C26.1105 24.5075 30.0001 22.3399 30.0001 19.6667C30.0001 19.2769 29.9152 18.8983 29.7586 18.5349C28.8437 20.662 25.4102 22.2437 21.3116 22.2437Z" fill="#D1B000"/>
                                             <path d="M21.3116 27.3544C17.213 27.3544 13.7798 25.7732 12.8642 23.646C12.7084 24.0093 12.6235 24.3879 12.6235 24.7779C12.6235 27.451 16.513 29.618 21.3116 29.618C26.1105 29.618 30.0001 27.451 30.0001 24.7779C30.0001 24.3879 29.9152 24.0093 29.7586 23.646C28.8437 25.7732 25.4102 27.3544 21.3116 27.3544Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Tarifs <br />
-                                        compétitifs
+                                        {servicesTxt[lang].competitiveRate}
                                     </li>
                                 </>
                                 : (servicesCtg === 2) ?
@@ -547,34 +614,30 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'music') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'music') ? 
-                                            <Extras index={4} liNb={"li1"}/>
+                                            <Extras lang={lang} index={4} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M27.1976 0.850765C27.1957 0.738033 27.1716 0.623732 27.1228 0.514138C26.9281 0.0770134 26.416 -0.119483 25.9786 0.075131L8.7954 7.7282C8.47713 7.86996 8.28722 8.18002 8.28235 8.50682C8.28162 8.559 8.28147 22.7197 8.28147 22.7197C7.58714 22.2395 6.7382 21.9797 5.82703 21.9797C4.37443 21.9797 2.8948 22.6262 1.76758 23.7533C-0.338405 25.8595 -0.599947 29.0249 1.18468 30.8095C1.95247 31.5773 3.01673 32 4.18149 32C5.63415 32 7.11367 31.3536 8.24089 30.2265C9.23859 29.2289 9.85956 27.9636 9.98954 26.6638C10.0098 26.4614 10.0182 26.2623 10.0146 26.0661C10.015 26.054 10.0146 16.1751 10.0146 16.1751L25.4648 9.3097V19.6043C24.7705 19.1241 23.9217 18.8643 23.0105 18.8643C21.5579 18.8643 20.0782 19.5108 18.9509 20.638C16.8448 22.7442 16.5833 25.9096 18.3681 27.6942C19.1358 28.462 20.2 28.8847 21.3648 28.8847C22.8174 28.8847 24.297 28.2383 25.4242 27.1112C26.6001 25.9352 27.2069 24.4291 27.1978 23.0175C27.2015 22.9836 27.1986 0.905667 27.1976 0.850765ZM8.26505 26.4913C8.1748 27.3942 7.73098 28.2855 7.01543 29.0011C6.21077 29.8057 5.17783 30.267 4.18139 30.267C3.68492 30.267 2.97443 30.1486 2.40999 29.5841C1.30113 28.4752 1.56262 26.4091 2.99299 24.9788C3.7976 24.1742 4.83054 23.7127 5.82698 23.7127C6.32356 23.7127 7.03394 23.8313 7.59843 24.3957C8.11211 24.9093 8.34892 25.6535 8.26505 26.4913ZM10.0145 14.2786V9.08235L25.4647 2.2012V7.41333M24.1986 25.8858C23.394 26.6903 22.3612 27.1516 21.3646 27.1516C20.8682 27.1516 20.1577 27.033 19.5932 26.4687C18.4843 25.3598 18.7459 23.2938 20.1762 21.8634C20.9809 21.0587 22.0138 20.5973 23.0103 20.5973C23.5069 20.5973 24.2171 20.7158 24.7816 21.2803C25.8907 22.3891 25.6291 24.4551 24.1986 25.8858Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Service <br />
-                                        personnalisé
+                                        {servicesTxt[lang].music}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'drinks', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'drinks') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'drinks') ? 
-                                            <Extras index={5} liNb={"li2"}/>
+                                            <Extras lang={lang} index={5} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M13.4124 0.34437C12.8976 -0.11479 12.0959 -0.11479 11.5811 0.34437C11.1118 0.766798 0 10.7459 0 17.4496C0 24.3676 5.6048 30 12.5 30C19.3887 30 25 24.3676 25 17.4496C25 10.7459 13.8882 0.766798 13.4124 0.34437ZM12.5 27.5022C7.07769 27.5022 2.66554 22.9902 2.66554 17.4496C2.66554 13.1947 9.0915 6.23387 12.5 3.00138C15.9085 6.23387 22.3345 13.1947 22.3345 17.4496C22.3345 22.9902 17.9223 27.5022 12.5 27.5022Z" fill="#D1B000"/>
                                             <path d="M7.42958 17.186C7.44262 16.5003 6.8691 15.931 6.13266 15.9126C6.11962 15.9126 6.10659 15.9126 6.10007 15.9126C5.38318 15.9126 4.79011 16.4513 4.77056 17.1309C4.76404 17.2717 4.67932 20.6695 7.54037 23.4857C8.17906 24.1163 9.16316 23.7673 9.42385 23.5408C9.95826 23.0694 9.98433 22.2796 9.4825 21.7715C7.42306 19.7206 7.42958 17.2411 7.42958 17.186Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Boissons et <br />
-                                        collations
+                                        {servicesTxt[lang].drinks}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2} liNb={"li3"}/>
+                                            <Extras lang={lang} index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -587,9 +650,7 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M21.3116 22.2437C17.213 22.2437 13.7798 20.662 12.8642 18.5349C12.7084 18.8982 12.6235 19.2768 12.6235 19.6667C12.6235 22.3399 16.513 24.5075 21.3116 24.5075C26.1105 24.5075 30.0001 22.3399 30.0001 19.6667C30.0001 19.2769 29.9152 18.8983 29.7586 18.5349C28.8437 20.662 25.4102 22.2437 21.3116 22.2437Z" fill="#D1B000"/>
                                             <path d="M21.3116 27.3544C17.213 27.3544 13.7798 25.7732 12.8642 23.646C12.7084 24.0093 12.6235 24.3879 12.6235 24.7779C12.6235 27.451 16.513 29.618 21.3116 29.618C26.1105 29.618 30.0001 27.451 30.0001 24.7779C30.0001 24.3879 29.9152 24.0093 29.7586 23.646C28.8437 25.7732 25.4102 27.3544 21.3116 27.3544Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Tarifs <br />
-                                        compétitifs
+                                        {servicesTxt[lang].competitiveRate}
                                     </li>
                                 </>
                                 : (servicesCtg === 3) ?
@@ -598,7 +659,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'flowers') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'flowers') ? 
-                                            <Extras index={6} liNb={"li1"}/>
+                                            <Extras lang={lang} index={6} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -609,14 +670,12 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M20.6449 3.85685L21.1079 4.79385L22.1429 4.94385C23.8089 5.18585 25.2539 6.05285 26.2569 7.31785L26.2849 7.15485C26.6779 4.85885 25.7339 2.53785 23.8499 1.16885C21.9649 -0.200148 19.4659 -0.381148 17.4039 0.702852L17.3159 0.748852C18.7399 1.33385 19.9319 2.41285 20.6449 3.85685Z" fill="#D1B000"/>
                                             <path d="M22.9109 16.5038C22.8549 16.1798 22.9629 15.8488 23.1979 15.6198L24.3229 14.5228C25.5369 13.3388 25.9739 11.5688 25.4499 9.95581C24.9259 8.34281 23.5319 7.16681 21.8529 6.92281L20.2969 6.69681C19.9719 6.64981 19.6909 6.44481 19.5449 6.15081L18.8499 4.74081C18.0989 3.21981 16.5499 2.25781 14.8539 2.25781C13.1579 2.25781 11.6089 3.22081 10.8589 4.74181L10.1639 6.15081C10.0199 6.44581 9.73887 6.64981 9.41387 6.69781L7.85787 6.92281C6.17987 7.16781 4.78587 8.34281 4.26187 9.95581C3.73787 11.5688 4.17487 13.3398 5.38887 14.5228L6.51387 15.6198C6.74887 15.8488 6.85687 16.1798 6.80087 16.5038L6.53587 18.0528C6.24887 19.7248 6.93587 21.4138 8.30787 22.4108C9.08387 22.9748 10.0029 23.2618 10.9269 23.2618C11.6359 23.2618 12.3479 23.0928 12.9999 22.7498L14.3909 22.0178C14.5369 21.9408 14.6959 21.9028 14.8559 21.9028C15.0159 21.9028 15.1749 21.9408 15.3209 22.0178L16.7129 22.7498C17.3649 23.0928 18.0759 23.2618 18.7849 23.2618C19.7089 23.2618 20.6279 22.9748 21.4049 22.4108C22.7769 21.4138 23.4639 19.7248 23.1779 18.0538L22.9109 16.5038ZM20.8029 14.1198H16.7209L20.2559 16.1608C20.4949 16.2988 20.5769 16.6048 20.4389 16.8438C20.3459 17.0048 20.1779 17.0938 20.0049 17.0938C19.9199 17.0938 19.8339 17.0728 19.7549 17.0268L16.2179 14.9848L18.2599 18.5218C18.3979 18.7608 18.3159 19.0668 18.0769 19.2048C17.9979 19.2498 17.9119 19.2718 17.8269 19.2718C17.6539 19.2718 17.4859 19.1828 17.3929 19.0218L15.3519 15.4858V19.5688C15.3519 19.8448 15.1279 20.0688 14.8519 20.0688C14.5759 20.0688 14.3519 19.8448 14.3519 19.5688V15.4858L12.3119 19.0198C12.2189 19.1798 12.0509 19.2698 11.8779 19.2698C11.7929 19.2698 11.7069 19.2478 11.6289 19.2028C11.3899 19.0648 11.3079 18.7588 11.4459 18.5198L13.4859 14.9868L9.95287 17.0268C9.87387 17.0718 9.78787 17.0938 9.70287 17.0938C9.52987 17.0938 9.36187 17.0048 9.26887 16.8438C9.13087 16.6048 9.21287 16.2988 9.45187 16.1608L12.9849 14.1208H8.90487C8.62887 14.1208 8.40487 13.8968 8.40487 13.6208C8.40487 13.3448 8.62887 13.1208 8.90487 13.1208H12.9859L9.45187 11.0808C9.21287 10.9428 9.13087 10.6368 9.26887 10.3978C9.40687 10.1578 9.71287 10.0758 9.95187 10.2148L13.4849 12.2548L11.4449 8.72181C11.3069 8.48281 11.3889 8.17681 11.6279 8.03881C11.8649 7.89981 12.1719 7.98181 12.3109 8.22181L14.3509 11.7558V7.67281C14.3509 7.39681 14.5749 7.17281 14.8509 7.17281C15.1269 7.17281 15.3509 7.39681 15.3509 7.67281V11.7528L17.3919 8.21781C17.5299 7.97781 17.8349 7.89581 18.0749 8.03481C18.3139 8.17281 18.3959 8.47881 18.2579 8.71781L16.2199 12.2528L19.7549 10.2118C19.9919 10.0738 20.2989 10.1548 20.4379 10.3948C20.5759 10.6338 20.4939 10.9398 20.2549 11.0778L16.7189 13.1198H20.8029C21.0789 13.1198 21.3029 13.3438 21.3029 13.6198C21.3029 13.8958 21.0789 14.1198 20.8029 14.1198Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Décoration <br />
-                                        florale
+                                        {servicesTxt[lang].floral}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'elegance', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'elegance') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'elegance') ? 
-                                            <Extras index={7} liNb={"li2"}/>
+                                            <Extras lang={lang} index={7} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="21" height="32" viewBox="0 0 21 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -624,14 +683,12 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M18.0666 5.98706H9.84033L7.28127 24.546C7.24356 24.818 7.32805 25.0933 7.51272 25.2977L13.2589 31.6914C13.4363 31.8875 13.6886 32 13.9535 32C14.2183 32 14.4706 31.8874 14.6481 31.6914L20.3951 25.2977C20.5798 25.0933 20.6631 24.818 20.6257 24.546L18.0666 5.98706Z" fill="#D1B000"/>
                                             <path d="M9.69423 3.85134L9.79878 4.28409H18.1081L18.2124 3.85134L18.5649 2.40271C18.7048 1.82294 18.5713 1.2108 18.2031 0.742362C17.8349 0.273142 17.2707 0 16.6743 0H11.2327C10.636 0 10.0718 0.273142 9.70387 0.742362C9.33569 1.2108 9.20214 1.82294 9.34181 2.40271L9.69423 3.85134Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Chauffeur <br />
-                                        élégant
+                                        {servicesTxt[lang].elegance}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
-                                            <Extras index={2} liNb={"li3"}/>
+                                            <Extras lang={lang} index={2} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -644,9 +701,7 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M21.3116 22.2437C17.213 22.2437 13.7798 20.662 12.8642 18.5349C12.7084 18.8982 12.6235 19.2768 12.6235 19.6667C12.6235 22.3399 16.513 24.5075 21.3116 24.5075C26.1105 24.5075 30.0001 22.3399 30.0001 19.6667C30.0001 19.2769 29.9152 18.8983 29.7586 18.5349C28.8437 20.662 25.4102 22.2437 21.3116 22.2437Z" fill="#D1B000"/>
                                             <path d="M21.3116 27.3544C17.213 27.3544 13.7798 25.7732 12.8642 23.646C12.7084 24.0093 12.6235 24.3879 12.6235 24.7779C12.6235 27.451 16.513 29.618 21.3116 29.618C26.1105 29.618 30.0001 27.451 30.0001 24.7779C30.0001 24.3879 29.9152 24.0093 29.7586 23.646C28.8437 25.7732 25.4102 27.3544 21.3116 27.3544Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Tarifs <br />
-                                        compétitifs
+                                        {servicesTxt[lang].competitiveRate}
                                     </li>
                                 </>
                                 : (servicesCtg === 4) ?
@@ -655,7 +710,7 @@ const Services = ({scrollY, navigate}) => {
                                         className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'luggage') ? 
-                                            <Extras index={8} liNb={"li1"}/>
+                                            <Extras lang={lang} index={8} liNb={"li1"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -667,14 +722,12 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M6.627 8.52411H9.72165C10.0473 8.52411 10.3107 8.15267 10.3107 7.69742C10.3107 7.2381 10.0473 6.86475 9.72165 6.86475H6.627C6.30156 6.86475 6.03711 7.2381 6.03711 7.69742C6.03711 8.151 6.30156 8.52411 6.627 8.52411Z" fill="#D1B000"/>
                                             <path d="M9.84443 13.7751H3.68332C3.35772 13.7751 3.09326 14.148 3.09326 14.6057C3.09326 15.0621 3.35772 15.4362 3.68332 15.4362H9.84426C10.1683 15.4362 10.4342 15.0621 10.4342 14.6057C10.4342 14.1492 10.1683 13.7751 9.84443 13.7751Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Service <br />
-                                        bagagerie
+                                        {servicesTxt[lang].luggage}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
                                         {(extraShown.isShown && extraShown.type === 'tourism') ? 
-                                            <Extras index={9} liNb={"li2"}/>
+                                            <Extras lang={lang} index={9} liNb={"li2"}/>
                                             : null
                                         }
                                         <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -682,14 +735,12 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M33.4713 0C29.8714 0 26.9435 2.92797 26.9435 6.52782C26.9435 8.45428 27.9657 10.3096 29.1644 11.8317L22.5159 19.814C21.9855 20.322 21.5477 21.3352 21.4631 22.0656L19.814 33.0237H16.2016C16.3691 32.7814 16.5393 32.5445 16.696 32.2923C17.8056 30.51 18.6045 28.4772 18.6045 26.3121C18.6045 21.1839 14.4318 17.0094 9.30268 17.0094C4.17355 17.0094 0 21.1839 0 26.3121C0 30.6685 3.65118 34.779 6.18738 37.1117C6.71155 37.5944 7.18889 38.0051 7.57616 38.3212C8.12014 38.7661 8.49031 39.0372 8.55785 39.0877C8.77941 39.248 9.0415 39.3281 9.30268 39.3281C9.39635 39.3281 21.4631 39.3281 21.4631 39.3281C23.0644 39.3281 24.1317 37.6178 24.3172 36.0255L26.0978 23.4895C26.0978 23.4895 35.9273 13.9788 36.0921 13.7788C37.6025 11.937 40 9.51883 40 6.52692C39.9982 2.92797 37.0702 0 33.4713 0ZM2.547 26.3121C2.547 22.5871 5.57765 19.5573 9.30268 19.5573C13.0277 19.5573 16.0575 22.588 16.0575 26.3121C16.0575 30.845 11.2075 35.0123 9.3252 36.4578C7.44557 34.9348 2.547 30.5541 2.547 26.3121ZM33.4839 13.6293C31.8024 12.2775 28.7447 9.25675 28.7447 6.52602C28.7447 3.91957 30.8648 1.79947 33.4713 1.79947C36.0777 1.79947 38.1969 3.91957 38.1969 6.52602C38.1969 9.69986 34.8015 12.617 33.4839 13.6293Z" fill="#D1B000"/>
                                             <path d="M33.5388 3.78174C32.0114 3.78174 30.7676 5.02462 30.7676 6.553C30.7676 8.08138 32.0114 9.32426 33.5388 9.32426C35.0663 9.32426 36.3101 8.08138 36.3101 6.553C36.3101 5.02462 35.0672 3.78174 33.5388 3.78174ZM33.5388 8.37499C32.5346 8.37499 31.7178 7.55721 31.7178 6.553C31.7178 5.54879 32.5346 4.73101 33.5388 4.73101C34.5421 4.73101 35.3599 5.54879 35.3599 6.553C35.3608 7.55811 34.543 8.37499 33.5388 8.37499Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Circuit <br />
-                                        touristique
+                                        {servicesTxt[lang].turism}
                                     </li>
                                     <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
                                         className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'provision') ? 
-                                            <Extras index={10} liNb={"li3"}/>
+                                            <Extras lang={lang} index={10} liNb={"li3"}/>
                                             : null
                                         }
                                         <svg width="24" height="30" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -697,9 +748,7 @@ const Services = ({scrollY, navigate}) => {
                                             <path d="M15.2952 20.0107H8.40149C2.66677 20.0107 0 24.2643 0 30L0.000240207 38.5L9.71556e-05 39L0.000143051 39.1903C5.47342 40.9001 8.83188 41.4404 12.7464 41.4404C20.391 41.4404 23.7254 39.3286 24.0001 39.1903V38.5V30C24.0006 24.2643 21.0314 20.0107 15.2952 20.0107ZM13.862 39.1903L12 41L10.014 39.1856C9.99893 39.1625 9.99185 39.1347 9.9928 39.1054L10.8663 25.7502C10.871 25.6799 10.9291 25.6256 10.9999 25.6256H12.8115C12.8819 25.6256 12.9399 25.6789 12.946 25.7502L13.8842 39.104C13.8875 39.1365 13.8781 39.1649 13.862 39.1903ZM13.0116 25.2226H10.8588L8.98667 21.3529C8.98667 20.9815 9.28681 20.6823 9.65821 20.6823H14.1537C14.5241 20.6823 14.8247 20.9815 14.8247 21.3529L13.0116 25.2226Z" fill="#D1B000"/>
                                             <path d="M18.4304 9.49453C17.6301 8.44876 15.2143 7.32324 11.8033 7.32324C8.2899 7.32324 5.87558 8.4884 5.12004 9.57098L4.28333 10.7701L3.99947 10C3.9301 10.4276 3.99989 11.0531 3.99989 11.5C3.99989 13.7492 4.62311 15.5959 6.09738 17.0692C7.56834 18.5454 9.60371 19.459 11.8519 19.459C14.3762 19.459 16.6315 18.3076 18.1213 16.5006C19.2893 15.0914 19.5 13.4726 19.5 11.5C19.5 10.962 19.5996 10.0087 19.5 9.5L19.3728 10.7225L18.4304 9.49453Z" fill="#D1B000"/>
                                         </svg>
-
-                                        Mise à <br />
-                                        disposition
+                                        {servicesTxt[lang].avaibility}
                                     </li>
                                 </>
                                 : null
@@ -722,7 +771,7 @@ const Services = ({scrollY, navigate}) => {
                             </svg>
                         </div>
                         <div>
-                            <p>Réservez votre voyage</p>
+                            <p>{servicesTxt[lang].book}</p>
                         </div>
                     </div>
                 </div>
