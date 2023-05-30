@@ -14,6 +14,7 @@ const aboutArray = [
         },
 
         eng: {
+            title : 'The company',
             p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-Elite</span> is a Provence-Alpes-Côte d\'Azur-based <strong>private transport service</strong>.'}} />,
             p2 : 'We offer our services to high-quality customers seeking comfort and excellence.',
             p3 : <p dangerouslySetInnerHTML={{__html: 'Our company is specialized in transporting people. Have a look at our various services ranging from a classic <strong>taxi ride</strong> to a <strong>private chauffeur</strong> for exceptional events.'}} />      

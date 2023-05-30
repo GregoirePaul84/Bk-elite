@@ -4,7 +4,59 @@ import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import emailjs from '@emailjs/browser';
 
-const Booking = () => {
+const bookingTxt = {
+    fr: {
+        mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>R</span>éservations'}} />,
+        h3: 'Vous souhaitez réserver une course ou demander un devis ?',
+        p1: <p dangerouslySetInnerHTML={{__html: 'Appellez nous au <b>06.58.22.86.36</b> ou réservez directement en ligne !'}} />,
+        p2: 'Notre chauffeur prendra contact avec vous dans les plus brefs délais afin de répondre au mieux à vos attentes.',
+        title1: 'À propos de vous', 
+        title2: 'Date du transport souhaité',
+        title3: 'Véhicule souhaité',
+        title4: 'Informations complémentaires',
+        required: 'Informations obligatoires',
+        lastName: 'Nom',
+        lastNamePh: 'Votre nom',
+        firstName: 'Prénom',
+        firstNamePh: 'Votre prénom',
+        telephone: 'Téléphone',
+        telephonePh: 'Fixe ou mobile',
+        postalCode: 'Code postal',
+        postalCodePh: 'Votre code postal',
+        city: 'Ville',
+        cityPh: 'Votre ville',
+        sedan: 'Berline',
+        van: 'Van',
+        message: 'Vous souhaitez un devis gratuit ou voulez nous poser une question particulière ? N\'hésitez pas à nous faire parvenir toute demande.'
+    },
+
+    eng: {
+        mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>B</span>ooking'}} />,
+        h3: 'Would you like to book a ride or ask for a quote?',
+        p1: <p dangerouslySetInnerHTML={{__html: 'Call us at <b>+336.58.22.86.36</b> or book online!'}} />,
+        p2: 'Our chauffeur will get in touch with you as soon as possible to answer any of your questions.',
+        title1: 'Your information',  
+        title2: 'Date Transportation Needed',
+        title3: 'Desired Vehicle',
+        title4: 'Additional Details',
+        required: 'Required',
+        lastName: 'Last Name',
+        lastNamePh: 'Your Last Name',
+        firstName: 'First Name',
+        firstNamePh: 'Your First Name',
+        telephone: 'Telephone',
+        telephonePh: 'Landline or mobile phone',
+        postalCode: 'Zip Code',
+        postalCodePh: 'Your Zip Code',
+        city: 'City',  
+        cityPh: 'Your city',
+        sedan: 'Sedan',
+        van: 'Van',
+        message: 'Looking for a free quote or wanting to ask us a question? Don\'t hesitate to reach out with your questions.'
+    }
+}
+
+const Booking = ({lang}) => {
 
     const schema = yup
         .object({
@@ -66,75 +118,77 @@ const Booking = () => {
         <>
             <div className="booking-nav">
                 <div className="booking-nav__title">
-                        <h2 className='h-section'>
-                            <span>R</span>eservations
-                        </h2>
+                        {bookingTxt[lang].mainTitle}
                     </div>
                 </div>
             <div className="booking-main">
                 <div className="static-info">
-                    <h3>Vous souhaitez réserver une course ou demander un devis? </h3>
-                    <p>Appellez nous au <b>06.58.22.86.36</b> ou réservez directement en ligne !</p>
-                    <p>Notre chauffeur prendra contact avec vous dans les plus brefs délais afin de répondre au mieux à vos attentes.</p>
+                    <h3>
+                        {bookingTxt[lang].h3}
+                    </h3>
+                    {bookingTxt[lang].p1}
+                    <p>
+                        {bookingTxt[lang].p2}
+                    </p>
                 </div>
                 <div className="form-container">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='form-subtitle'>
-                            <h4>À propos de vous</h4>
-                            <p className='colored'>* : Informations obligatoires</p>
+                            <h4>{bookingTxt[lang].title1}</h4>
+                            <p className='colored'>* : {bookingTxt[lang].required}</p>
                         </div>
                         <div className='input-container basic-info'>
                             <p className='error'>{errors.lastName && errors.lastName.message}</p>
-                            <label htmlFor="lastName">Nom : <span className='colored'>*</span></label>
+                            <label htmlFor="lastName">{bookingTxt[lang].lastName} : <span className='colored'>*</span></label>
                             <input 
                                 type="text" 
                                 id="lastName" 
                                 name="lastName" 
-                                placeholder='Votre nom'
+                                placeholder={bookingTxt[lang].lastNamePh}
                                 {...register('lastName')} />
                         </div>
                         <div className='input-container basic-info'>
                             <p className='error'>{errors.firstName && errors.firstName.message}</p>
-                            <label htmlFor="firstName">Prénom : <span className='colored'>*</span></label>
+                            <label htmlFor="firstName">{bookingTxt[lang].firstName} : <span className='colored'>*</span></label>
                             <input 
                                 type="text" 
                                 id="firstName" 
                                 name="firstName"
-                                placeholder='Votre prénom'
+                                placeholder={bookingTxt[lang].firstNamePh}
                                 {...register('firstName')}  />
                         </div>
                         <div className='input-container basic-info'>
                             <p className='error'>{errors.phone && errors.phone.message}</p>
-                            <label htmlFor="phone">Téléphone : <span className='colored'>*</span></label>
+                            <label htmlFor="phone">{bookingTxt[lang].telephone} : <span className='colored'>*</span></label>
                             <input 
                                 type="text" 
                                 id="phone" 
                                 name="phone"
-                                placeholder='Fixe ou mobile'
+                                placeholder={bookingTxt[lang].telephonePh}
                                 {...register('phone')}  />
                         </div>
                         <div className='input-container basic-info'>
                             <p className='error'></p>
-                            <label htmlFor="postalCode">Code postal :</label>
+                            <label htmlFor="postalCode">{bookingTxt[lang].postalCode} :</label>
                             <input 
                                 type="text" 
                                 id="postalCode" 
                                 name="postalCode" 
-                                placeholder='Votre code postal'
+                                placeholder={bookingTxt[lang].postalCodePh}
                                 {...register('postalCode')} />
                         </div>
                         <div className='input-container basic-info'>
                             <p className='error'></p>
-                            <label htmlFor="city">Ville :</label>
+                            <label htmlFor="city">{bookingTxt[lang].city} :</label>
                             <input 
                                 type="text" 
                                 id="city" 
                                 name="city" 
-                                placeholder='Votre ville'
+                                placeholder={bookingTxt[lang].cityPh}
                                 {...register('city')} />
                         </div>
                         <div className='form-subtitle'>
-                            <h4>Date du transport souhaité</h4>
+                            <h4>{bookingTxt[lang].title2}</h4>
                         </div>
                         <div className='input-container'>
                             <input 
@@ -143,10 +197,10 @@ const Booking = () => {
                                 {...register('date')} />
                         </div>
                         <div className='form-subtitle'>
-                            <h4>Véhicule souhaité</h4>
+                            <h4>{bookingTxt[lang].title3}</h4>
                         </div>
                         <div className='input-container row'>
-                            <label htmlFor="sedan">Berline</label>
+                            <label htmlFor="sedan">{bookingTxt[lang].sedan}</label>
                             <input 
                                 type="checkbox" 
                                 id="sedan" 
@@ -154,7 +208,7 @@ const Booking = () => {
                                 {...register('sedan')} />
                         </div>
                         <div className='input-container row'>
-                            <label htmlFor="van">Van</label>
+                            <label htmlFor="van">{bookingTxt[lang].van}</label>
                             <input 
                                 type="checkbox" 
                                 id="van" 
@@ -162,14 +216,14 @@ const Booking = () => {
                                 {...register('van')}  />
                         </div>
                         <div className='form-subtitle'>
-                            <h4>Informations complémentaires</h4>
+                            <h4>{bookingTxt[lang].title4}</h4>
                         </div>
                         <div className='message-container'>
                             <label htmlFor="message">Message :</label>
                             <textarea 
                                 id="message" 
                                 name="message"
-                                placeholder="Vous souhaitez un devis gratuit ou voulez nous poser une question particulière ? N'hésitez pas à nous faire parvenir toute demande."
+                                placeholder={bookingTxt[lang].message}
                                 {...register('message')} >
                             </textarea>
                         </div>
