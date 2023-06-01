@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Bk-elite/static/css/main.2f8722b0.css",
-    "main.js": "/Bk-elite/static/js/main.59d6f3bb.js",
+    "main.css": "/Bk-elite/static/css/main.02337997.css",
+    "main.js": "/Bk-elite/static/js/main.aac96cd8.js",
     "static/media/night_city_short.mp4": "/Bk-elite/static/media/night_city_short.358b7b6844c889896a74.mp4",
     "static/media/taxi.jpg": "/Bk-elite/static/media/taxi.4da2340855dc4de0701a.jpg",
     "static/media/teslamodel3.png": "/Bk-elite/static/media/teslamodel3.fa9818ef8b65e21e20ed.png",
@@ -23,11 +23,11 @@
     "static/media/person.svg": "/Bk-elite/static/media/person.93038e2613644d1f79b3.svg",
     "static/media/tablet.svg": "/Bk-elite/static/media/tablet.7a36c7d09af0e57a803b.svg",
     "static/media/drop.svg": "/Bk-elite/static/media/drop.c96eac074659fb9173e0.svg",
-    "main.2f8722b0.css.map": "/Bk-elite/static/css/main.2f8722b0.css.map",
-    "main.59d6f3bb.js.map": "/Bk-elite/static/js/main.59d6f3bb.js.map"
+    "main.02337997.css.map": "/Bk-elite/static/css/main.02337997.css.map",
+    "main.aac96cd8.js.map": "/Bk-elite/static/js/main.aac96cd8.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f8722b0.css",
-    "static/js/main.59d6f3bb.js"
+    "static/css/main.02337997.css",
+    "static/js/main.aac96cd8.js"
   ]
 }
