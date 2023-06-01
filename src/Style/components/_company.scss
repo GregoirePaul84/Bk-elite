@@ -24,6 +24,10 @@
     }
 }
 
+.company-info-ctr {
+    min-height: 600px;
+}
+
 #company-slider {
     height: 100%;
     width: 100%;
@@ -55,10 +59,10 @@
             align-items: center;
         
             .company-card {
-                height: 30%;
+                height: 25%;
                 width: 35%;
-                min-width: 540px;
-                min-height: 260px;
+                min-width: 580px;
+                min-height: 290px;
                 background-color: $transparent_black;
                 margin-left: 10%;
                 box-shadow: inset 10px 0 $color_secondary;
@@ -67,7 +71,7 @@
                 .card-title {
                     height: auto;
                     width: 60ch;
-                    margin-bottom: 20px;
+                    margin-bottom: 30px;
                     white-space: nowrap;
                     // overflow: hidden;
         

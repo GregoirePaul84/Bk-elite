@@ -15,7 +15,7 @@ const servicesArray = [
             p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs professionnels et expérimentés vous conduiront à votre destination en toute sécurité, avec des véhicules modernes et bien entretenus.'}} />
         },
 
-        eng: {
+        en: {
             title : 'Taxi driver',
             p1 : <p dangerouslySetInnerHTML={{__html: 'A fast, reliable trip in the city is what you are looking for? Our taxi service offers a low-price, practical solution for all journeys.'}} />,
             p2 : <p dangerouslySetInnerHTML={{__html: 'Our professional and experienced drivers will drive you in comfort, style and safety aboard one of our high-class vehicles.'}} />
@@ -28,7 +28,7 @@ const servicesArray = [
             p2 : <p dangerouslySetInnerHTML={{__html: 'Nos chauffeurs vous accueillent dès votre arrivée à l\'aéroport et vous accompagnent jusqu\'à votre destination finale en toute sécurité et confort. Nous vous garantissons un trajet agréable et relaxant, pour que vous puissiez vous détendre et vous concentrer sur vos affaires ou votre voyage.'}} />
         },
 
-        eng: {
+        en: {
             title : 'Airport transfer',
             p1 : <p dangerouslySetInnerHTML={{__html: 'Traveling by plane for business or for a holiday? We know that it can be <b>exhausting</b>.'}} />,
             p2 : <p dangerouslySetInnerHTML={{__html: 'You will be welcomed by our chauffeurs and driven safely and comfortably to your destination. We guarantee a smooth and stress-free journey so that you can relax and focus on your work or destination.'}} />
@@ -41,7 +41,7 @@ const servicesArray = [
             p2 : <p dangerouslySetInnerHTML={{__html: ' Que vous ayez besoin d\'un transport pour une réunion d\'affaires dans une autre ville ou d\'un voyage de plusieurs heures pour vous rendre à une destination spéciale, nos chauffeurs expérimentés sont à votre disposition pour vous accompagner tout au long de votre trajet.'}} />
         },
 
-        eng: {
+        en: {
             title : 'Long distances',
             p1 : <p dangerouslySetInnerHTML={{__html: 'Looking for a <span class=colored>first class, stress-free journey ?</span>'}} />,
             p2 : <p dangerouslySetInnerHTML={{__html: ' Our experienced chauffeurs will make sure you have the best experience whether you need transport for a business meeting in another city or a several hour ride to a special destination. '}} />
@@ -54,7 +54,7 @@ const servicesArray = [
             p2 : <p dangerouslySetInnerHTML={{__html: 'Nous proposons des véhicules décorés selon vos goûts et vos envies, avec des <strong>chauffeurs professionnels et expérimentés</strong> pour vous conduire en toute sécurité.'}} />
         },
 
-        eng: {
+        en: {
             title : 'Events',
             p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Planning your wedding</span> and looking for an elegant, high-class vehicle for the big day? Our <strong>private chauffeur service</strong> offers tailored solutions for your <span class=colored>unforgettable moment.</span>'}} />,
             p2 : <p dangerouslySetInnerHTML={{__html: 'Our vehicles will be decorated and customised according to your tastes and wishes. Our <strong>experienced and professional chauffeurs</strong> will drive you safely and in style.'}} />
@@ -67,7 +67,7 @@ const servicesArray = [
             p2 : <p dangerouslySetInnerHTML={{__html: 'Vous voyagez avec des bagages encombrants ou coûteux, vous souhaitez faire confiance à notre connaissance de la région pour faire du tourisme, ou plus encore ? Notre service de chauffeur privé VTC vous offre une solution sur mesure pour vos déplacements.'}} />,
         },
 
-        eng: {
+        en: {
             title : 'Extras',
             p1 : <p dangerouslySetInnerHTML={{__html: 'At <strong>Bk-Elite</strong>, our priority is to give the best experience possible at the best price.'}} />,
             p2 : <p dangerouslySetInnerHTML={{__html: 'Traveling with bulky or expensive luggage? Do you want to rely on our knowledge of the region and to be shown around? Or do you have a special request? Our private chauffeur service offers you a customisable solution for every journey.'}} />,
@@ -97,7 +97,7 @@ const servicesTxt = {
         book: 'Réservez votre course'
     },
 
-    eng: {
+    en: {
         mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>S</span>ervices'}} />,
         nav1: 'Taxi driver',
         nav2: 'Airport transfer',

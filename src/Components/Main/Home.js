@@ -24,7 +24,7 @@ const homeTxt = {
         devBy: 'Développé par',
     },
 
-    eng: {
+    en: {
         nav1: 'About',
         nav2: 'Services',
         nav3: 'Vehicles',
@@ -84,6 +84,27 @@ const Home = () => {
                 break;
         }
     }
+
+    function handleLanguageChange(newLang) {
+
+        if(newLang === lang) return;
+
+        document.documentElement.lang = newLang;
+        localStorage.setItem('lang', newLang);
+        window.location.reload();
+    };
+
+    useEffect(() => {
+        const storedLang = localStorage.getItem('lang');
+        if (storedLang) {
+          setLang(storedLang);
+          document.documentElement.lang = storedLang;
+        } else {
+          // Langue par défaut si aucune langue n'est enregistrée
+          setLang('fr');
+          document.documentElement.lang = 'fr';
+        }
+    }, []);
 
     useEffect(() => {
         const header = headerRef.current;
@@ -192,8 +213,8 @@ const Home = () => {
                         <path d="M3.2 6.4H22.4C24.16 6.4 25.6 4.96 25.6 3.2C25.6 1.44 24.16 0 22.4 0H3.2C1.44 0 0 1.44 0 3.2C0 4.96 1.44 6.4 3.2 6.4Z" fill="white"/>
                         <path d="M22.4 19.2H3.2C1.44 19.2 0 20.64 0 22.4C0 24.16 1.44 25.6 3.2 25.6H22.4C24.16 25.6 25.6 24.16 25.6 22.4C25.6 20.64 24.16 19.2 22.4 19.2Z" fill="white"/>
                     </svg>
-                    <img src={french} alt="drapeau français" onClick={() => setLang('fr')}/>
-                    <img src={english} alt="drapeau anglais" onClick={() => setLang('eng')}/>
+                    <img src={french} alt="drapeau français" onClick={() => handleLanguageChange('fr')}/>
+                    <img src={english} alt="drapeau anglais" onClick={() => handleLanguageChange('en')}/>
                 </div>
             </header>
             <main>  

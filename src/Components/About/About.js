@@ -13,7 +13,7 @@ const aboutArray = [
             p3 : <p dangerouslySetInnerHTML={{__html: 'Société spécialisée dans le transport de personnes, nous vous proposons de nombreuses prestations, du <strong>service de taxi</strong> classique à la <strong>location de chauffeurs</strong> pour vos événements exceptionnels.'}} />       
         },
 
-        eng: {
+        en: {
             title : 'The company',
             p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-Elite</span> is a Provence-Alpes-Côte d\'Azur-based <strong>private transport service</strong>.'}} />,
             p2 : 'We offer our services to high-quality customers seeking comfort and excellence.',
@@ -40,7 +40,7 @@ const aboutArray = [
             ]        
         },
 
-        eng: {
+        en: {
             title : 'Our values',
             p1 : <p dangerouslySetInnerHTML={{__html: 'At <span class=colored>Bk-Elite</span>, we have a strong attachment to our values.'}} />,
             p2 : 'Our values are essential in keeping our clients satisfied but also to always guarantee excellence.',
@@ -67,7 +67,7 @@ const aboutArray = [
             p3 : <p dangerouslySetInnerHTML={{__html: 'Être accompagné par l\'un de nos chauffeurs, c\'est avoir la garantie d\'un <b>service haut-de-gamme</b>, d\'un transport en toute sécurité, ainsi que d\'une expérience de voyage confortable et personnalisée. Nos chauffeurs sont des <b>professionnels de confiance</b>, formés pour répondre à vos besoins et rendre votre voyage mémorable.'}} />     
         },
 
-        eng: {
+        en: {
             title : 'Your chauffeur',
             p1 : <p dangerouslySetInnerHTML={{__html: '<span class=colored>Bk-Elite</span> is proud of its team of <b>high-skilled, experienced professionals</b>.'}} />,
             p2 : 'Our chauffeurs are carefully chosen based on their driving abilities, their perfect knowledge of the roads and their ability to provide an exceptional experience.',
@@ -85,7 +85,7 @@ const aboutTxt = {
         title : 'La société',
     },
 
-    eng: {
+    en: {
         mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>A</span>bout'}} />,
         nav1: 'The company',
         nav2: 'Our values',

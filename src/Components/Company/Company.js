@@ -15,7 +15,7 @@ const companyTxt = {
         booking: 'Réserver une course'
     },
 
-    eng: {
+    en: {
         title1: 'Your private transportation service',
         title2: 'Safety first',
         title3: 'Luxury cars',

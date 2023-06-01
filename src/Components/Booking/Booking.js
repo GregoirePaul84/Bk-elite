@@ -30,7 +30,7 @@ const bookingTxt = {
         message: 'Vous souhaitez un devis gratuit ou voulez nous poser une question particulière ? N\'hésitez pas à nous faire parvenir toute demande.'
     },
 
-    eng: {
+    en: {
         mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>B</span>ooking'}} />,
         h3: 'Would you like to book a ride or ask for a quote?',
         p1: <p dangerouslySetInnerHTML={{__html: 'Call us at <b>+336.58.22.86.36</b> or book online!'}} />,

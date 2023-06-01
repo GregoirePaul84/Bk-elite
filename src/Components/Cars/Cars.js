@@ -41,7 +41,7 @@ const carsArray = [
                 }
             ]
         },
-        eng: {
+        en: {
             type: 'Sedans',
             title: 'Tesla model 3',
             features: [
@@ -117,7 +117,7 @@ const carsArray = [
                 }
             ]
         },
-        eng: {
+        en: {
             type: 'Vans',
             title: 'Mercedes class V',
             features: [
@@ -169,7 +169,7 @@ const carsTxt = {
         
     },
 
-    eng: {
+    en: {
         mainTitle: <h2 className='h-section' dangerouslySetInnerHTML={{__html: '<span class=colored>V</span>ehicles'}} />,
         nav1: 'Sedans',
         nav2: 'Vans',
