@@ -444,7 +444,7 @@ const Services = ({lang, scrollY, navigate}) => {
         if(-scrollY <= -1.7 && servicesSlide.from === undefined) {
             displayServices('noSlide');
         }
-
+    // eslint-disable-next-line
     }, [scrollY])
 
     return (

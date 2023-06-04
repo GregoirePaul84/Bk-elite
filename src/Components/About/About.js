@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import companyImg from '../../Medias/Image/Main/office.jpg';
 import valuesImg from '../../Medias/Image/Main/values.jpg';
@@ -189,11 +189,6 @@ const About = ({lang, scrollY}) => {
     }
 
     useEffect(() => {
-        console.log(aboutArray[aboutCtg][lang]);
-
-    }, [aboutCtg])
-
-    useEffect(() => {
         const valueP = document.querySelector('.value-type');
 
         if(value.increment > 1) {
@@ -254,7 +249,7 @@ const About = ({lang, scrollY}) => {
         if(aboutSlide.from === 'driver' && aboutSlide.to === 'company') {
             displayAbout('slide3to1');     
         }
-           
+    // eslint-disable-next-line     
     }, [aboutSlide])
 
 
@@ -263,7 +258,7 @@ const About = ({lang, scrollY}) => {
         if(-scrollY <= -0.7 && aboutSlide.from === undefined) {
             displayAbout('noSlide');
         }
-
+    // eslint-disable-next-line
     }, [scrollY])
 
     return (
