@@ -8,6 +8,7 @@ import About from '../About/About';
 import Services from '../Services/Services';
 import Cars from '../Cars/Cars';
 import Booking from '../Booking/Booking';
+import { Link } from 'react-router-dom';
 
 const homeTxt = {
     fr: {
@@ -288,16 +289,22 @@ const Home = () => {
                             <svg width="25" height="25" viewBox="0 0 35 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M35 17.5301C35 7.84868 27.1631 0 17.5011 0C7.83901 0 0 7.84868 0 17.5301C0 21.3524 1.72422 24.5881 3.29696 27.7701C6.03637 33.3112 11.0844 42.0365 13.7422 46.7591C14.4222 47.9676 15.9853 48.8947 17.7256 48.885C19.4659 48.8754 21.0075 47.9719 21.6736 46.7623C24.2744 42.043 28.7165 34.4629 31.746 27.711C33.1898 24.4957 35 21.3277 35 17.5301ZM17.5 11.7934C20.668 11.7934 23.2366 14.362 23.2366 17.5301C23.2366 20.6971 20.668 23.2657 17.5 23.2657C14.332 23.2657 11.7634 20.6971 11.7634 17.5301C11.7644 14.362 14.332 11.7934 17.5 11.7934Z" fill="#D1B000"/>
                             </svg>
-
+                            08 avenue Albert Camus <br />
+                            30150 Roquemaure
                         </li>
                     </ul>
                 </div>
                 <div className="legal-notice">
                     <p>© 2023, Bk-elite</p>
                     <p>
-                        <span>{homeTxt[lang].legal} </span> 
+                        <Link to="/Bk-elite/mentions-legales" target="_blank">
+                            <span>{homeTxt[lang].legal} </span> 
+                        </Link>
                         | 
-                        <span> {homeTxt[lang].cgv}</span></p>
+                        <Link to="/Bk-elite/cgv" target="_blank">
+                            <span to="/cgv"> {homeTxt[lang].cgv}</span>
+                        </Link>
+                    </p>   
                     <p>{homeTxt[lang].devBy} 
                         <a href="mailto:gregoirepaulet84@gmail.com"> Grégoire Paulet</a>
                     </p>

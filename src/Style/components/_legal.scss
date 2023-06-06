@@ -1,0 +1,32 @@
+#legal-container {
+    .brand-logo {
+        margin-bottom: 20px;
+
+        h1 {
+            padding: 25px;
+        }
+    }
+
+    .legal-title {
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            text-align: center;
+            color: $color_secondary;
+        }
+    }
+
+    .legal-txt {
+        text-align: center;
+
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}
