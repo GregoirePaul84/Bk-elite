@@ -9,10 +9,10 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/bk-elite/' element={<Home />}></Route>
-        <Route path='/bk-elite/mentions-legales' element={<Legal />}></Route>
-        <Route path='/bk-elite/cgv' element={<Cgv />}></Route>
-        <Route path='/bk-elite/success' element={<Success />}></Route>
+        <Route path='/Bk-elite/' element={<Home />}></Route>
+        <Route path='/Bk-elite/mentions-legales' element={<Legal />}></Route>
+        <Route path='/Bk-elite/cgv' element={<Cgv />}></Route>
+        <Route path='/Bk-elite/success' element={<Success />}></Route>
       </Routes>
     </Router>
   );

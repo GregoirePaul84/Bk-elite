@@ -1,7 +1,7 @@
 {
   "name": "bk-elite",
   "version": "0.1.0",
-  "homepage": "https://GregoirePaul84.github.io/bk-elite",
+  "homepage": "https://GregoirePaul84.github.io/Bk-elite/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

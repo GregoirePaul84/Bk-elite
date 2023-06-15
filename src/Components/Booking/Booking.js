@@ -110,7 +110,7 @@ const Booking = ({lang}) => {
             emailjs
                 .send(serviceId, templateId, variables, process.env.REACT_APP_EMAILJS_KEY)
                 .then((res) => {
-                    navigate('/bk-elite/success');
+                    navigate('/Bk-elite/success');
                 })
                 .catch((err) => {
                     alert('Erreur dans l\'envoi du formulaire');
