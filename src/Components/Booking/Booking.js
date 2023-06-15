@@ -3,6 +3,7 @@ import {useForm} from 'react-hook-form';
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 
 const bookingTxt = {
     fr: {
@@ -58,6 +59,8 @@ const bookingTxt = {
 
 const Booking = ({lang}) => {
 
+    const navigate = useNavigate();
+
     const schema = yup
         .object({
             lastName: yup
@@ -102,14 +105,15 @@ const Booking = ({lang}) => {
     }
 
     const sendFeedback = (serviceId, templateId, variables) => {
+
         if (window.confirm('Êtes-vous sûr(e) de vouloir envoyer le message ?')) {
             emailjs
                 .send(serviceId, templateId, variables, process.env.REACT_APP_EMAILJS_KEY)
                 .then((res) => {
-                    alert('Merci pour votre message, nous reviendrons vers vous au plus vite !')
+                    navigate('/bk-elite/success');
                 })
                 .catch((err) => {
-                    alert('Erreur dans l\'envoi du formulaire')
+                    alert('Erreur dans l\'envoi du formulaire');
                 })
         }
     }

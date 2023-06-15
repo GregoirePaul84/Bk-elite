@@ -10,8 +10,9 @@
     z-index: 10;
 
     .brand-logo {
-        height: 226px;
-        width: 340px;
+        width: 90%;
+        max-width: 340px;
+        margin-bottom: 25px;
 
         #home-svg {
             width: 100%;

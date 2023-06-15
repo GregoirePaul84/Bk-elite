@@ -417,6 +417,14 @@
 /* Mobiles (portrait and landscape) ----------- */
 @media only screen and (max-device-width : 480px) {
     #root {
+        .welcome-container {
+            .btn-container {
+                button {
+                    height: 32px;
+                    width: 90px;
+                }
+            }
+        }
         header {
             .brand-logo {
                 h1 {
@@ -460,13 +468,15 @@
             .about-ctr {
                 .about-main{
                     .content-title {
+                        padding-left: 80px;
+
                         h3 {
                             font-size: 2.5em;
-                            margin-right: 0;
+                            margin-right: 15px;
                         }
 
                         svg {
-                            display: none;
+                            transform: scale(0.9);
                         }
                     }
 
@@ -476,12 +486,17 @@
                             min-height: 370px;
 
                             &:nth-child(1) {
-                                padding: 20px 0px 20px 80px;
+                                padding: 20px 0px 20px 50px;
                             }
                         }
 
                         .right-banner {
-                            padding: 20px 0px 20px 80px;
+                            padding: 20px 0px 20px 50px;
+                            align-items: flex-end;
+
+                            p {
+                                padding: 0 35px 0 0;
+                            }
 
                             ul {
                                 flex-wrap: wrap;
@@ -499,12 +514,12 @@
                 }
 
                 .about-nav {
-                    width: 80px;
+                    width: 60px;
 
                     ul {
                         li {
-                            font-size: 1.1em;
-                            padding: 0;
+                            font-size: 1em;
+                            padding: 0 5px;
                         }
                     }
                 }
@@ -512,12 +527,16 @@
 
             .services-ctr {
                 .services-nav {
-                    width: 80px;
+                    width: 60px;
 
                     ul {
                         li {
-                            font-size: 1.1em;
+                            font-size: 1em;
                             padding: 0;
+
+                            &:nth-child(4) {
+                                font-size: 0.9em;
+                            }
                         }
                     }
                 }
@@ -526,6 +545,7 @@
                     .content-title {
                         height: auto;
                         min-height: 65px;
+                        padding-left: 80px;
 
                         h3 {
                             font-size: 2.5em;
@@ -533,16 +553,16 @@
                         }
 
                         svg {
-                            display: none;
+                            transform: scale(0.8);
                         }
                     }
 
                     .services-content {
                         .main-banner {
                             min-height: 800px;
-                            width: calc(100% - 80px);
+                            width: calc(100% - 60px);
                             margin: 0;
-                            padding: 5%;
+                            padding: 3%;
 
                             .extras {
                                 flex-wrap: wrap;
@@ -594,8 +614,8 @@
                                 }
     
                                 &:nth-child(2) {
-                                    max-height: 68%;
-                                    object-position: 28% 0;
+                                    max-height: 65%;
+                                    object-position: 30% 0;
                                 }
                             }
                         }
@@ -626,7 +646,7 @@
 
                     .cars-content {
                         flex-direction: column-reverse;
-                        padding: 0 0 0 80px;
+                        padding: 0 0 0 60px;
 
                         .left-info {
                             top: 370px;
@@ -675,7 +695,7 @@
                 }
 
                 .cars-nav {
-                    width: 80px;
+                    width: 60px;
 
                     ul {
                         li {
@@ -688,7 +708,7 @@
 
             .booking-ctr {
                 .booking-nav {
-                    width: 80px;
+                    width: 60px;
 
                     ul {
                         li {
@@ -700,7 +720,7 @@
 
                 .booking-main {
                     .static-info, .form-container {
-                        width: calc(100% - 80px);
+                        width: calc(100% - 60px);
                         padding: 0 5%;
                     }
 
@@ -753,6 +773,10 @@
 
             .footer-column {
                 width: 100%;
+
+                .contact {
+                    justify-content: center;
+                }
             }
 
             .legal-notice {

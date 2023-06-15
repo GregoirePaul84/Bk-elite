@@ -318,11 +318,11 @@ const Home = () => {
                 <div className="legal-notice">
                     <p>© 2023, Bk-elite</p>
                     <p>
-                        <Link to="/Bk-elite/mentions-legales" target="_blank">
+                        <Link to="/bk-elite/mentions-legales" target="_blank">
                             <span>{homeTxt[lang].legal} </span> 
                         </Link>
                         | 
-                        <Link to="/Bk-elite/cgv" target="_blank">
+                        <Link to="/bk-elite/cgv" target="_blank">
                             <span to="/cgv"> {homeTxt[lang].cgv}</span>
                         </Link>
                     </p>   
