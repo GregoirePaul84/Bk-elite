@@ -45,6 +45,7 @@ const Home = () => {
     const [lang, setLang] = useState('fr');
     const [isLoaded, setIsLoaded] = useState(false);
     const [isEntered, setIsEntered] = useState(false);
+    const [showVideo, setShowVideo] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [width, setWidth] = useState(window.innerWidth);
     const [menuIsShown, setMenuIsShown] = useState(false);
@@ -179,7 +180,7 @@ const Home = () => {
 
     return (
         <div className="page-block">
-            <Welcome lang={lang} isLoaded={isLoaded} setIsEntered={setIsEntered} />
+            <Welcome lang={lang} isLoaded={isLoaded} setIsEntered={setIsEntered} setShowVideo={setShowVideo} />
             <header ref={headerRef}>
                 <div className="brand-logo" onClick={() => navigate('company')}>
                     <h1>
@@ -208,19 +209,21 @@ const Home = () => {
                         </li>
                     </ul>
                 </nav>
-                <div className="languages-ctn">
+                <div className="right-ctn">
                     <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg" className='hamburger-menu' onClick={() => setMenuIsShown(!menuIsShown)}>
                         <path d="M28.8 9.59998H3.2C1.44 9.59998 0 11.04 0 12.8C0 14.56 1.44 16 3.2 16H28.8C30.56 16 32 14.56 32 12.8C32 11.04 30.56 9.59998 28.8 9.59998Z" fill="white"/>
                         <path d="M3.2 6.4H22.4C24.16 6.4 25.6 4.96 25.6 3.2C25.6 1.44 24.16 0 22.4 0H3.2C1.44 0 0 1.44 0 3.2C0 4.96 1.44 6.4 3.2 6.4Z" fill="white"/>
                         <path d="M22.4 19.2H3.2C1.44 19.2 0 20.64 0 22.4C0 24.16 1.44 25.6 3.2 25.6H22.4C24.16 25.6 25.6 24.16 25.6 22.4C25.6 20.64 24.16 19.2 22.4 19.2Z" fill="white"/>
                     </svg>
-                    <img src={french} alt="drapeau français" onClick={() => handleLanguageChange('fr')}/>
-                    <img src={english} alt="drapeau anglais" onClick={() => handleLanguageChange('en')}/>
+                    <div className="languages-ctn">
+                        <img src={french} alt="drapeau français" onClick={() => handleLanguageChange('fr')}/>
+                        <img src={english} alt="drapeau anglais" onClick={() => handleLanguageChange('en')}/>
+                    </div>
                 </div>
             </header>
             <main>  
                 <section className="company-info-ctr" ref={companyRef} >
-                    <Company lang={lang} scrollY={scrollY} setIsLoaded={setIsLoaded} isEntered={isEntered} navigate={navigate}/>
+                    <Company lang={lang} scrollY={scrollY} setIsLoaded={setIsLoaded} isEntered={isEntered} showVideo={showVideo} navigate={navigate}/>
                     <div className="top-link" onClick={() => navigate('company')} ref={topLinkRef}>
                         <svg width="30" height="47" viewBox="0 0 40 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.0001 0L0 46.2434L20.0001 36.1916L40 46.2434L20.0001 0Z" fill="white"/>

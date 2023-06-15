@@ -67,7 +67,6 @@ const Welcome = ({lang, isLoaded, setIsEntered}) => {
                     :
                     <span className="loading-dot"></span>
                 }
-                
             </div>
         </div>
     );

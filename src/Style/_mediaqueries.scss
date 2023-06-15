@@ -30,7 +30,7 @@
                     }
                 }
             }
-            .languages-ctn {
+            .right-ctn {
                 width: auto;
 
                 .hamburger-menu {
@@ -417,6 +417,19 @@
 /* Mobiles (portrait and landscape) ----------- */
 @media only screen and (max-device-width : 480px) {
     #root {
+        header {
+            .brand-logo {
+                h1 {
+                    font-size: 1.9em;
+                }
+            }
+
+            .right-ctn {
+                .languages-ctn {
+                    flex-direction: column;
+                }
+            }
+        }
         main {
             .company-info-ctr {
                 #company-slider {

@@ -86,7 +86,7 @@
             }
         }
 
-        .languages-ctn {
+        .right-ctn {
             height: 100%;
             width: 10%;
             display: flex;
@@ -100,6 +100,11 @@
 
             img {
                 cursor: pointer;
+            }
+
+            .languages-ctn {
+                display: flex;
+                column-gap: 20px;
             }
         }
     }

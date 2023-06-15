@@ -299,7 +299,10 @@ const Company = ({lang, scrollY, setIsLoaded, isEntered, navigate}) => {
                     <video 
                         width="100%" 
                         height="100%" 
-                        autoPlay muted loop 
+                        autoPlay 
+                        muted 
+                        playsInline
+                        loop 
                         onLoadedData={() => {
                             handleLoading();
                         }}
