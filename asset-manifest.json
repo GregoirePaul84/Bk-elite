@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Bk-elite/static/css/main.71706919.css",
-    "main.js": "/Bk-elite/static/js/main.e64c5049.js",
+    "main.css": "/Bk-elite/static/css/main.c2a818c7.css",
+    "main.js": "/Bk-elite/static/js/main.23eeec0a.js",
     "static/media/night_city_short.mp4": "/Bk-elite/static/media/night_city_short.358b7b6844c889896a74.mp4",
     "static/media/taxi.jpg": "/Bk-elite/static/media/taxi.4da2340855dc4de0701a.jpg",
     "static/media/teslamodel3.png": "/Bk-elite/static/media/teslamodel3.fa9818ef8b65e21e20ed.png",
@@ -18,16 +18,16 @@
     "static/media/tesla-webfont.woff": "/Bk-elite/static/media/tesla-webfont.6c2ec8e0fd300778262c.woff",
     "static/media/tesla-webfont.woff2": "/Bk-elite/static/media/tesla-webfont.7088f8799f0f798149bd.woff2",
     "static/media/food.svg": "/Bk-elite/static/media/food.c944899c7268b37794e3.svg",
-    "static/media/magazine.svg": "/Bk-elite/static/media/magazine.6fc5078e8172a4bc6765.svg",
     "index.html": "/Bk-elite/index.html",
+    "static/media/magazine.svg": "/Bk-elite/static/media/magazine.6fc5078e8172a4bc6765.svg",
     "static/media/person.svg": "/Bk-elite/static/media/person.93038e2613644d1f79b3.svg",
     "static/media/tablet.svg": "/Bk-elite/static/media/tablet.7a36c7d09af0e57a803b.svg",
     "static/media/drop.svg": "/Bk-elite/static/media/drop.c96eac074659fb9173e0.svg",
-    "main.71706919.css.map": "/Bk-elite/static/css/main.71706919.css.map",
-    "main.e64c5049.js.map": "/Bk-elite/static/js/main.e64c5049.js.map"
+    "main.c2a818c7.css.map": "/Bk-elite/static/css/main.c2a818c7.css.map",
+    "main.23eeec0a.js.map": "/Bk-elite/static/js/main.23eeec0a.js.map"
   },
   "entrypoints": [
-    "static/css/main.71706919.css",
-    "static/js/main.e64c5049.js"
+    "static/css/main.c2a818c7.css",
+    "static/js/main.23eeec0a.js"
   ]
 }
