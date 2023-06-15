@@ -11,7 +11,7 @@ const Legal = () => {
             </div>
             <div className="legal-title">
                 <h2>Mentions légales</h2>
-                <h3>Bk-Élite-E-Transport</h3>
+                <h3>Bk-Elite-E-Transport</h3>
             </div>
             <div className="legal-txt">
                 <p>Auto-entreprise</p>

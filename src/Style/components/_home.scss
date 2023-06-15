@@ -179,6 +179,30 @@
                 }
                 
             }
+
+            .contact {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+
+                li {
+                    width: calc(50% - 15px);
+
+                    &:nth-child(1), &:nth-child(3) {
+                        margin-right: 15px;
+                    }
+                }
+
+                .network {
+                    gap: 20px;
+
+                    svg {
+                        margin: 0;
+                        cursor: pointer;
+                    }
+                    
+                }
+            }
         }
 
         .legal-notice {

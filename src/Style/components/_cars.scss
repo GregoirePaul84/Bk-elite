@@ -99,7 +99,7 @@
                 left: 0;
                 top: 220px;             
                 height: 115px;
-                width: 27px;
+                width: 30px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -116,12 +116,13 @@
                     width: 100%;
                     background-color: $color_secondary;
                     position: absolute;
-                    transition: 300ms;
+                    transform: scaleX(0);
                     transform-origin: left;
+                    overflow: hidden;
+                }
 
-                    &:hover {
-                        transform: scaleX(1.2);
-                    }
+                .scroll-move {
+                    animation: scrollMove 1s ease 1 forwards;
                 }
 
                 .cars-info {
@@ -299,5 +300,14 @@
                 }
             }
         }
+    }
+}
+
+@keyframes scrollMove {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(100%);
     }
 }

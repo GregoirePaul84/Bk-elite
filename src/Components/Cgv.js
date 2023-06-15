@@ -11,7 +11,7 @@ const Cgv = () => {
             </div>
             <div className="cgv-title">
                 <h2>Conditions générales de vente</h2>
-                <h3>Bk-Élite-E-Transport</h3>
+                <h3>Bk-Elite-E-Transport</h3>
             </div>
             <div className="cgv-txt">
                 <div className="cgv-part">

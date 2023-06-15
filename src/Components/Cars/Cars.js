@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import teslaImg from '../../Medias/Image/Main/teslamodel3.png';
 import vanImg from '../../Medias/Image/Main/mercedes.png';
@@ -180,11 +180,13 @@ const carsTxt = {
     }
 }
 
-const Cars = ({lang}) => {
+const Cars = ({lang, scrollY}) => {
 
     const [carsCtg, setCarsCtg] = useState(0);
     const [carsSlide, setCarsSlide] = useState({from: undefined, to: 'sedan'});
     const [showInfo, setShowInfo] = useState(false);
+
+    const infoRef = useRef(null);
 
     function displayCars(index) {
         const slider = document.querySelector('.img-ctn .cars-slider');      
@@ -218,7 +220,6 @@ const Cars = ({lang}) => {
             van.classList.add('nav-selected');
         }
 
-            
         if(carsSlide.to === 'van')
             document.getElementById('van-nav').classList.add('nav-selected');
 
@@ -233,6 +234,14 @@ const Cars = ({lang}) => {
            
     }, [carsSlide])
 
+    useEffect(() => {
+        const info = infoRef.current;
+
+        if(-scrollY <= -2.7) {
+            console.log('apparition');
+            info.classList.add('scroll-move');
+        }
+    }, [scrollY])
 
     return (
         <>
@@ -264,7 +273,7 @@ const Cars = ({lang}) => {
                 </div>
                 <div className="cars-content">
                     <div className="left-info" onClick={() => setShowInfo(!showInfo)}>
-                        <div className="scaled-color"></div>
+                        <div className="scaled-color" ref={infoRef}></div>
                         <svg width="16" height="32" viewBox="0 0 16 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 16C3.105 16 4 16.895 4 18V26C4 27.105 3.105 28 2 28H0V32H16V28H14.008C12.906 28 12.008 27.105 12.008 26L12 12H0V16H2Z" fill="#040613"/>
                             <path d="M8 8C10.2091 8 12 6.20914 12 4C12 1.79086 10.2091 0 8 0C5.79086 0 4 1.79086 4 4C4 6.20914 5.79086 8 8 8Z" fill="#040613"/>

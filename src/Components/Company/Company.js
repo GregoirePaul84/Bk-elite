@@ -9,7 +9,7 @@ const companyTxt = {
         title1: 'Votre service de transport privé',
         title2: 'Un transport en toute sécurité',
         title3: 'Des véhicules haut de gamme',
-        txt1: <p dangerouslySetInnerHTML={{__html: '<strong>Deux chauffeurs expérimentés</strong> à votre disposition pour vos déplacements en Provence, <span> 24h/24 et 7j/7.</span>'}} />,
+        txt1: <p dangerouslySetInnerHTML={{__html: '<strong>Votre chauffeur expérimenté</strong> à votre disposition pour vos déplacements en Provence, <span> 24h/24 et 7j/7.</span>'}} />,
         txt2: <p dangerouslySetInnerHTML={{__html: 'Voyagez avec nos chauffeurs expérimentés, ponctuels, dans le <span>plus grand confort et la plus grande sérénité</span>.'}} />,
         txt3: <p dangerouslySetInnerHTML={{__html: 'Voyagez à bord de nos véhicules spacieux et bien entretenus, afin de passer un <span>trajet sans histoire.</span>'}} />,
         booking: 'Réserver une course'
@@ -19,7 +19,7 @@ const companyTxt = {
         title1: 'Your private transportation service',
         title2: 'Safety first',
         title3: 'Luxury cars',
-        txt1: <p dangerouslySetInnerHTML={{__html: '<strong>Two experienced drivers</strong> at your service for your travels in Provence, <span> 24 hours a day/7 days a week.</span>'}} />,
+        txt1: <p dangerouslySetInnerHTML={{__html: '<strong>Your experienced driver</strong> at your service for your travels in Provence, <span> 24 hours a day/7 days a week.</span>'}} />,
         txt2: <p dangerouslySetInnerHTML={{__html: 'Travel in peace and comfort with our <span>experienced, reliable chauffeurs.</span>'}} />,
         txt3: <p dangerouslySetInnerHTML={{__html: 'Enjoy a safe journey in one of our <span>spacious, perfectly maintained and reliable cars.</span>'}} />,
         booking: 'Book a ride'

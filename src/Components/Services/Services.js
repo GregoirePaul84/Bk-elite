@@ -522,8 +522,10 @@ const Services = ({lang, scrollY, navigate}) => {
                         <ul className="extras">
                             {(servicesCtg === 0) ? 
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'ponctual', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'ponctual', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'ponctual', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}
+                                        >
 
                                         {(extraShown.isShown && extraShown.type === 'ponctual') ? 
                                             <Extras lang={lang} index={0} liNb={"li1"} />
@@ -534,8 +536,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].ponctual}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'allDay', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'allDay') ? 'extend' : null} >
+                                    <li onMouseEnter={() => setExtraShown({type: 'allDay', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'allDay', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'allDay') ? 'extend' : null} 
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'allDay') ? 
                                             <Extras lang={lang} index={1} liNb={"li2"}/>
                                             : null
@@ -545,8 +549,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].aroundClock}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'prices', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'prices', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras lang={lang} index={2} liNb={"li3"}/>
                                             : null
@@ -566,7 +572,8 @@ const Services = ({lang, scrollY, navigate}) => {
                                 </>
                                 : (servicesCtg === 1) ?
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'ponctual', isShown: !extraShown.isShown})} 
+                                    <li onMouseEnter={() => setExtraShown({type: 'ponctual', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'ponctual', isShown: false})}
                                         className={(extraShown.isShown && extraShown.type === 'ponctual') ? 'extend' : null}>
 
                                         {(extraShown.isShown && extraShown.type === 'ponctual') ? 
@@ -578,8 +585,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].ponctual}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'delay', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'delay') ? 'extend' : null} >
+                                    <li onMouseEnter={() => setExtraShown({type: 'delay', isShown: true})}
+                                        onMouseLeave={() => setExtraShown({type: 'delay', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'delay') ? 'extend' : null} 
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'delay') ? 
                                             <Extras lang={lang} index={3} liNb={"li2"}/>
                                             : null
@@ -589,7 +598,8 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].flightDelay}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
+                                    <li onMouseEnter={() => setExtraShown({type: 'prices', isShown: true})}
+                                        onMouseLeave={() => setExtraShown({type: 'prices', isShown: false})} 
                                         className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras lang={lang} index={2} liNb={"li3"}/>
@@ -610,8 +620,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                 </>
                                 : (servicesCtg === 2) ?
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'music', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'music') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'music', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'music', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'music') ? 'extend' : null}
+                                        >
 
                                         {(extraShown.isShown && extraShown.type === 'music') ? 
                                             <Extras lang={lang} index={4} liNb={"li1"}/>
@@ -622,8 +634,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].music}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'drinks', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'drinks') ? 'extend' : null} >
+                                    <li onMouseEnter={() => setExtraShown({type: 'drinks', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'drinks', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'drinks') ? 'extend' : null}
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'drinks') ? 
                                             <Extras lang={lang} index={5} liNb={"li2"}/>
                                             : null
@@ -634,8 +648,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].drinks}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'prices', isShown: true})}
+                                        onMouseLeave={() => setExtraShown({type: 'prices', isShown: false})} 
+                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras lang={lang} index={2} liNb={"li3"}/>
                                             : null
@@ -655,8 +671,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                 </>
                                 : (servicesCtg === 3) ?
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'flowers', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'flowers') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'flowers', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'flowers', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'flowers') ? 'extend' : null}
+                                        >
 
                                         {(extraShown.isShown && extraShown.type === 'flowers') ? 
                                             <Extras lang={lang} index={6} liNb={"li1"}/>
@@ -672,8 +690,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].floral}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'elegance', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'elegance') ? 'extend' : null} >
+                                    <li onMouseEnter={() => setExtraShown({type: 'elegance', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'elegance', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'elegance') ? 'extend' : null}
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'elegance') ? 
                                             <Extras lang={lang} index={7} liNb={"li2"}/>
                                             : null
@@ -685,8 +705,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].elegance}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'prices', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'prices', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'prices', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'prices') ? 'extend' : null}
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'prices') ? 
                                             <Extras lang={lang} index={2} liNb={"li3"}/>
                                             : null
@@ -706,8 +728,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                 </>
                                 : (servicesCtg === 4) ?
                                 <>
-                                    <li onClick={() => setExtraShown({type: 'luggage', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'luggage', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'luggage', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'luggage') ? 'extend' : null}
+                                        >
 
                                         {(extraShown.isShown && extraShown.type === 'luggage') ? 
                                             <Extras lang={lang} index={8} liNb={"li1"}/>
@@ -724,8 +748,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].luggage}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'tourism', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null} >
+                                    <li onMouseEnter={() => setExtraShown({type: 'tourism', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'tourism', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'tourism') ? 'extend' : null}
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'tourism') ? 
                                             <Extras lang={lang} index={9} liNb={"li2"}/>
                                             : null
@@ -737,8 +763,10 @@ const Services = ({lang, scrollY, navigate}) => {
                                         </svg>
                                         {servicesTxt[lang].turism}
                                     </li>
-                                    <li onClick={() => setExtraShown({type: 'provision', isShown: !extraShown.isShown})} 
-                                        className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}>
+                                    <li onMouseEnter={() => setExtraShown({type: 'provision', isShown: true})} 
+                                        onMouseLeave={() => setExtraShown({type: 'provision', isShown: false})}
+                                        className={(extraShown.isShown && extraShown.type === 'provision') ? 'extend' : null}
+                                        >
                                         {(extraShown.isShown && extraShown.type === 'provision') ? 
                                             <Extras lang={lang} index={10} liNb={"li3"}/>
                                             : null
