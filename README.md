@@ -22,6 +22,8 @@ Le site Bk-elite est composé d'une page, divisée en plusieurs sections :
 
 2. **Présentation de l'entreprise** : Des informations plus détaillées sur la société, les valeurs chères à l'entreprise et sur la qualité du service.
 
-3. **Présentation des véhicules** : Une présentation des véhicules disponibles pour les services proposés par l'entreprise.
+3. **Présentation des services** : Les différentes prestations proposées par la société.
 
-4. **Réservation** : Les utilisateurs peuvent facilement réserver un chauffeur en utilisant le formulaire de réservation intuitif. Les informations saisies sont envoyées par e-mail à l'équipe de Bk-elite pour un traitement rapide.
+4. **Présentation des véhicules** : Une présentation des véhicules disponibles pour les services proposés par l'entreprise.
+
+5. **Réservation** : Les utilisateurs peuvent facilement réserver un chauffeur en utilisant le formulaire de réservation intuitif. Les informations saisies sont envoyées par e-mail à l'équipe de Bk-elite pour un traitement rapide.
