@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import teslaImg from '../../Medias/Image/Main/teslamodel3.png';
-import vanImg from '../../Medias/Image/Main/mercedes.png';
+import teslaImg from '../../Medias/Image/Main/teslamodel3.webp';
+import vanImg from '../../Medias/Image/Main/mercedes.webp';
 
 const carsArray = [
     {

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import taxiImg from '../../Medias/Image/Main/taxi.jpg';
-import airplaneImg from '../../Medias/Image/Main/airplane.jpg';
-import distanceImg from '../../Medias/Image/Main/distance.jpg';
-import weddingImg from '../../Medias/Image/Main/wedding.jpg';
-import provenceImg from '../../Medias/Image/Main/pexels-claudio-vincenti-4106624.jpg';
+import taxiImg from '../../Medias/Image/Main/taxi.webp';
+import airplaneImg from '../../Medias/Image/Main/airplane.webp';
+import distanceImg from '../../Medias/Image/Main/distance.webp';
+import weddingImg from '../../Medias/Image/Main/wedding.webp';
+import provenceImg from '../../Medias/Image/Main/lavander.webp';
 import Extras from './Extras';
 
 const servicesArray = [

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import city from '../../Medias/Video/night_city_short.mp4';
-import bridge from '../../Medias/Image/Main/bridge.jpg';
-import car from '../../Medias/Image/Main/car_above_darked.jpg';
+import bridge from '../../Medias/Image/Main/bridge.webp';
+import car from '../../Medias/Image/Main/car_above_darked.webp';
 
 const companyTxt = {
     fr: {

@@ -195,9 +195,11 @@ const Booking = ({lang}) => {
                             <h4>{bookingTxt[lang].title2}</h4>
                         </div>
                         <div className='input-container'>
+                            <label htmlFor="date">Date :</label>
                             <input 
                                 type="date" 
                                 id="date" 
+                                name="date"
                                 {...register('date')} />
                         </div>
                         <div className='form-subtitle'>
