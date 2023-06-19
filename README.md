@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Bk-elite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo_Bk-elite](./src/Medias/Image/Main/logo.jpg)
 
-## Available Scripts
+Bk-elite est un site vitrine conçu pour promouvoir une entreprise de transport privé de luxe.
 
-In the project directory, you can run:
+Site consultable sur [Github-pages](https://gregoirepaul84.github.io/Bk-elite/).
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js**: Le site Bk-elite est développé en utilisant la bibliothèque JavaScript React.js, offrant ainsi une structure modulaire et une expérience utilisateur dynamique.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Sass**: Le préprocesseur CSS Sass est utilisé pour faciliter le développement et la gestion des styles du site. Il permet une meilleure organisation du code CSS grâce à des fonctionnalités avancées telles que les variables, les mixins et les importations.
 
-### `npm test`
+- **Email.js**: Pour la gestion des formulaires de contact, le service Email.js est utilisé. Il offre une solution simple et sécurisée pour envoyer des e-mails directement depuis le site, sans nécessiter de backend supplémentaire.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Architecture du site
 
-### `npm run build`
+Le site Bk-elite est composé d'une page, divisée en plusieurs sections :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Accueil de l'utilisateur** : Une première section composée d'un slider qui affiche une vidéo ainsi que deux images, accompagnées de courts textes accrocheurs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Présentation de l'entreprise** : Des informations plus détaillées sur la société, les valeurs chères à l'entreprise et sur la qualité du service.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Présentation des véhicules** : Une présentation des véhicules disponibles pour les services proposés par l'entreprise.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. **Réservation** : Les utilisateurs peuvent facilement réserver un chauffeur en utilisant le formulaire de réservation intuitif. Les informations saisies sont envoyées par e-mail à l'équipe de Bk-elite pour un traitement rapide.
