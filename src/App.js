@@ -6,10 +6,9 @@ import Success from './Components/Booking/Success';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Bk-elite">
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/Bk-elite/' element={<Home />}></Route>
         <Route path='/Bk-elite/mentions-legales' element={<Legal />}></Route>
         <Route path='/Bk-elite/cgv' element={<Cgv />}></Route>
         <Route path='/Bk-elite/success' element={<Success />}></Route>
