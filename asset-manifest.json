@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Bk-elite/static/css/main.97259d6e.css",
-    "main.js": "/Bk-elite/static/js/main.8e80551d.js",
+    "main.js": "/Bk-elite/static/js/main.69976dda.js",
     "static/media/night_city_short.mp4": "/Bk-elite/static/media/night_city_short.358b7b6844c889896a74.mp4",
     "static/media/taxi.webp": "/Bk-elite/static/media/taxi.3242f501aa0d538b0130.webp",
     "static/media/car_above_darked.webp": "/Bk-elite/static/media/car_above_darked.76f3656d153e2a011b44.webp",
@@ -24,10 +24,10 @@
     "static/media/tablet.svg": "/Bk-elite/static/media/tablet.7a36c7d09af0e57a803b.svg",
     "static/media/drop.svg": "/Bk-elite/static/media/drop.c96eac074659fb9173e0.svg",
     "main.97259d6e.css.map": "/Bk-elite/static/css/main.97259d6e.css.map",
-    "main.8e80551d.js.map": "/Bk-elite/static/js/main.8e80551d.js.map"
+    "main.69976dda.js.map": "/Bk-elite/static/js/main.69976dda.js.map"
   },
   "entrypoints": [
     "static/css/main.97259d6e.css",
-    "static/js/main.8e80551d.js"
+    "static/js/main.69976dda.js"
   ]
 }
